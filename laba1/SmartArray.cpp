@@ -1,18 +1,19 @@
 #include "SmartArray.h"
 #include <random>
-#include <iostream>
 
 SmartArray::SmartArray(int n) : size(n) {
     if (size > 0) data = std::make_unique<int[]>(size);
 }
-
-SmartArray::SmartArray(int n, std::unique_ptr<int[]> arr) : size(n), data(std::move(arr)) {}
 
 SmartArray::SmartArray(const SmartArray& other) : size(other.size) {
     if (size > 0) {
         data = std::make_unique<int[]>(size);
         for (int i = 0; i < size; i++) data[i] = other.data[i];
     }
+}
+
+SmartArray::~SmartArray() {
+    data.reset();
 }
 
 SmartArray& SmartArray::operator=(const SmartArray& other) {
@@ -27,8 +28,16 @@ SmartArray& SmartArray::operator=(const SmartArray& other) {
     return *this;
 }
 
-SmartArray::~SmartArray() {
-    data.reset();
+void SmartArray::fillManual() {
+    for (int i = 0; i < size; i++) std::cin >> data[i];
+}
+
+void SmartArray::fillRandom(int min, int max) {
+    if (size <= 0) return;
+    for (int i = 0; i < size; i++) {
+        auto r = static_cast<int>(min + (std::random_device{}() % (max - min + 1)));
+        data[i] = r;
+    }
 }
 
 void SmartArray::print() const {
@@ -43,26 +52,13 @@ int SmartArray::getElement(int index) const {
     return 0;
 }
 
-SmartArray SmartArray::resize(int newSize) const {
+void SmartArray::resize(int newSize) {
+    if (newSize == size) return;
     auto newData = (newSize > 0) ? std::make_unique<int[]>(newSize) : nullptr;
     int limit = (newSize < size) ? newSize : size;
     for (int i = 0; i < limit; i++) newData[i] = data[i];
-    return SmartArray(newSize, std::move(newData));
-}
-
-SmartArray SmartArray::fillManual(int n) {
-    auto arr = std::make_unique<int[]>(n);
-    for (int i = 0; i < n; i++) std::cin >> arr[i];
-    return SmartArray(n, std::move(arr));
-}
-
-SmartArray SmartArray::fillRandom(int n, int min, int max) {
-    auto arr = std::make_unique<int[]>(n);
-    for (int i = 0; i < n; i++) {
-        auto r = static_cast<int>(min + (std::random_device{}() % (max - min + 1)));
-        arr[i] = r;
-    }
-    return SmartArray(n, std::move(arr));
+    data = std::move(newData);
+    size = newSize;
 }
 
 SmartArray SmartArray::intersection(const SmartArray& a, const SmartArray& b) {
@@ -95,9 +91,9 @@ SmartArray SmartArray::intersection(const SmartArray& a, const SmartArray& b) {
         }
     }
 
-    auto resultData = std::make_unique<int[]>(k);
-    for (int i = 0; i < k; i++) resultData[i] = temp[i];
-    return SmartArray(k, std::move(resultData));
+    SmartArray result(k);
+    for (int i = 0; i < k; i++) result.data[i] = temp[i];
+    return result;
 }
 
 SmartArray SmartArray::unionArrays(const SmartArray& a, const SmartArray& b) {
@@ -105,7 +101,10 @@ SmartArray SmartArray::unionArrays(const SmartArray& a, const SmartArray& b) {
     auto temp = std::make_unique<int[]>(maxSize);
     int k = 0;
 
-    for (int i = 0; i < a.size; i++) temp[k++] = a.data[i];
+    for (int i = 0; i < a.size; i++) {
+        temp[k] = a.data[i];
+        k++;
+    }
 
     for (int i = 0; i < b.size; i++) {
         bool exists = false;
@@ -115,10 +114,13 @@ SmartArray SmartArray::unionArrays(const SmartArray& a, const SmartArray& b) {
                 break;
             }
         }
-        if (!exists) temp[k++] = b.data[i];
+        if (!exists) {
+            temp[k] = b.data[i];
+            k++;
+        }
     }
 
-    auto resultData = std::make_unique<int[]>(k);
-    for (int i = 0; i < k; i++) resultData[i] = temp[i];
-    return SmartArray(k, std::move(resultData));
+    SmartArray result(k);
+    for (int i = 0; i < k; i++) result.data[i] = temp[i];
+    return result;
 }
