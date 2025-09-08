@@ -34,9 +34,8 @@ void SmartArray::fillManual() {
 
 void SmartArray::fillRandom(int min, int max) {
     if (size <= 0) return;
-
     for (int i = 0; i < size; i++) {
-        int r = static_cast<int>(min + (std::random_device{}() % (max - min + 1)));
+        auto r = static_cast<int>(min + (std::random_device{}() % (max - min + 1)));
         data[i] = r;
     }
 }
@@ -72,7 +71,7 @@ SmartArray SmartArray::intersection(const SmartArray& a, const SmartArray& b) {
     for (int i = 0; i < a.size; i++) {
         bool inB = false;
         for (int j = 0; j < b.size; j++) {
-            if (a.data[j] == a.data[i]) {
+            if (a.data[i] == b.data[j]) {
                 inB = true;
                 break;
             }
@@ -86,7 +85,6 @@ SmartArray SmartArray::intersection(const SmartArray& a, const SmartArray& b) {
                 break;
             }
         }
-
         if (!exists) {
             temp[k] = a.data[i];
             k++;
@@ -126,4 +124,3 @@ SmartArray SmartArray::unionArrays(const SmartArray& a, const SmartArray& b) {
     for (int i = 0; i < k; i++) result.data[i] = temp[i];
     return result;
 }
-
