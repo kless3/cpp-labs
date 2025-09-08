@@ -34,10 +34,11 @@ void SmartArray::fillManual() {
 
 void SmartArray::fillRandom(int min, int max) {
     if (size <= 0) return;
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution dist(min, max);
-    for (int i = 0; i < size; i++) data[i] = dist(gen);
+    static std::mt19937 gen(std::random_device{}());
+    std::uniform_int_distribution<int> dist(min, max);
+    for (int i = 0; i < size; i++) {
+        data[i] = dist(gen);
+    }
 }
 
 void SmartArray::print() const {
