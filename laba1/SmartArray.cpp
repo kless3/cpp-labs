@@ -71,7 +71,7 @@ SmartArray SmartArray::intersection(const SmartArray& a, const SmartArray& b) {
     for (int i = 0; i < a.size; i++) {
         bool inB = false;
         for (int j = 0; j < b.size; j++) {
-            if (a.data[i] == b.data[j]) {
+            if (a.data[j] == a.data[i]) {
                 inB = true;
                 break;
             }
@@ -85,7 +85,11 @@ SmartArray SmartArray::intersection(const SmartArray& a, const SmartArray& b) {
                 break;
             }
         }
-        if (!exists) temp[k++] = a.data[i];
+
+        if (!exists) {
+            temp[k] = a.data[i];
+            k++;
+        }
     }
 
     SmartArray result(k);
@@ -98,7 +102,10 @@ SmartArray SmartArray::unionArrays(const SmartArray& a, const SmartArray& b) {
     auto temp = std::make_unique<int[]>(maxSize);
     int k = 0;
 
-    for (int i = 0; i < a.size; i++) temp[k++] = a.data[i];
+    for (int i = 0; i < a.size; i++) {
+        temp[k] = a.data[i];
+        k++;
+    }
 
     for (int i = 0; i < b.size; i++) {
         bool exists = false;
@@ -108,10 +115,14 @@ SmartArray SmartArray::unionArrays(const SmartArray& a, const SmartArray& b) {
                 break;
             }
         }
-        if (!exists) temp[k++] = b.data[i];
+        if (!exists) {
+            temp[k] = b.data[i];
+            k++;
+        }
     }
 
     SmartArray result(k);
     for (int i = 0; i < k; i++) result.data[i] = temp[i];
     return result;
 }
+
