@@ -1,5 +1,6 @@
 #include "SmartArray.h"
 #include <cstdlib>
+#include <random>
 
 SmartArray::SmartArray(int n) : size(n) {
     data = (size > 0) ? new int[size] : nullptr;
@@ -35,8 +36,14 @@ void SmartArray::fillManual() {
 }
 
 void SmartArray::fillRandom(int min, int max) {
+    if (size <= 0) return;
+
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dist(min, max);
+
     for (int i = 0; i < size; i++) {
-        data[i] = min + rand() % (max - min + 1);
+        data[i] = dist(gen);
     }
 }
 
