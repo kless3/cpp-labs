@@ -6,7 +6,7 @@
 
 class SmartArray {
 private:
-    std::unique_ptr<int[]> data;
+    std::unique_ptr<std::unique_ptr<int>[]> data;
     int size{0};
 
 public:
