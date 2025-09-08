@@ -12,6 +12,10 @@ SmartArray::SmartArray(const SmartArray& other) : size(other.size) {
     }
 }
 
+SmartArray::~SmartArray() {
+    data.reset();
+}
+
 SmartArray& SmartArray::operator=(const SmartArray& other) {
     if (this == &other) return *this;
     size = other.size;
@@ -65,17 +69,23 @@ SmartArray SmartArray::intersection(const SmartArray& a, const SmartArray& b) {
     int k = 0;
 
     for (int i = 0; i < a.size; i++) {
-        bool found = false;
-        for (int j = 0; j < b.size && !found; j++) {
+        bool inB = false;
+        for (int j = 0; j < b.size; j++) {
             if (a.data[i] == b.data[j]) {
-                found = true;
+                inB = true;
+                break;
             }
         }
-        if (found) {
-            bool exists = false;
-            for (int x = 0; x < k; x++) if (temp[x] == a.data[i]) exists = true;
-            if (!exists) temp[k++] = a.data[i];
+        if (!inB) continue;
+
+        bool exists = false;
+        for (int x = 0; x < k; x++) {
+            if (temp[x] == a.data[i]) {
+                exists = true;
+                break;
+            }
         }
+        if (!exists) temp[k++] = a.data[i];
     }
 
     SmartArray result(k);
@@ -92,8 +102,11 @@ SmartArray SmartArray::unionArrays(const SmartArray& a, const SmartArray& b) {
 
     for (int i = 0; i < b.size; i++) {
         bool exists = false;
-        for (int j = 0; j < k && !exists; j++) {
-            if (temp[j] == b.data[i]) exists = true;
+        for (int j = 0; j < k; j++) {
+            if (temp[j] == b.data[i]) {
+                exists = true;
+                break;
+            }
         }
         if (!exists) temp[k++] = b.data[i];
     }
