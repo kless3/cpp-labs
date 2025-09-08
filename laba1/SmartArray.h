@@ -13,7 +13,7 @@ public:
     explicit SmartArray(int n = 0);
     SmartArray(const SmartArray& other);
     SmartArray& operator=(const SmartArray& other);
-    ~SmartArray();
+    ~SmartArray(); // Оставляем деструктор
 
     void fillManual();
     void fillRandom(int min = 0, int max = 100);
