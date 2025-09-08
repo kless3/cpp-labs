@@ -1,0 +1,17 @@
+!*.cpp
+!*.h
+!CMakeLists.txt
+
+cmake-build-*/
+cmake-build-*
+/cmake-build-*/
+
+.idea/
+*.iml
+
+.DS_Store
+Thumbs.db
+
+*~
+*.swp
+*.swo
