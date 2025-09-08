@@ -5,13 +5,15 @@ using namespace std;
 int main() {
     setlocale(LC_ALL, "Russian");
 
-    int n, m;
+    int n;
+    int m;
     cout << "Введите начальный размер первого массива: ";
     cin >> n;
     cout << "Введите начальный размер второго массива: ";
     cin >> m;
 
-    SmartArray arr1(n), arr2(m);
+    SmartArray arr1(n);
+    SmartArray arr2(m);
 
     bool running = true;
     while (running) {
@@ -29,23 +31,26 @@ int main() {
         cin >> choice;
 
         switch (choice) {
-            case 1:
+            case 1: {
                 cout << "Заполнение первого массива:\n";
                 arr1.fillManual();
                 cout << "Заполнение второго массива:\n";
                 arr2.fillManual();
                 break;
-            case 2:
+            }
+            case 2: {
                 arr1.fillRandom();
                 arr2.fillRandom();
                 cout << "Массивы заполнены случайными числами.\n";
                 break;
-            case 3:
+            }
+            case 3: {
                 cout << "Первый массив: ";
                 arr1.print();
                 cout << "Второй массив: ";
                 arr2.print();
                 break;
+            }
             case 4: {
                 SmartArray inter = SmartArray::intersection(arr1, arr2);
                 cout << "Пересечение: ";
@@ -59,7 +64,8 @@ int main() {
                 break;
             }
             case 6: {
-                int newN, newM;
+                int newN;
+                int newM;
                 cout << "Введите новый размер первого массива: ";
                 cin >> newN;
                 cout << "Введите новый размер второго массива: ";
