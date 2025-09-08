@@ -1,6 +1,5 @@
 #include "SmartArray.h"
 #include <random>
-#include <iostream>
 
 SmartArray::SmartArray(int n) : size(n) {
     if (size > 0) data = std::make_unique<int[]>(size);
@@ -11,6 +10,10 @@ SmartArray::SmartArray(const SmartArray& other) : size(other.size) {
         data = std::make_unique<int[]>(size);
         for (int i = 0; i < size; i++) data[i] = other.data[i];
     }
+}
+
+SmartArray::~SmartArray() {
+    data.reset();
 }
 
 SmartArray& SmartArray::operator=(const SmartArray& other) {
@@ -25,22 +28,15 @@ SmartArray& SmartArray::operator=(const SmartArray& other) {
     return *this;
 }
 
-SmartArray::~SmartArray() {
-    data.reset(); // Очищаем память
-}
-
 void SmartArray::fillManual() {
     for (int i = 0; i < size; i++) std::cin >> data[i];
 }
 
 void SmartArray::fillRandom(int min, int max) {
     if (size <= 0) return;
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> dist(min, max);
-
     for (int i = 0; i < size; i++) {
-        data[i] = dist(gen);
+        auto r = static_cast<int>(min + (std::random_device{}() % (max - min + 1)));
+        data[i] = r;
     }
 }
 
