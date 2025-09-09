@@ -1,5 +1,4 @@
 #include "String.h"
-#include <iostream>
 
 void String::copyFrom(const char* str, size_t len) {
     data = new char[len + 1];
@@ -41,12 +40,12 @@ String String::operator()(int start, int count) const {
         throw std::invalid_argument("Count cannot be negative");
     }
 
-    auto actualCount = count;
+    size_t actualCount = count;
     if (start + count > static_cast<int>(length)) {
         actualCount = length - start;
     }
 
-    auto subStr = new char[actualCount + 1];
+    char* subStr = new char[actualCount + 1];
     std::strncpy(subStr, data + start, actualCount);
     subStr[actualCount] = '\0';
 

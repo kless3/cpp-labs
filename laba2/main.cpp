@@ -53,7 +53,8 @@ int main() {
                         break;
                     }
 
-                    int start, count;
+                    int start;
+                    int count;
                     std::cout << "Текущая строка: " << currentString << std::endl;
                     std::cout << "Введите начальный индекс: ";
                     std::cin >> start;
