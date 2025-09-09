@@ -45,7 +45,7 @@ String String::operator()(int start, int count) const {
         actualCount = length - start;
     }
 
-    char* subStr = new char[actualCount + 1];
+    auto subStr = new char[actualCount + 1];
     std::strncpy(subStr, data + start, actualCount);
     subStr[actualCount] = '\0';
 
