@@ -1,0 +1,89 @@
+#include "String.h"
+#include <iostream>
+
+void String::copyFrom(const char* str, size_t len) {
+    data = new char[len + 1];
+    std::strcpy(data, str);
+    length = len;
+}
+
+String::String() : data(nullptr), length(0) {
+    data = new char[1];
+    data[0] = '\0';
+}
+
+String::String(const char* str) {
+    if (str) {
+        length = std::strlen(str);
+        copyFrom(str, length);
+    } else {
+        data = new char[1];
+        data[0] = '\0';
+        length = 0;
+    }
+}
+
+String::String(const String& other) {
+    copyFrom(other.data, other.length);
+}
+
+String::~String() {
+    delete[] data;
+}
+
+bool String::operator!() const {
+    return length == 0;
+}
+
+String String::operator()(int start, int count) const {
+    if (start < 0 || start >= static_cast<int>(length)) {
+        throw std::out_of_range("Start index out of range");
+    }
+    if (count < 0) {
+        throw std::invalid_argument("Count cannot be negative");
+    }
+
+    int actualCount = count;
+    if (start + count > static_cast<int>(length)) {
+        actualCount = length - start;
+    }
+
+    char* subStr = new char[actualCount + 1];
+    std::strncpy(subStr, data + start, actualCount);
+    subStr[actualCount] = '\0';
+
+    String result(subStr);
+    delete[] subStr;
+    return result;
+}
+
+char& String::operator[](int index) {
+    if (index < 0 || index >= static_cast<int>(length)) {
+        throw std::out_of_range("Index out of range");
+    }
+    return data[index];
+}
+
+const char& String::operator[](int index) const {
+    if (index < 0 || index >= static_cast<int>(length)) {
+        throw std::out_of_range("Index out of range");
+    }
+    return data[index];
+}
+
+std::ostream& operator<<(std::ostream& os, const String& str) {
+    os << str.data;
+    return os;
+}
+
+std::istream& operator>>(std::istream& is, String& str) {
+    char buffer[1024];
+    is.getline(buffer, sizeof(buffer));
+
+    delete[] str.data;
+    str.length = std::strlen(buffer);
+    str.data = new char[str.length + 1];
+    std::strcpy(str.data, buffer);
+
+    return is;
+}
