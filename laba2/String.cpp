@@ -7,24 +7,22 @@ void String::copyFrom(const char* str, size_t len) {
     length = len;
 }
 
-String::String() : data(nullptr), length(0) {
-    data = new char[1];
+String::String() : data(new char[1]), length(0) {
     data[0] = '\0';
 }
 
-String::String(const char* str) {
+String::String(const char* str) : data(nullptr), length(0) {
     if (str) {
         length = std::strlen(str);
         copyFrom(str, length);
     } else {
         data = new char[1];
         data[0] = '\0';
-        length = 0;
     }
 }
 
-String::String(const String& other) {
-    copyFrom(other.data, other.length);
+String::String(const String& other) : data(nullptr), length(other.length) {
+    copyFrom(other.data, length);
 }
 
 String::~String() {
@@ -43,12 +41,12 @@ String String::operator()(int start, int count) const {
         throw std::invalid_argument("Count cannot be negative");
     }
 
-    int actualCount = count;
+    auto actualCount = count;
     if (start + count > static_cast<int>(length)) {
         actualCount = length - start;
     }
 
-    char* subStr = new char[actualCount + 1];
+    auto subStr = new char[actualCount + 1];
     std::strncpy(subStr, data + start, actualCount);
     subStr[actualCount] = '\0';
 

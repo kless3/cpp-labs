@@ -21,7 +21,6 @@ void displayMenu() {
 int main() {
     setlocale(LC_ALL, "Rus");
     String currentString;
-    String copyString;
     int choice = 0;
 
     do {
