@@ -23,8 +23,22 @@ public:
     char& operator[](int index);
     const char& operator[](int index) const;
 
-    friend std::ostream& operator<<(std::ostream& os, const String& str);
-    friend std::istream& operator>>(std::istream& is, String& str);
+    friend std::ostream& operator<<(std::ostream& os, const String& str) {
+        os << str.data;
+        return os;
+    }
+
+    friend std::istream& operator>>(std::istream& is, String& str) {
+        char buffer[1024];
+        is.getline(buffer, sizeof(buffer));
+
+        delete[] str.data;
+        str.length = std::strlen(buffer);
+        str.data = new char[str.length + 1];
+        std::strcpy(str.data, buffer);
+
+        return is;
+    }
 };
 
 #endif
