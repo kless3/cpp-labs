@@ -6,11 +6,11 @@ void String::copyFrom(const char* str, size_t len) {
     length = len;
 }
 
-String::String() : data(new char[1]), length(0) {
+String::String() : data(new char[1]) {
     data[0] = '\0';
 }
 
-String::String(const char* str) : data(nullptr), length(0) {
+String::String(const char* str) : data(nullptr) {
     if (str) {
         length = std::strlen(str);
         copyFrom(str, length);
@@ -40,7 +40,7 @@ String String::operator()(int start, int count) const {
         throw std::invalid_argument("Count cannot be negative");
     }
 
-    size_t actualCount = count;
+    auto actualCount = static_cast<size_t>(count);
     if (start + count > static_cast<int>(length)) {
         actualCount = length - start;
     }
