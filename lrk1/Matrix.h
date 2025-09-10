@@ -21,6 +21,7 @@ public:
     void clear();
 
     friend Matrix operator+(const Matrix& lhs, const Matrix& rhs);
+
     Matrix& operator=(const Matrix& other);
 
     friend std::ostream& operator<<(std::ostream& os, const Matrix& matrix) {
@@ -29,8 +30,8 @@ public:
             return os;
         }
 
-        for (int i = 0; i < matrix.rows; i++) {
-            for (int j = 0; j < matrix.cols; j++) {
+        for (auto i = 0; i < matrix.rows; i++) {
+            for (auto j = 0; j < matrix.cols; j++) {
                 os << matrix.data[i][j] << "\t";
             }
             os << std::endl;
@@ -39,8 +40,8 @@ public:
     }
 
     friend std::istream& operator>>(std::istream& is, Matrix& matrix) {
-        int r;
-        int c;
+        auto r = 0;
+        auto c = 0;
 
         std::cout << "¬ведите количество строк: ";
         is >> r;
@@ -56,8 +57,8 @@ public:
         matrix.resize(r, c);
 
         std::cout << "¬ведите элементы матрицы " << r << "x" << c << ":" << std::endl;
-        for (int i = 0; i < r; i++) {
-            for (int j = 0; j < c; j++) {
+        for (auto i = 0; i < r; i++) {
+            for (auto j = 0; j < c; j++) {
                 std::cout << "Ёлемент [" << i << "][" << j << "]: ";
                 is >> matrix.data[i][j];
             }
