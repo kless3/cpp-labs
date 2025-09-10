@@ -20,7 +20,19 @@ public:
     void resize(int newRows, int newCols);
     void clear();
 
-    friend Matrix operator+(const Matrix& lhs, const Matrix& rhs);
+    friend Matrix operator+(const Matrix& lhs, const Matrix& rhs) {
+        if (lhs.rows != rhs.rows || lhs.cols != rhs.cols) {
+            throw std::invalid_argument("Матрицы должны быть одинакового размера для сложения");
+        }
+
+        Matrix result(lhs.rows, lhs.cols);
+        for (auto i = 0; i < lhs.rows; i++) {
+            for (auto j = 0; j < lhs.cols; j++) {
+                result.data[i][j] = lhs.data[i][j] + rhs.data[i][j];
+            }
+        }
+        return result;
+    }
 
     Matrix& operator=(const Matrix& other);
 
