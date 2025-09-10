@@ -1,6 +1,6 @@
-#include "Matrix.h"
-#include <iostream>
+#include "../include/Matrix.h"
 #include <stdexcept>
+
 
 Matrix::Matrix(int r, int c) : rows(r), cols(c) {
     if (rows > 0 && cols > 0) {

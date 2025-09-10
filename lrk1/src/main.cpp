@@ -1,24 +1,10 @@
-#include "Matrix.h"
-#include <iostream>
-#include <limits>
+#include "../include/Matrix.h"
+#include "../include/Functions.h"
 
 using namespace std;
 
-void clearInputBuffer() {
-    cin.clear();
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-}
-
-void showMatrixInfo(const Matrix& matrix, const string& name) {
-    cout << name << " матрица: " << matrix.getRows() << "x" << matrix.getCols() << endl;
-    if (matrix.getRows() > 0 && matrix.getCols() > 0) {
-        cout << matrix;
-    } else {
-        cout << "Матрица пуста" << endl;
-    }
-}
-
 int main() {
+    setlocale(LC_ALL, "Rus");
     int choice;
     Matrix matrix1;
     Matrix matrix2;
@@ -81,7 +67,7 @@ int main() {
                     result = matrix1 + matrix2;
                     cout << "Сложение выполнено успешно!" << endl;
                     cout << "Размер результата: " << result.getRows() << "x" << result.getCols() << endl;
-                } catch (const exception& e) {
+                } catch (const exception &e) {
                     cout << "Ошибка: " << e.what() << endl;
                 }
                 break;
