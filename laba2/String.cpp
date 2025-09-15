@@ -1,6 +1,6 @@
 #include "String.h"
 
-void String::copyFrom(const char* str, size_t len) {
+void String::copyFrom(const char *str, size_t len) {
     data = new char[len + 1];
     std::strcpy(data, str);
     length = len;
@@ -10,7 +10,7 @@ String::String() : data(new char[1]) {
     data[0] = '\0';
 }
 
-String::String(const char* str) : data(nullptr) {
+String::String(const char *str) : data(nullptr) {
     if (str) {
         length = std::strlen(str);
         copyFrom(str, length);
@@ -20,7 +20,7 @@ String::String(const char* str) : data(nullptr) {
     }
 }
 
-String::String(const String& other) : data(nullptr), length(other.length) {
+String::String(const String &other) : data(nullptr), length(other.length) {
     copyFrom(other.data, length);
 }
 
@@ -54,14 +54,14 @@ String String::operator()(int start, int count) const {
     return result;
 }
 
-char& String::operator[](int index) {
+char &String::operator[](int index) {
     if (index < 0 || index >= static_cast<int>(length)) {
         throw std::out_of_range("Index out of range");
     }
     return data[index];
 }
 
-const char& String::operator[](int index) const {
+const char &String::operator[](int index) const {
     if (index < 0 || index >= static_cast<int>(length)) {
         throw std::out_of_range("Index out of range");
     }

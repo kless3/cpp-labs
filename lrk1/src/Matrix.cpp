@@ -4,7 +4,7 @@
 
 Matrix::Matrix(int r, int c) : rows(r), cols(c) {
     if (rows > 0 && cols > 0) {
-        data = new int*[rows];
+        data = new int *[rows];
         for (auto i = 0; i < rows; i++) {
             data[i] = new int[cols]();
         }
@@ -13,9 +13,9 @@ Matrix::Matrix(int r, int c) : rows(r), cols(c) {
     }
 }
 
-Matrix::Matrix(const Matrix& other) : rows(other.rows), cols(other.cols) {
+Matrix::Matrix(const Matrix &other) : rows(other.rows), cols(other.cols) {
     if (rows > 0 && cols > 0) {
-        data = new int*[rows];
+        data = new int *[rows];
         for (auto i = 0; i < rows; i++) {
             data[i] = new int[cols];
             for (auto j = 0; j < cols; j++) {
@@ -49,7 +49,7 @@ void Matrix::resize(int newRows, int newCols) {
         return;
     }
 
-    auto newData = new int*[newRows];
+    auto newData = new int *[newRows];
     for (auto i = 0; i < newRows; i++) {
         newData[i] = new int[newCols]();
     }
@@ -75,7 +75,7 @@ void Matrix::resize(int newRows, int newCols) {
     cols = newCols;
 }
 
-Matrix& Matrix::operator=(const Matrix& other) {
+Matrix &Matrix::operator=(const Matrix &other) {
     if (this == &other) {
         return *this;
     }
@@ -86,7 +86,7 @@ Matrix& Matrix::operator=(const Matrix& other) {
     cols = other.cols;
 
     if (rows > 0 && cols > 0) {
-        data = new int*[rows];
+        data = new int *[rows];
         for (auto i = 0; i < rows; i++) {
             data[i] = new int[cols];
             for (auto j = 0; j < cols; j++) {

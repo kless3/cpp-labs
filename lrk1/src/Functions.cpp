@@ -8,10 +8,10 @@ void clearInputBuffer() {
 }
 
 void showMatrixInfo(const Matrix &matrix, const string &name) {
-    cout << name << " Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ð°: " << matrix.getRows() << "x" << matrix.getCols() << endl;
+    cout << name << " ìàòðèöà: " << matrix.getRows() << "x" << matrix.getCols() << endl;
     if (matrix.getRows() > 0 && matrix.getCols() > 0) {
         cout << matrix;
     } else {
-        cout << "ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ð° Ð¿ÑƒÑÑ‚Ð°" << endl;
+        cout << "Ìàòðèöà ïóñòà" << endl;
     }
 }

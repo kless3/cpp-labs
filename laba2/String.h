@@ -7,28 +7,34 @@
 
 class String {
 private:
-    char* data;
+    char *data;
     size_t length = 0;
 
-    void copyFrom(const char* str, size_t len);
+    void copyFrom(const char *str, size_t len);
 
 public:
     String();
-    explicit String(const char* str);
-    String(const String& other);
+
+    explicit String(const char *str);
+
+    String(const String &other);
+
     ~String();
 
     bool operator!() const;
-    String operator()(int start, int count) const;
-    char& operator[](int index);
-    const char& operator[](int index) const;
 
-    friend std::ostream& operator<<(std::ostream& os, const String& str) {
+    String operator()(int start, int count) const;
+
+    char &operator[](int index);
+
+    const char &operator[](int index) const;
+
+    friend std::ostream &operator<<(std::ostream &os, const String &str) {
         os << str.data;
         return os;
     }
 
-    friend std::istream& operator>>(std::istream& is, String& str) {
+    friend std::istream &operator>>(std::istream &is, String &str) {
         char buffer[1024];
         is.getline(buffer, sizeof(buffer));
 

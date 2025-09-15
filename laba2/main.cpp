@@ -115,7 +115,7 @@ int main() {
                     break;
                 }
             }
-        } catch (const std::exception& e) {
+        } catch (const std::exception &e) {
             std::cout << "Îøèáêà: " << e.what() << std::endl;
             clearInputBuffer();
         }

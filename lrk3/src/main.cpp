@@ -15,7 +15,7 @@ void clearInputBuffer() {
 }
 
 int main() {
-    Student *students = nullptr;
+    Student* students = nullptr;
     int studentCount = 0;
     int choice;
 
@@ -43,14 +43,14 @@ int main() {
                 std::cin >> examCount;
 
                 if (examCount > 0) {
-                    int *exams = new int[examCount];
+                    int* exams = new int[examCount];
                     std::cout << "Enter exam results: ";
                     for (int i = 0; i < examCount; ++i) {
                         std::cin >> exams[i];
                     }
                     clearInputBuffer();
 
-                    Student *temp = new Student[studentCount + 1];
+                    Student* temp = new Student[studentCount + 1];
                     for (int i = 0; i < studentCount; ++i) {
                         temp[i] = students[i];
                     }
@@ -66,7 +66,7 @@ int main() {
 
                     std::cout << "Student added successfully!" << std::endl;
                 } else {
-                    Student *temp = new Student[studentCount + 1];
+                    Student* temp = new Student[studentCount + 1];
                     for (int i = 0; i < studentCount; ++i) {
                         temp[i] = students[i];
                     }
@@ -86,6 +86,7 @@ int main() {
                 if (studentCount == 0) {
                     std::cout << "No students in the system." << std::endl;
                 } else {
+                    std::cout << "\n=== Students List ===" << std::endl;
                     for (int i = 0; i < studentCount; ++i) {
                         students[i].display();
                     }

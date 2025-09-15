@@ -4,12 +4,12 @@
 #include <string>
 
 class Fakultet {
-protected:
+private:
     std::string facultyName;
 
 public:
     Fakultet();
-    Fakultet(const std::string& name);
+    explicit Fakultet(const std::string& name);
     Fakultet(const Fakultet& other);
     virtual ~Fakultet();
 

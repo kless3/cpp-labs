@@ -7,20 +7,24 @@ class Matrix {
 private:
     int rows;
     int cols;
-    int** data;
+    int **data;
 
 public:
     explicit Matrix(int r = 0, int c = 0);
-    Matrix(const Matrix& other);
+
+    Matrix(const Matrix &other);
+
     ~Matrix();
 
     int getRows() const { return rows; }
+
     int getCols() const { return cols; }
 
     void resize(int newRows, int newCols);
+
     void clear();
 
-    friend Matrix operator+(const Matrix& lhs, const Matrix& rhs) {
+    friend Matrix operator+(const Matrix &lhs, const Matrix &rhs) {
         if (lhs.rows != rhs.rows || lhs.cols != rhs.cols) {
             throw std::invalid_argument("Матрицы должны быть одинакового размера для сложения");
         }
@@ -34,9 +38,9 @@ public:
         return result;
     }
 
-    Matrix& operator=(const Matrix& other);
+    Matrix &operator=(const Matrix &other);
 
-    friend std::ostream& operator<<(std::ostream& os, const Matrix& matrix) {
+    friend std::ostream &operator<<(std::ostream &os, const Matrix &matrix) {
         if (matrix.rows == 0 || matrix.cols == 0) {
             os << "Матрица пуста" << std::endl;
             return os;
@@ -51,7 +55,7 @@ public:
         return os;
     }
 
-    friend std::istream& operator>>(std::istream& is, Matrix& matrix) {
+    friend std::istream &operator>>(std::istream &is, Matrix &matrix) {
         auto r = 0;
         auto c = 0;
 
