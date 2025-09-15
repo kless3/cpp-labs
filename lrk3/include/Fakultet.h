@@ -12,7 +12,7 @@ public:
     Fakultet();
     explicit Fakultet(std::string_view name);
     Fakultet(const Fakultet& other);
-    virtual ~Fakultet() = default;
+    virtual ~Fakultet();
 
     Fakultet& operator=(const Fakultet& other);
 
