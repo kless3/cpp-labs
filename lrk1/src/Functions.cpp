@@ -8,10 +8,10 @@ void clearInputBuffer() {
 }
 
 void showMatrixInfo(const Matrix &matrix, const string &name) {
-    cout << name << " матрица: " << matrix.getRows() << "x" << matrix.getCols() << endl;
+    cout << name << " matrix: " << matrix.getRows() << "x" << matrix.getCols() << endl;
     if (matrix.getRows() > 0 && matrix.getCols() > 0) {
         cout << matrix;
     } else {
-        cout << "Матрица пуста" << endl;
+        cout << "Matrix is empty" << endl;
     }
 }

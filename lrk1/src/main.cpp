@@ -11,20 +11,20 @@ int main() {
     Matrix result;
 
     do {
-        cout << "1. Ввести/изменить первую матрицу" << endl;
-        cout << "2. Ввести/изменить вторую матрицу" << endl;
-        cout << "3. Очистить первую матрицу" << endl;
-        cout << "4. Очистить вторую матрицу" << endl;
-        cout << "5. Показать матрицы" << endl;
-        cout << "6. Сложить матрицы" << endl;
-        cout << "7. Показать результат сложения" << endl;
-        cout << "8. Очистить результат" << endl;
-        cout << "0. Выход" << endl;
-        cout << "Выберите действие: ";
+        cout << "1. Enter/modify first matrix" << endl;
+        cout << "2. Enter/modify second matrix" << endl;
+        cout << "3. Clear first matrix" << endl;
+        cout << "4. Clear second matrix" << endl;
+        cout << "5. Show matrices" << endl;
+        cout << "6. Add matrices" << endl;
+        cout << "7. Show addition result" << endl;
+        cout << "8. Clear result" << endl;
+        cout << "0. Exit" << endl;
+        cout << "Choose action: ";
 
         if (!(cin >> choice)) {
             clearInputBuffer();
-            cout << "Ошибка ввода! Введите число." << endl;
+            cout << "Input error! Please enter a number." << endl;
             continue;
         }
         clearInputBuffer();
@@ -32,72 +32,72 @@ int main() {
         switch (choice) {
             case 1: {
                 cin >> matrix1;
-                cout << "Первая матрица установлена:" << endl;
-                showMatrixInfo(matrix1, "Первая");
+                cout << "First matrix set:" << endl;
+                showMatrixInfo(matrix1, "First");
                 break;
             }
             case 2: {
                 cin >> matrix2;
-                cout << "Вторая матрица установлена:" << endl;
-                showMatrixInfo(matrix2, "Вторая");
+                cout << "Second matrix set:" << endl;
+                showMatrixInfo(matrix2, "Second");
                 break;
             }
             case 3: {
                 matrix1.clear();
-                cout << "Первая матрица очищена" << endl;
+                cout << "First matrix cleared" << endl;
                 break;
             }
             case 4: {
                 matrix2.clear();
-                cout << "Вторая матрица очищена" << endl;
+                cout << "Second matrix cleared" << endl;
                 break;
             }
             case 5: {
-                showMatrixInfo(matrix1, "Первая");
-                showMatrixInfo(matrix2, "Вторая");
+                showMatrixInfo(matrix1, "First");
+                showMatrixInfo(matrix2, "Second");
                 break;
             }
             case 6: {
                 if (matrix1.getRows() == 0 || matrix1.getCols() == 0 ||
                     matrix2.getRows() == 0 || matrix2.getCols() == 0) {
-                    cout << "Ошибка: одна или обе матрицы пусты!" << endl;
+                    cout << "Error: one or both matrices are empty!" << endl;
                     break;
                 }
                 try {
                     result = matrix1 + matrix2;
-                    cout << "Сложение выполнено успешно!" << endl;
-                    cout << "Размер результата: " << result.getRows() << "x" << result.getCols() << endl;
+                    cout << "Addition completed successfully!" << endl;
+                    cout << "Result size: " << result.getRows() << "x" << result.getCols() << endl;
                 } catch (const exception &e) {
-                    cout << "Ошибка: " << e.what() << endl;
+                    cout << "Error: " << e.what() << endl;
                 }
                 break;
             }
             case 7: {
                 if (result.getRows() > 0 && result.getCols() > 0) {
-                    cout << "Результат (" << result.getRows() << "x" << result.getCols() << "):" << endl;
+                    cout << "Result (" << result.getRows() << "x" << result.getCols() << "):" << endl;
                     cout << result;
                 } else {
-                    cout << "Результат еще не вычислен или пуст" << endl;
+                    cout << "Result not yet calculated or empty" << endl;
                 }
                 break;
             }
             case 8: {
                 result.clear();
-                cout << "Результат очищен" << endl;
+                cout << "Result cleared" << endl;
                 break;
             }
             case 0: {
-                cout << "Выход из программы..." << endl;
+                cout << "Exiting program..." << endl;
                 break;
             }
             default: {
-                cout << "Неверный выбор! Попробуйте снова." << endl;
+                cout << "Invalid choice! Please try again." << endl;
                 break;
             }
         }
 
         if (choice != 0) {
-            cout << "\nНажмите Enter для продолжения...";
+            cout << "\nPress Enter to continue...";
             cin.get();
         }
 

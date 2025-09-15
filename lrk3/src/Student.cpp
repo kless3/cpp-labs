@@ -1,6 +1,5 @@
 #include "../include/Student.h"
 #include <iostream>
-#include <stdexcept>
 
 Student::Student() : Fakultet(), birthYear(0), examResults(nullptr) {}
 

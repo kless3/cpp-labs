@@ -3,7 +3,6 @@
 #include <limits>
 
 void displayMenu() {
-    std::cout << "\n=== Student Management System ===" << std::endl;
     std::cout << "1. Add new student" << std::endl;
     std::cout << "2. Display all students" << std::endl;
     std::cout << "3. Exit" << std::endl;
@@ -15,7 +14,7 @@ void clearInputBuffer() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-void addStudent(Student*& students, int& studentCount) {
+void addStudent(Student *&students, int &studentCount) {
     std::string name;
     std::string faculty;
     int year;
@@ -73,11 +72,10 @@ void addStudent(Student*& students, int& studentCount) {
     }
 }
 
-void displayStudents(const Student* students, int studentCount) {
+void displayStudents(const Student *students, int studentCount) {
     if (studentCount == 0) {
         std::cout << "No students in the system." << std::endl;
     } else {
-        std::cout << "\n=== Students List ===" << std::endl;
         for (int i = 0; i < studentCount; ++i) {
             students[i].display();
         }
@@ -85,7 +83,7 @@ void displayStudents(const Student* students, int studentCount) {
 }
 
 int main() {
-    Student* students = nullptr;
+    Student *students = nullptr;
     int studentCount = 0;
     int choice;
 
