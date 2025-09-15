@@ -1,8 +1,9 @@
-#include "../include/Student.h"
+#include "Student.h"
 #include <iostream>
 #include <limits>
 
 void displayMenu() {
+    std::cout << "\n=== Student Management System ===" << std::endl;
     std::cout << "1. Add new student" << std::endl;
     std::cout << "2. Display all students" << std::endl;
     std::cout << "3. Exit" << std::endl;
@@ -72,7 +73,7 @@ void addStudent(Student*& students, int& studentCount) {
     }
 }
 
-void displayStudents(Student* students, int studentCount) {
+void displayStudents(const Student* students, int studentCount) {
     if (studentCount == 0) {
         std::cout << "No students in the system." << std::endl;
     } else {
