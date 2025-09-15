@@ -16,7 +16,7 @@ public:
     Student();
     Student(std::string_view name, int year, std::string_view faculty);
     Student(const Student& other);
-    ~Student();
+    ~Student() override;
 
     Student& operator=(const Student& other);
 
