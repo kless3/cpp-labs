@@ -113,5 +113,4 @@ void Student::display() const {
     } else {
         std::cout << "No results" << std::endl;
     }
-    std::cout << "-------------------" << std::endl;
 }

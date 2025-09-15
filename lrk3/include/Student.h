@@ -30,7 +30,7 @@ public:
     int getExamsCount() const;
 
     double calculateAverage() const;
-    void display() const override final;
+    void display() const final;
 };
 
 #endif
