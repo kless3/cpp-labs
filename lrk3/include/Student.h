@@ -3,23 +3,24 @@
 
 #include "Fakultet.h"
 #include <string>
+#include <string_view>
 
 class Student : public Fakultet {
 private:
     std::string fullName;
     int birthYear;
     int* examResults;
-    int examsCount;
+    int examsCount = 0;
 
 public:
     Student();
-    Student(const std::string& name, int year, const std::string& faculty);
+    Student(std::string_view name, int year, std::string_view faculty);
     Student(const Student& other);
     ~Student();
 
     Student& operator=(const Student& other);
 
-    void setFullName(const std::string& name);
+    void setFullName(std::string_view name);
     void setBirthYear(int year);
     void setExamResults(const int* results, int count);
 

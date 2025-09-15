@@ -3,20 +3,13 @@
 
 Fakultet::Fakultet() : facultyName("Unknown") {}
 
-Fakultet::Fakultet(const std::string& name) : facultyName(name) {}
+Fakultet::Fakultet(std::string_view name) : facultyName(name) {}
 
-Fakultet::Fakultet(const Fakultet& other) : facultyName(other.facultyName) {}
+Fakultet::Fakultet(const Fakultet& other) = default;
 
-Fakultet::~Fakultet() {}
+Fakultet& Fakultet::operator=(const Fakultet& other) = default;
 
-Fakultet& Fakultet::operator=(const Fakultet& other) {
-    if (this != &other) {
-        facultyName = other.facultyName;
-    }
-    return *this;
-}
-
-void Fakultet::setFacultyName(const std::string& name) {
+void Fakultet::setFacultyName(std::string_view name) {
     facultyName = name;
 }
 

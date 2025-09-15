@@ -2,10 +2,10 @@
 #include <iostream>
 #include <stdexcept>
 
-Student::Student() : Fakultet(), birthYear(0), examResults(nullptr), examsCount(0) {}
+Student::Student() : Fakultet(), birthYear(0), examResults(nullptr) {}
 
-Student::Student(const std::string& name, int year, const std::string& faculty)
-        : Fakultet(faculty), fullName(name), birthYear(year), examResults(nullptr), examsCount(0) {}
+Student::Student(std::string_view name, int year, std::string_view faculty)
+        : Fakultet(faculty), fullName(name), birthYear(year), examResults(nullptr) {}
 
 Student::Student(const Student& other)
         : Fakultet(other), fullName(other.fullName), birthYear(other.birthYear),
@@ -47,7 +47,7 @@ Student& Student::operator=(const Student& other) {
     return *this;
 }
 
-void Student::setFullName(const std::string& name) {
+void Student::setFullName(std::string_view name) {
     fullName = name;
 }
 
