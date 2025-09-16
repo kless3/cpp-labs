@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
 #include <memory>
-#include "../include/person.h"
-#include "../include/girl.h"
-#include "../include/youngman.h"
+#include "../include/Person.h"
+#include "../include/Girl.h"
+#include "../include/YoungMan.h"
 
 int main() {
     std::vector<std::unique_ptr<Person>> people;
