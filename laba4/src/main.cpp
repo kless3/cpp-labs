@@ -35,7 +35,8 @@ int main() {
                 cout << "Shape " << i + 1 << ": " << shapes[i]->area() << endl;
             }
         } else if (choice == 2) {
-            double w, h;
+            double w;
+            double h;
             cout << "Enter width and height: ";
             cin >> w >> h;
             shapes.push_back(make_unique<Rectangle>(w, h));
@@ -45,12 +46,15 @@ int main() {
             cin >> r;
             shapes.push_back(make_unique<Circle>(r));
         } else if (choice == 4) {
-            double b, h;
+            double b;
+            double h;
             cout << "Enter base and height: ";
             cin >> b >> h;
             shapes.push_back(make_unique<RightTriangle>(b, h));
         } else if (choice == 5) {
-            double a, b, h;
+            double a;
+            double b;
+            double h;
             cout << "Enter base1, base2 and height: ";
             cin >> a >> b >> h;
             shapes.push_back(make_unique<Trapezoid>(a, b, h));
