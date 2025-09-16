@@ -9,4 +9,6 @@ add_executable(lrk4 src/main.cpp
         src/Girl.cpp
         include/Girl.h
         include/Person.h
-        include/YoungMan.h)
+        include/YoungMan.h
+        include/Utils.h
+        src/Utils.cpp)
