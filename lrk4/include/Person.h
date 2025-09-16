@@ -4,11 +4,11 @@
 #include <string>
 
 class Person {
-protected:
+public:
     std::string name;
 public:
     explicit Person(const std::string& n);
-    virtual ~Person();
+    virtual ~Person() = default;
     virtual void reactToNewPerson(const Person* other) const = 0;
     std::string getName() const;
 };
