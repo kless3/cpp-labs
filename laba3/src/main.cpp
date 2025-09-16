@@ -6,7 +6,6 @@
 using namespace std;
 
 void printMenu() {
-    cout << "\n=== Menu ===" << endl;
     cout << "1. Circle vs Circle" << endl;
     cout << "2. Circle vs Square" << endl;
     cout << "3. Circle vs Triangle" << endl;
