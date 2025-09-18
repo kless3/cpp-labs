@@ -1,6 +1,7 @@
 #include "../include/ArrayOperations.h"
 #include <iostream>
 #include <algorithm>
+#include <utility>
 
 ArrayOperations::ArrayOperations(int* arr, int n) {
     size = n;
@@ -12,6 +13,21 @@ ArrayOperations::ArrayOperations(int* arr, int n) {
 
 ArrayOperations::~ArrayOperations() {
     delete[] array;
+}
+
+ArrayOperations::ArrayOperations(const ArrayOperations& other) {
+    size = other.size;
+    array = new int[size];
+    for (int i = 0; i < size; i++) {
+        array[i] = other.array[i];
+    }
+}
+
+ArrayOperations::ArrayOperations(ArrayOperations&& other) noexcept {
+    size = other.size;
+    array = other.array;
+    other.size = 0;
+    other.array = nullptr;
 }
 
 ArrayOperations ArrayOperations::intersection(const ArrayOperations& arr1, const ArrayOperations& arr2) {
