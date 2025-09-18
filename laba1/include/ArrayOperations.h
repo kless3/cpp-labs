@@ -3,8 +3,8 @@
 
 class ArrayOperations {
 private:
-    int* array;
     int size;
+    int* array;
 
 public:
     ArrayOperations(const int* arr, int n);
