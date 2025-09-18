@@ -3,7 +3,7 @@ project(laba1)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(laba1 main.cpp
-        SmartArray.h
-        SmartArray.cpp
+add_executable(laba1 src/main.cpp
+        include/ArrayOperations.h
+        src/ArrayOperations.cpp
 )
