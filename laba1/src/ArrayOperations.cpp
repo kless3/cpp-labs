@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <utility>
 
-ArrayOperations::ArrayOperations(int* arr, int n)
+ArrayOperations::ArrayOperations(const int* arr, int n)
         : size(n), array(new int[n]) {
     for (auto i = 0; i < size; i++) {
         array[i] = arr[i];
@@ -97,6 +97,6 @@ int ArrayOperations::getSize() const {
     return size;
 }
 
-int* ArrayOperations::getArray() const {
+const int* ArrayOperations::getArray() const {
     return array;
 }

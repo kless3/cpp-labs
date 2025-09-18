@@ -7,7 +7,7 @@ private:
     int size;
 
 public:
-    ArrayOperations(int* arr, int n);
+    ArrayOperations(const int* arr, int n);
     ~ArrayOperations();
 
     ArrayOperations(const ArrayOperations& other);
@@ -20,7 +20,7 @@ public:
 
     void display() const;
     int getSize() const;
-    int* getArray() const;
+    const int* getArray() const;
 };
 
 #endif
