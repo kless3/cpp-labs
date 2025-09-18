@@ -6,7 +6,7 @@
 ArrayOperations::ArrayOperations(int* arr, int n) {
     size = n;
     array = new int[size];
-    for (int i = 0; i < size; i++) {
+    for (auto i = 0; i < size; i++) {
         array[i] = arr[i];
     }
 }
@@ -18,7 +18,7 @@ ArrayOperations::~ArrayOperations() {
 ArrayOperations::ArrayOperations(const ArrayOperations& other) {
     size = other.size;
     array = new int[size];
-    for (int i = 0; i < size; i++) {
+    for (auto i = 0; i < size; i++) {
         array[i] = other.array[i];
     }
 }
@@ -30,27 +30,41 @@ ArrayOperations::ArrayOperations(ArrayOperations&& other) noexcept {
     other.array = nullptr;
 }
 
-ArrayOperations ArrayOperations::intersection(const ArrayOperations& arr1, const ArrayOperations& arr2) {
-    int maxSize = std::min(arr1.size, arr2.size);
-    int* temp = new int[maxSize];
-    int count = 0;
-
-    for (int i = 0; i < arr1.size; i++) {
-        for (int j = 0; j < arr2.size; j++) {
-            if (arr1.array[i] == arr2.array[j]) {
-                bool exists = false;
-                for (int k = 0; k < count; k++) {
-                    if (temp[k] == arr1.array[i]) {
-                        exists = true;
-                        break;
-                    }
-                }
-                if (!exists) {
-                    temp[count++] = arr1.array[i];
-                }
-                break;
-            }
+bool elementExistsInTemp(const int* temp, int count, int value) {
+    for (auto k = 0; k < count; k++) {
+        if (temp[k] == value) {
+            return true;
         }
+    }
+    return false;
+}
+
+bool elementExistsInArray(const int* array, int size, int value) {
+    for (auto j = 0; j < size; j++) {
+        if (array[j] == value) {
+            return true;
+        }
+    }
+    return false;
+}
+
+ArrayOperations ArrayOperations::intersection(const ArrayOperations& arr1, const ArrayOperations& arr2) {
+    auto maxSize = std::min(arr1.size, arr2.size);
+    auto temp = new int[maxSize];
+    auto count = 0;
+
+    for (auto i = 0; i < arr1.size; i++) {
+        auto currentElement = arr1.array[i];
+
+        if (!elementExistsInArray(arr2.array, arr2.size, currentElement)) {
+            continue;
+        }
+
+        if (elementExistsInTemp(temp, count, currentElement)) {
+            continue;
+        }
+
+        temp[count++] = currentElement;
     }
 
     ArrayOperations result(temp, count);
@@ -59,33 +73,23 @@ ArrayOperations ArrayOperations::intersection(const ArrayOperations& arr1, const
 }
 
 ArrayOperations ArrayOperations::unionArrays(const ArrayOperations& arr1, const ArrayOperations& arr2) {
-    int maxSize = arr1.size + arr2.size;
-    int* temp = new int[maxSize];
-    int count = 0;
+    auto maxSize = arr1.size + arr2.size;
+    auto temp = new int[maxSize];
+    auto count = 0;
 
-    for (int i = 0; i < arr1.size; i++) {
-        bool exists = false;
-        for (int j = 0; j < count; j++) {
-            if (temp[j] == arr1.array[i]) {
-                exists = true;
-                break;
-            }
-        }
-        if (!exists) {
-            temp[count++] = arr1.array[i];
+    for (auto i = 0; i < arr1.size; i++) {
+        auto currentElement = arr1.array[i];
+
+        if (!elementExistsInTemp(temp, count, currentElement)) {
+            temp[count++] = currentElement;
         }
     }
 
-    for (int i = 0; i < arr2.size; i++) {
-        bool exists = false;
-        for (int j = 0; j < count; j++) {
-            if (temp[j] == arr2.array[i]) {
-                exists = true;
-                break;
-            }
-        }
-        if (!exists) {
-            temp[count++] = arr2.array[i];
+    for (auto i = 0; i < arr2.size; i++) {
+        auto currentElement = arr2.array[i];
+
+        if (!elementExistsInTemp(temp, count, currentElement)) {
+            temp[count++] = currentElement;
         }
     }
 
@@ -95,7 +99,7 @@ ArrayOperations ArrayOperations::unionArrays(const ArrayOperations& arr1, const 
 }
 
 void ArrayOperations::display() const {
-    for (int i = 0; i < size; i++) {
+    for (auto i = 0; i < size; i++) {
         std::cout << array[i] << " ";
     }
     std::cout << std::endl;
