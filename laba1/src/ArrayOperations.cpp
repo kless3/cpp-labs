@@ -3,9 +3,8 @@
 #include <algorithm>
 #include <utility>
 
-ArrayOperations::ArrayOperations(int* arr, int n) {
-    size = n;
-    array = new int[size];
+ArrayOperations::ArrayOperations(int* arr, int n)
+        : size(n), array(new int[n]) {
     for (auto i = 0; i < size; i++) {
         array[i] = arr[i];
     }
@@ -15,33 +14,22 @@ ArrayOperations::~ArrayOperations() {
     delete[] array;
 }
 
-ArrayOperations::ArrayOperations(const ArrayOperations& other) {
-    size = other.size;
-    array = new int[size];
+ArrayOperations::ArrayOperations(const ArrayOperations& other)
+        : size(other.size), array(new int[other.size]) {
     for (auto i = 0; i < size; i++) {
         array[i] = other.array[i];
     }
 }
 
-ArrayOperations::ArrayOperations(ArrayOperations&& other) noexcept {
-    size = other.size;
-    array = other.array;
+ArrayOperations::ArrayOperations(ArrayOperations&& other) noexcept
+        : size(other.size), array(other.array) {
     other.size = 0;
     other.array = nullptr;
 }
 
-bool elementExistsInTemp(const int* temp, int count, int value) {
-    for (auto k = 0; k < count; k++) {
-        if (temp[k] == value) {
-            return true;
-        }
-    }
-    return false;
-}
-
-bool elementExistsInArray(const int* array, int size, int value) {
-    for (auto j = 0; j < size; j++) {
-        if (array[j] == value) {
+bool elementExistsInArray(const int* array, int arraySize, int value) {
+    for (auto i = 0; i < arraySize; i++) {
+        if (array[i] == value) {
             return true;
         }
     }
@@ -60,7 +48,7 @@ ArrayOperations ArrayOperations::intersection(const ArrayOperations& arr1, const
             continue;
         }
 
-        if (elementExistsInTemp(temp, count, currentElement)) {
+        if (elementExistsInArray(temp, count, currentElement)) {
             continue;
         }
 
@@ -80,7 +68,7 @@ ArrayOperations ArrayOperations::unionArrays(const ArrayOperations& arr1, const 
     for (auto i = 0; i < arr1.size; i++) {
         auto currentElement = arr1.array[i];
 
-        if (!elementExistsInTemp(temp, count, currentElement)) {
+        if (!elementExistsInArray(temp, count, currentElement)) {
             temp[count++] = currentElement;
         }
     }
@@ -88,7 +76,7 @@ ArrayOperations ArrayOperations::unionArrays(const ArrayOperations& arr1, const 
     for (auto i = 0; i < arr2.size; i++) {
         auto currentElement = arr2.array[i];
 
-        if (!elementExistsInTemp(temp, count, currentElement)) {
+        if (!elementExistsInArray(temp, count, currentElement)) {
             temp[count++] = currentElement;
         }
     }
