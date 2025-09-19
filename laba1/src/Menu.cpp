@@ -71,18 +71,5 @@ void processUnion() {
 }
 
 void handleChoice(int choice) {
-    switch (choice) {
-        case 1:
-            processIntersection();
-            break;
-        case 2:
-            processUnion();
-            break;
-        case 3:
-            std::cout << "Exiting program..." << std::endl;
-            break;
-        default:
-            std::cout << "Invalid choice! Try again." << std::endl;
-            break;
-    }
+
 }

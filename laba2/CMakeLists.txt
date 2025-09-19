@@ -3,6 +3,6 @@ project(laba2)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(laba2 main.cpp
-        String.h
-        String.cpp)
+add_executable(laba2 src/main.cpp
+        include/String.h
+        src/String.cpp)

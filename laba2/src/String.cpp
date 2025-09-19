@@ -1,4 +1,4 @@
-#include "String.h"
+#include "../include/String.h"
 
 void String::copyFrom(const char *str, size_t len) {
     data = new char[len + 1];
