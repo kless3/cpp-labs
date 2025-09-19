@@ -23,11 +23,11 @@ int main() {
         printMenu();
         cin >> choice;
 
-        Shape* shape1 = nullptr;
-        Shape* shape2 = nullptr;
+        Shape *shape1 = nullptr;
+        Shape *shape2 = nullptr;
         bool result = false;
 
-        switch(choice) {
+        switch (choice) {
             case 1:
                 shape1 = new Circle();
                 shape2 = new Circle();
@@ -74,7 +74,7 @@ int main() {
         delete shape1;
         delete shape2;
 
-    } while(choice != 0);
+    } while (choice != 0);
 
     return 0;
 }
