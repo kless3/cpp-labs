@@ -1,7 +1,3 @@
-//
-// Created by Maksim on 19.09.2025.
-//
-
 #ifndef LABA1_MENU_H
 #define LABA1_MENU_H
 

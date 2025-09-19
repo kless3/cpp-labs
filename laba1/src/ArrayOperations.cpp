@@ -1,7 +1,6 @@
 #include "../include/ArrayOperations.h"
 #include <iostream>
 #include <algorithm>
-#include <utility>
 
 ArrayOperations::ArrayOperations(const int* arr, int n)
         : size(n), array(new int[n]) {
