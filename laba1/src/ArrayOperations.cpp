@@ -27,9 +27,9 @@ ArrayOperations::ArrayOperations(ArrayOperations&& other) noexcept
     other.array = nullptr;
 }
 
-bool elementExistsInArray(const int* array, int arraySize, int value) {
-    for (auto i = 0; i < arraySize; i++) {
-        if (array[i] == value) {
+bool ArrayOperations::elementExistsInArray(const ArrayOperations& arr, int value) {
+    for (auto i = 0; i < arr.size; i++) {
+        if (arr.array[i] == value) {
             return true;
         }
     }
