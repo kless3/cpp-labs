@@ -27,7 +27,7 @@ ArrayOperations::ArrayOperations(ArrayOperations&& other) noexcept
     other.array = nullptr;
 }
 
-bool ArrayOperations::elementExistsInArray(const ArrayOperations& arr, int value) {
+bool ArrayOperations::elementExists(const ArrayOperations& arr, int value) {
     for (auto i = 0; i < arr.size; i++) {
         if (arr.array[i] == value) {
             return true;
@@ -44,11 +44,11 @@ ArrayOperations ArrayOperations::intersection(const ArrayOperations& arr1, const
     for (auto i = 0; i < arr1.size; i++) {
         auto currentElement = arr1.array[i];
 
-        if (!elementExistsInArray(arr2.array, arr2.size, currentElement)) {
+        if (!elementExists(arr2, currentElement)) {
             continue;
         }
 
-        if (elementExistsInArray(temp, count, currentElement)) {
+        if (elementExists(ArrayOperations(temp, count), currentElement)) {
             continue;
         }
 
@@ -68,7 +68,7 @@ ArrayOperations ArrayOperations::unionArrays(const ArrayOperations& arr1, const 
     for (auto i = 0; i < arr1.size; i++) {
         auto currentElement = arr1.array[i];
 
-        if (!elementExistsInArray(temp, count, currentElement)) {
+        if (!elementExists(ArrayOperations(temp, count), currentElement)) {
             temp[count++] = currentElement;
         }
     }
@@ -76,7 +76,7 @@ ArrayOperations ArrayOperations::unionArrays(const ArrayOperations& arr1, const 
     for (auto i = 0; i < arr2.size; i++) {
         auto currentElement = arr2.array[i];
 
-        if (!elementExistsInArray(temp, count, currentElement)) {
+        if (!elementExists(ArrayOperations(temp, count), currentElement)) {
             temp[count++] = currentElement;
         }
     }

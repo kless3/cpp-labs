@@ -6,6 +6,8 @@ private:
     int size;
     int* array;
 
+    static bool elementExists(const ArrayOperations& arr, int value);
+
 public:
     ArrayOperations(const int* arr, int n);
     ~ArrayOperations();
@@ -15,16 +17,12 @@ public:
     ArrayOperations(ArrayOperations&& other) noexcept;
     ArrayOperations& operator=(ArrayOperations&& other) noexcept = delete;
 
-    static bool elementExistsInArray(const ArrayOperations& arr, int value);
-
     static ArrayOperations intersection(const ArrayOperations& arr1, const ArrayOperations& arr2);
     static ArrayOperations unionArrays(const ArrayOperations& arr1, const ArrayOperations& arr2);
 
     void display() const;
     int getSize() const;
     const int* getArray() const;
-
-    bool elementExistsInArray(const ArrayOperations &arr, int value);
 };
 
 #endif
