@@ -5,10 +5,10 @@ const int EXIT_OPTION = 3;
 int main() {
     auto choice = 0;
 
-    do {
+    do {bhmjjhmjbjk
         displayMenu();
         choice = getChoice();
-        
+
         switch (choice) {
             case 1:
                 processIntersection();
