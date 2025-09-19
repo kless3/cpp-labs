@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(laba2 src/main.cpp
         include/String.h
-        src/String.cpp)
+        src/String.cpp
+        include/Menu.h
+        src/Menu.cpp)
