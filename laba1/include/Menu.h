@@ -1,7 +1,6 @@
 #ifndef LABA1_MENU_H
 #define LABA1_MENU_H
 
-
 void displayMenu();
 int getChoice();
 int* createArray(int size);

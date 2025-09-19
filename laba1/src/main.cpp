@@ -1,6 +1,6 @@
-#include "../include/ArrayOperations.h"
 #include "../include/Menu.h"
-#include <iostream>
+
+const int EXIT_OPTION = 3;
 
 int main() {
     auto choice = 0;
@@ -10,7 +10,7 @@ int main() {
         choice = getChoice();
         handleChoice(choice);
 
-    } while (choice != 3);
+    } while (choice != EXIT_OPTION);
 
     return 0;
 }
