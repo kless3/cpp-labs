@@ -1,6 +1,21 @@
 #include "../include/String.h"
 #include <string_view>
 
+const size_t MAX_LENGTH = 4096;
+
+namespace {
+    size_t safeStrlen(const char *str) {
+        if (!str) return 0;
+
+        for (size_t i = 0; i < MAX_LENGTH; ++i) {
+            if (str[i] == '\0') {
+                return i;
+            }
+        }
+        return MAX_LENGTH;
+    }
+}
+
 void String::copyFrom(const char *str, size_t len) {
     data = new char[len + 1];
     if (str && len > 0) {
@@ -16,7 +31,7 @@ String::String() : data(new char[1]) {
 
 String::String(const char *str)
         : data(nullptr),
-          length(str ? safe(str) : 0) {
+          length(str ? safeStrlen(str) : 0) {
     if (str) {
         copyFrom(str, length);
     } else {
@@ -98,11 +113,5 @@ String &String::operator=(String &&other) noexcept {
         other.length = 0;
     }
     return *this;
-}
-
-
-size_t safe_strlen(const char* str) {
-    if (!str) return 0;
-    return std::char_traits<char>::length(str);
 }
 
