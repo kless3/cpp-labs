@@ -9,4 +9,6 @@ add_executable(laba4 src/main.cpp
         src/Circle.cpp
         src/Trapezoid.cpp
         src/Rectangle.cpp
-        src/RightTriangle.cpp)
+        src/RightTriangle.cpp
+        include/Menu.h
+        src/Menu.cpp)
