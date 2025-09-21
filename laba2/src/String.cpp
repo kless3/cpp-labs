@@ -14,10 +14,10 @@ String::String() : data(new char[1]) {
     data[0] = '\0';
 }
 
-String::String(const char *str) : data(nullptr), length(0) {
+String::String(const char *str)
+        : data(nullptr),
+          length(str ? std::strlen(str) : 0) {
     if (str) {
-        std::string_view sv(str);
-        length = sv.length();
         copyFrom(str, length);
     } else {
         data = new char[1];

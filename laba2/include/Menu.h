@@ -11,7 +11,7 @@ void handleInputString(String &currentString);
 
 void handleCheckEmpty(const String &currentString);
 
-void handleGetSubstring(String &currentString);
+void handleGetSubstring(const String &currentString);
 
 void handleGetChar(const String &currentString);
 

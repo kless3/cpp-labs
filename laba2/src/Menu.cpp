@@ -33,7 +33,7 @@ void handleCheckEmpty(const String &currentString) {
     }
 }
 
-void handleGetSubstring(String &currentString) {
+void handleGetSubstring(const String &currentString) {
     if (!currentString) {
         std::cout << "—трока пуста€, невозможно получить подстроку" << std::endl;
         return;
