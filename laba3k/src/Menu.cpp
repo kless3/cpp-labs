@@ -1,4 +1,8 @@
 #include "../include/Menu.h"
+#include <iostream>
+#include <limits>
+#include <span>
+
 
 void displayMenu() {
     std::cout << "1. Add new student" << std::endl;
@@ -12,7 +16,7 @@ void clearInputBuffer() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-void addStudent(Student *&students, int &studentCount) {
+void addStudent(std::span<Student>& studentsSpan, int& studentCount) {
     std::string name;
     std::string faculty;
     int year;
@@ -30,6 +34,8 @@ void addStudent(Student *&students, int &studentCount) {
 
     std::cout << "Enter number of exams: ";
     std::cin >> examCount;
+
+    Student* students = studentsSpan.data();
 
     if (examCount > 0) {
         auto exams = new int[examCount];
@@ -53,6 +59,8 @@ void addStudent(Student *&students, int &studentCount) {
         students = temp;
         studentCount++;
 
+        studentsSpan = std::span<Student>(students, studentCount);
+
         std::cout << "Student added successfully!" << std::endl;
     } else {
         auto temp = new Student[studentCount + 1];
@@ -66,16 +74,18 @@ void addStudent(Student *&students, int &studentCount) {
         students = temp;
         studentCount++;
 
+        studentsSpan = std::span<Student>(students, studentCount);
+
         std::cout << "Student added successfully!" << std::endl;
     }
 }
 
-void displayStudents(const Student *students, int studentCount) {
-    if (studentCount == 0) {
+void displayStudents(std::span<Student> studentsSpan) {
+    if (studentsSpan.empty()) {
         std::cout << "No students in the system." << std::endl;
     } else {
-        for (int i = 0; i < studentCount; ++i) {
-            students[i].display();
+        for (const auto& student : studentsSpan) {
+            student.display();
         }
     }
 }

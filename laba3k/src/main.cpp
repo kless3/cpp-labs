@@ -1,5 +1,6 @@
 #include "../include/Menu.h"
 #include <iostream>
+#include <span>
 
 const int EXIT_OPTION = 3;
 
@@ -13,13 +14,15 @@ int main() {
         std::cin >> choice;
         clearInputBuffer();
 
+        std::span<Student> studentsSpan(students, studentCount);
+
         switch (choice) {
             case 1:
-                addStudent(students, studentCount);
+                addStudent(studentsSpan, studentCount);
                 break;
 
             case 2:
-                displayStudents(students, studentCount);
+                displayStudents(studentsSpan);
                 break;
 
             case 3:

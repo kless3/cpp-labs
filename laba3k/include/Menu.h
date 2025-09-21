@@ -5,11 +5,12 @@
 #include "../include/Student.h"
 #include <iostream>
 #include <limits>
+#include <span>
 
 void displayMenu();
 void clearInputBuffer();
-void addStudent(Student *&students, int &studentCount);
-void displayStudents(const Student *students, int studentCount);
+void addStudent(std::span<Student>& students, int& studentCount);
+void displayStudents(std::span<Student> students);
 
 
 #endif
