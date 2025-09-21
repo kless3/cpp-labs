@@ -1,6 +1,7 @@
 !*.cpp
 !*.h
 !CMakeLists.txt
+!/lrk4
 
 cmake-build-*/
 cmake-build-*
