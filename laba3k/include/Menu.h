@@ -1,4 +1,3 @@
-
 #ifndef LABA3_MENU_H
 #define LABA3_MENU_H
 
