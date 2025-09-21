@@ -1,4 +1,5 @@
 #include <iostream>
+#include <span> // Add this include for std::span
 #include "../include/Shape.h"
 #include "../include/Rectangle.h"
 #include "../include/Circle.h"
@@ -9,8 +10,8 @@ const int EXIT_OPTION = 6;
 
 using namespace std;
 
-// Прототипы функций
-void showAllAreas(Shape** shapes, int shapeCount);
+// Прототипы функций - update the prototype
+void showAllAreas(std::span<Shape*> shapes);
 void addRectangle(Shape*** shapes, int* shapeCount, int* capacity);
 void addCircle(Shape*** shapes, int* shapeCount, int* capacity);
 void addRightTriangle(Shape*** shapes, int* shapeCount, int* capacity);
@@ -36,7 +37,10 @@ int main() {
         cin >> choice;
 
         switch (choice) {
-            case 1: showAllAreas(shapes, shapeCount); break;
+            case 1:
+                // Update the call to use std::span
+                showAllAreas(std::span<Shape*>(shapes, shapeCount));
+                break;
             case 2: addRectangle(&shapes, &shapeCount, &capacity); break;
             case 3: addCircle(&shapes, &shapeCount, &capacity); break;
             case 4: addRightTriangle(&shapes, &shapeCount, &capacity); break;
@@ -63,15 +67,15 @@ void resizeArray(Shape*** shapes, int shapeCount, int* capacity) {
     *capacity = newCapacity;
 }
 
-// Функция для отображения всех площадей
-void showAllAreas(Shape** shapes, int shapeCount) {
+// Функция для отображения всех площадей - updated with std::span
+void showAllAreas(std::span<Shape*> shapes) {
     cout << "\nAreas of all shapes:" << endl;
-    for (int i = 0; i < shapeCount; ++i) {
+    for (size_t i = 0; i < shapes.size(); ++i) {
         cout << "Shape " << i + 1 << ": " << shapes[i]->area() << endl;
     }
 }
 
-// Функция для добавления прямоугольника
+// Остальные функции остаются без изменений
 void addRectangle(Shape*** shapes, int* shapeCount, int* capacity) {
     double w;
     double h;
@@ -85,7 +89,6 @@ void addRectangle(Shape*** shapes, int* shapeCount, int* capacity) {
     (*shapes)[(*shapeCount)++] = new Rectangle(w, h);
 }
 
-// Функция для добавления круга
 void addCircle(Shape*** shapes, int* shapeCount, int* capacity) {
     double r;
     cout << "Enter radius: ";
@@ -98,7 +101,6 @@ void addCircle(Shape*** shapes, int* shapeCount, int* capacity) {
     (*shapes)[(*shapeCount)++] = new Circle(r);
 }
 
-// Функция для добавления прямоугольного треугольника
 void addRightTriangle(Shape*** shapes, int* shapeCount, int* capacity) {
     double b;
     double h;
@@ -112,7 +114,6 @@ void addRightTriangle(Shape*** shapes, int* shapeCount, int* capacity) {
     (*shapes)[(*shapeCount)++] = new RightTriangle(b, h);
 }
 
-// Функция для добавления трапеции
 void addTrapezoid(Shape*** shapes, int* shapeCount, int* capacity) {
     double a;
     double b;
@@ -127,7 +128,6 @@ void addTrapezoid(Shape*** shapes, int* shapeCount, int* capacity) {
     (*shapes)[(*shapeCount)++] = new Trapezoid(a, b, h);
 }
 
-// Функция для очистки памяти
 void cleanupMemory(Shape** shapes, int shapeCount) {
     for (int i = 0; i < shapeCount; ++i) {
         delete shapes[i];
