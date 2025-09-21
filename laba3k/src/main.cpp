@@ -1,6 +1,7 @@
 #include "../include/Menu.h"
 #include <iostream>
 
+const int EXIT_OPTION = 3;
 
 int main() {
     Student *students = nullptr;
@@ -28,7 +29,7 @@ int main() {
             default:
                 std::cout << "Invalid choice. Please try again." << std::endl;
         }
-    } while (choice != 3);
+    } while (choice != EXIT_OPTION);
 
     delete[] students;
     return 0;

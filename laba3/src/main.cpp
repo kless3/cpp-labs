@@ -2,6 +2,8 @@
 
 #include "../include/Menu.h"
 
+const int EXIT_OPTION = 0;
+
 using namespace std;
 
 int main() {
@@ -37,7 +39,7 @@ int main() {
                 cout << "Invalid choice!" << endl;
         }
 
-    } while (choice != 0);
+    } while (choice != EXIT_OPTION);
 
     return 0;
 }
