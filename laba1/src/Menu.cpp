@@ -69,7 +69,3 @@ void processUnion() {
     delete[] arr1;
     delete[] arr2;
 }
-
-void handleChoice(int choice) {
-
-}
