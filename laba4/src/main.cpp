@@ -56,7 +56,7 @@ int main() {
 // Функция для изменения размера массива
 void resizeArray(Shape*** shapes, int shapeCount, int* capacity) {
     int newCapacity = (*capacity == 0) ? 10 : *capacity * 2;
-    Shape** newShapes = new Shape*[newCapacity];
+    auto newShapes = new Shape*[newCapacity];
 
     for (int i = 0; i < shapeCount; ++i) {
         newShapes[i] = (*shapes)[i];
