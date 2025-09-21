@@ -35,13 +35,13 @@ public:
     }
 
     friend std::istream &operator>>(std::istream &is, String &str) {
-        char buffer[1024];
-        is.getline(buffer, sizeof(buffer));
+        std::string buffer;
+        std::getline(is, buffer);
 
         delete[] str.data;
-        str.length = std::strlen(buffer);
+        str.length = buffer.length();
         str.data = new char[str.length + 1];
-        std::strcpy(str.data, buffer);
+        std::strcpy(str.data, buffer.c_str());
 
         return is;
     }
