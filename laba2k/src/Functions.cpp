@@ -16,50 +16,46 @@ void showMatrixInfo(const Matrix &matrix, const string &name) {
     }
 }
 
-
-void enterFirstMatrix(Matrix& matrix1) {
+void enterFirstMatrix(Matrix &matrix1) {
     cin >> matrix1;
     cout << "First matrix set:" << endl;
     showMatrixInfo(matrix1, "First");
 }
 
-void enterSecondMatrix(Matrix& matrix2) {
+void enterSecondMatrix(Matrix &matrix2) {
     cin >> matrix2;
     cout << "Second matrix set:" << endl;
     showMatrixInfo(matrix2, "Second");
 }
 
-void clearFirstMatrix(Matrix& matrix1) {
+void clearFirstMatrix(Matrix &matrix1) {
     matrix1.clear();
     cout << "First matrix cleared" << endl;
 }
 
-void clearSecondMatrix(Matrix& matrix2) {
+void clearSecondMatrix(Matrix &matrix2) {
     matrix2.clear();
     cout << "Second matrix cleared" << endl;
 }
 
-void showMatrices(const Matrix& matrix1, const Matrix& matrix2) {
+void showMatrices(const Matrix &matrix1, const Matrix &matrix2) {
     showMatrixInfo(matrix1, "First");
     showMatrixInfo(matrix2, "Second");
 }
 
-void addMatrices(const Matrix& matrix1, const Matrix& matrix2, Matrix& result) {
+void addMatrices(const Matrix &matrix1, const Matrix &matrix2, Matrix &result) {
     if (matrix1.getRows() == 0 || matrix1.getCols() == 0 ||
         matrix2.getRows() == 0 || matrix2.getCols() == 0) {
         cout << "Error: one or both matrices are empty!" << endl;
         return;
     }
-    try {
-        result = matrix1 + matrix2;
-        cout << "Addition completed successfully!" << endl;
-        cout << "Result size: " << result.getRows() << "x" << result.getCols() << endl;
-    } catch (const exception &e) {
-        cout << "Error: " << e.what() << endl;
-    }
+
+    result = matrix1 + matrix2;
+    cout << "Addition completed successfully!" << endl;
+    cout << "Result size: " << result.getRows() << "x" << result.getCols() << endl;
 }
 
-void showResult(const Matrix& result) {
+void showResult(const Matrix &result) {
     if (result.getRows() > 0 && result.getCols() > 0) {
         cout << "Result (" << result.getRows() << "x" << result.getCols() << "):" << endl;
         cout << result;
@@ -68,7 +64,7 @@ void showResult(const Matrix& result) {
     }
 }
 
-void clearResult(Matrix& result) {
+void clearResult(Matrix &result) {
     result.clear();
     cout << "Result cleared" << endl;
 }
