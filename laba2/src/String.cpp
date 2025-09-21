@@ -1,4 +1,5 @@
 #include "../include/String.h"
+#include <string_view>
 
 void String::copyFrom(const char *str, size_t len) {
     data = new char[len + 1];
@@ -13,9 +14,10 @@ String::String() : data(new char[1]) {
     data[0] = '\0';
 }
 
-String::String(const char *str) : data(nullptr) {
+String::String(const char *str) : data(nullptr), length(0) {
     if (str) {
-        length = std::strlen(str);
+        std::string_view sv(str);
+        length = sv.length();
         copyFrom(str, length);
     } else {
         data = new char[1];
