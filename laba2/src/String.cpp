@@ -14,10 +14,10 @@ String::String() : data(new char[1]) {
     data[0] = '\0';
 }
 
-String::String(const char *str) : data(nullptr), length(0) {
+String::String(const char *str)
+        : data(nullptr),
+          length(str ? safe(str) : 0) {
     if (str) {
-        std::string_view sv(str);
-        length = sv.length();
         copyFrom(str, length);
     } else {
         data = new char[1];
@@ -25,8 +25,8 @@ String::String(const char *str) : data(nullptr), length(0) {
     }
 }
 
-String::String(const String &other) : data(nullptr) {
-    length = other.length;
+String::String(const String &other)
+        : data(nullptr), length(other.length) {
     copyFrom(other.data, length);
 }
 
@@ -99,3 +99,10 @@ String &String::operator=(String &&other) noexcept {
     }
     return *this;
 }
+
+
+size_t safe_strlen(const char* str) {
+    if (!str) return 0;
+    return std::char_traits<char>::length(str);
+}
+

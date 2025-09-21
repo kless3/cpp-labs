@@ -8,15 +8,16 @@
 class String {
 private:
     char *data;
-    size_t length = 0;
+    size_t length;
 
     void copyFrom(const char *str, size_t len);
 
 public:
-    String& operator=(const String& other);
+    String &operator=(const String &other);
 
-    String(String&& other) noexcept;
-    String& operator=(String&& other) noexcept;
+    String(String &&other) noexcept;
+
+    String &operator=(String &&other) noexcept;
 
     String();
 
@@ -52,7 +53,6 @@ public:
         return is;
     }
 };
-
 
 
 #endif
