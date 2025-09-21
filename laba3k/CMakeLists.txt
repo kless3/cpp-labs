@@ -11,4 +11,6 @@ add_executable(laba3 src/main.cpp
         src/Student.cpp
         include/Student.h
         include/Student.h
-        src/main.cpp)
+        src/main.cpp
+        src/Menu.cpp
+        include/Menu.h)

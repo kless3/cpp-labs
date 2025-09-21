@@ -9,4 +9,6 @@ add_executable(laba3 src/main.cpp
         src/Circle.cpp
         include/Square.h
         src/Square.cpp
-        src/Triangle.cpp)
+        src/Triangle.cpp
+        include/Menu.h
+        src/Menu.cpp)
