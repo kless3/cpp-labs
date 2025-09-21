@@ -14,7 +14,8 @@ void printMenu() {
 }
 
 bool testCircleCircle() {
-    Circle circle1, circle2;
+    Circle circle1;
+    Circle circle2;
     bool result = circle1.intersect(&circle2);
     cout << "Circle vs Circle: " << (result ? "Intersect" : "No intersect") << endl;
     return true;
@@ -37,7 +38,8 @@ bool testCircleTriangle() {
 }
 
 bool testSquareSquare() {
-    Square square1, square2;
+    Square square1;
+    Square square2;
     bool result = square1.intersect(&square2);
     cout << "Square vs Square: " << (result ? "Intersect" : "No intersect") << endl;
     return true;
@@ -52,7 +54,8 @@ bool testSquareTriangle() {
 }
 
 bool testTriangleTriangle() {
-    Triangle triangle1, triangle2;
+    Triangle triangle2;
+    Triangle triangle1;
     bool result = triangle1.intersect(&triangle2);
     cout << "Triangle vs Triangle: " << (result ? "Intersect" : "No intersect") << endl;
     return true;
