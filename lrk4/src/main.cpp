@@ -4,7 +4,7 @@
 int main() {
     int capacity = 10;
     int count = 0;
-    Person** people = new Person*[capacity];
+    auto people = new Person*[capacity];
 
     people[count++] = new Girl("Anna");
     people[count++] = new Girl("Maria");

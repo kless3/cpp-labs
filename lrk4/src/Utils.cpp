@@ -13,7 +13,7 @@ void showAllReactions(Person** people, int count) {
 
 void resizeArray(Person*** people, int* capacity) {
     int newCapacity = *capacity * 2;
-    Person** newArray = new Person*[newCapacity];
+    auto newArray = new Person*[newCapacity];
 
     for (int i = 0; i < *capacity; ++i) {
         newArray[i] = (*people)[i];
