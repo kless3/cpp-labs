@@ -5,6 +5,8 @@
 #include "../include/RightTriangle.h"
 #include "../include/Trapezoid.h"
 
+const int EXIT_OPTION = 6;
+
 using namespace std;
 
 int main() {
@@ -12,10 +14,10 @@ int main() {
     int shapeCount = 0;
     int capacity = 0;
 
-    
+
     int choice;
 
-    while (true) {
+    while (choice != EXIT_OPTION) {
         cout << "1. Show all areas" << endl;
         cout << "2. Add Rectangle" << endl;
         cout << "3. Add Circle" << endl;
@@ -135,7 +137,7 @@ int main() {
                     delete shapes[i];
                 }
                 delete[] shapes;
-                return 0;
+                break;
             }
 
             default: {
