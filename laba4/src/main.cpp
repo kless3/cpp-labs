@@ -24,106 +24,125 @@ int main() {
         cout << "Choose option: ";
         cin >> choice;
 
-        if (choice == 1) {
-            cout << "\nAreas of all shapes:" << endl;
-            for (int i = 0; i < shapeCount; ++i) {
-                cout << "Shape " << i + 1 << ": " << shapes[i]->area() << endl;
-            }
-        } else if (choice == 2) {
-            double w, h;
-            cout << "Enter width and height: ";
-            cin >> w >> h;
-
-            // Увеличиваем емкость массива при необходимости
-            if (shapeCount >= capacity) {
-                int newCapacity = (capacity == 0) ? 10 : capacity * 2;
-                Shape** newShapes = new Shape*[newCapacity];
-
-                // Копируем существующие указатели
+        switch (choice) {
+            case 1: {
+                cout << "\nAreas of all shapes:" << endl;
                 for (int i = 0; i < shapeCount; ++i) {
-                    newShapes[i] = shapes[i];
+                    cout << "Shape " << i + 1 << ": " << shapes[i]->area() << endl;
+                }
+                break;
+            }
+
+            case 2: {
+                double w;
+                double h;
+                cout << "Enter width and height: ";
+                cin >> w >> h;
+
+                // Увеличиваем емкость массива при необходимости
+                if (shapeCount >= capacity) {
+                    int newCapacity = (capacity == 0) ? 10 : capacity * 2;
+                    Shape** newShapes = new Shape*[newCapacity];
+
+                    // Копируем существующие указатели
+                    for (int i = 0; i < shapeCount; ++i) {
+                        newShapes[i] = shapes[i];
+                    }
+
+                    // Освобождаем старый массив
+                    delete[] shapes;
+                    shapes = newShapes;
+                    capacity = newCapacity;
                 }
 
-                // Освобождаем старый массив
-                delete[] shapes;
-                shapes = newShapes;
-                capacity = newCapacity;
+                shapes[shapeCount++] = new Rectangle(w, h);
+                break;
             }
 
-            shapes[shapeCount++] = new Rectangle(w, h);
+            case 3: {
+                double r;
+                cout << "Enter radius: ";
+                cin >> r;
 
-        } else if (choice == 3) {
-            double r;
-            cout << "Enter radius: ";
-            cin >> r;
+                if (shapeCount >= capacity) {
+                    int newCapacity = (capacity == 0) ? 10 : capacity * 2;
+                    Shape** newShapes = new Shape*[newCapacity];
 
-            if (shapeCount >= capacity) {
-                int newCapacity = (capacity == 0) ? 10 : capacity * 2;
-                Shape** newShapes = new Shape*[newCapacity];
+                    for (int i = 0; i < shapeCount; ++i) {
+                        newShapes[i] = shapes[i];
+                    }
 
-                for (int i = 0; i < shapeCount; ++i) {
-                    newShapes[i] = shapes[i];
+                    delete[] shapes;
+                    shapes = newShapes;
+                    capacity = newCapacity;
                 }
 
-                delete[] shapes;
-                shapes = newShapes;
-                capacity = newCapacity;
+                shapes[shapeCount++] = new Circle(r);
+                break;
             }
 
-            shapes[shapeCount++] = new Circle(r);
+            case 4: {
+                double b;
+                double h;
+                cout << "Enter base and height: ";
+                cin >> b >> h;
 
-        } else if (choice == 4) {
-            double b, h;
-            cout << "Enter base and height: ";
-            cin >> b >> h;
+                if (shapeCount >= capacity) {
+                    int newCapacity = (capacity == 0) ? 10 : capacity * 2;
+                    Shape** newShapes = new Shape*[newCapacity];
 
-            if (shapeCount >= capacity) {
-                int newCapacity = (capacity == 0) ? 10 : capacity * 2;
-                Shape** newShapes = new Shape*[newCapacity];
+                    for (int i = 0; i < shapeCount; ++i) {
+                        newShapes[i] = shapes[i];
+                    }
 
-                for (int i = 0; i < shapeCount; ++i) {
-                    newShapes[i] = shapes[i];
+                    delete[] shapes;
+                    shapes = newShapes;
+                    capacity = newCapacity;
                 }
 
-                delete[] shapes;
-                shapes = newShapes;
-                capacity = newCapacity;
+                shapes[shapeCount++] = new RightTriangle(b, h);
+                break;
             }
 
-            shapes[shapeCount++] = new RightTriangle(b, h);
+            case 5: {
+                double a;
+                double b;
+                double h;
+                cout << "Enter base1, base2 and height: ";
+                cin >> a >> b >> h;
 
-        } else if (choice == 5) {
-            double a, b, h;
-            cout << "Enter base1, base2 and height: ";
-            cin >> a >> b >> h;
+                if (shapeCount >= capacity) {
+                    int newCapacity = (capacity == 0) ? 10 : capacity * 2;
+                    Shape** newShapes = new Shape*[newCapacity];
 
-            if (shapeCount >= capacity) {
-                int newCapacity = (capacity == 0) ? 10 : capacity * 2;
-                Shape** newShapes = new Shape*[newCapacity];
+                    for (int i = 0; i < shapeCount; ++i) {
+                        newShapes[i] = shapes[i];
+                    }
 
-                for (int i = 0; i < shapeCount; ++i) {
-                    newShapes[i] = shapes[i];
+                    delete[] shapes;
+                    shapes = newShapes;
+                    capacity = newCapacity;
                 }
 
-                delete[] shapes;
-                shapes = newShapes;
-                capacity = newCapacity;
+                shapes[shapeCount++] = new Trapezoid(a, b, h);
+                break;
             }
 
-            shapes[shapeCount++] = new Trapezoid(a, b, h);
+            case 6: {
+                // Освобождаем память перед выходом
+                for (int i = 0; i < shapeCount; ++i) {
+                    delete shapes[i];
+                }
+                delete[] shapes;
+                return 0;
+            }
 
-        } else if (choice == 6) {
-            break;
-        } else {
-            cout << "Invalid choice!" << endl;
+            default: {
+                cout << "Invalid choice!" << endl;
+                break;
+            }
         }
     }
-
-    // Освобождаем память перед выходом
-    for (int i = 0; i < shapeCount; ++i) {
-        delete shapes[i];
-    }
-    delete[] shapes;
 
     return 0;
 }
