@@ -25,7 +25,8 @@ String::String(const char *str) : data(nullptr), length(0) {
     }
 }
 
-String::String(const String &other) : data(nullptr), length(other.length) {
+String::String(const String &other) : data(nullptr) {
+    length = other.length;
     copyFrom(other.data, length);
 }
 
@@ -71,4 +72,30 @@ const char &String::operator[](int index) const {
         throw std::out_of_range("Index out of range");
     }
     return data[index];
+}
+
+String &String::operator=(const String &other) {
+    if (this != &other) {
+        delete[] data;
+        length = other.length;
+        copyFrom(other.data, length);
+    }
+    return *this;
+}
+
+String::String(String &&other) noexcept
+        : data(other.data), length(other.length) {
+    other.data = nullptr;
+    other.length = 0;
+}
+
+String &String::operator=(String &&other) noexcept {
+    if (this != &other) {
+        delete[] data;
+        data = other.data;
+        length = other.length;
+        other.data = nullptr;
+        other.length = 0;
+    }
+    return *this;
 }

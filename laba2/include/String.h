@@ -13,6 +13,11 @@ private:
     void copyFrom(const char *str, size_t len);
 
 public:
+    String& operator=(const String& other);
+
+    String(String&& other) noexcept;
+    String& operator=(String&& other) noexcept;
+
     String();
 
     explicit String(const char *str);
@@ -41,11 +46,13 @@ public:
         delete[] str.data;
         str.length = buffer.length();
         str.data = new char[str.length + 1];
-        std::copy(buffer.begin(), buffer.end(), str.data);
+        std::memcpy(str.data, buffer.data(), str.length);
         str.data[str.length] = '\0';
 
         return is;
     }
 };
+
+
 
 #endif
