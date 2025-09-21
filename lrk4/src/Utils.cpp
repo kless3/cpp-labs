@@ -1,44 +1,49 @@
 #include "../include/Utils.h"
+#include <iostream>
 
-void showAllReactions(const std::vector<std::unique_ptr<Person>>& people) {
-    for(size_t i = 0; i < people.size(); ++i) {
-        for(size_t j = 0; j < people.size(); ++j) {
+void showAllReactions(Person** people, int count) {
+    for(int i = 0; i < count; ++i) {
+        for(int j = 0; j < count; ++j) {
             if(i != j) {
-                people[i]->reactToNewPerson(people[j].get());
+                people[i]->reactToNewPerson(people[j]);
             }
         }
     }
 }
 
-void addGirl(std::vector<std::unique_ptr<Person>>& people) {
+void resizeArray(Person*** people, int* capacity) {
+    int newCapacity = *capacity * 2;
+    Person** newArray = new Person*[newCapacity];
+
+    for (int i = 0; i < *capacity; ++i) {
+        newArray[i] = (*people)[i];
+    }
+
+    delete[] *people;
+    *people = newArray;
+    *capacity = newCapacity;
+}
+
+void addGirl(Person*** people, int* count, int* capacity) {
+    if (*count >= *capacity) {
+        resizeArray(people, capacity);
+    }
+
     std::string name;
     std::cout << "Enter girl name: ";
     std::cin >> name;
-    people.push_back(std::make_unique<Girl>(name));
+
+    (*people)[(*count)++] = new Girl(name);
 }
 
-void addYoungMan(std::vector<std::unique_ptr<Person>>& people) {
+void addYoungMan(Person*** people, int* count, int* capacity) {
+    if (*count >= *capacity) {
+        resizeArray(people, capacity);
+    }
+
     std::string name;
     std::cout << "Enter young man name: ";
     std::cin >> name;
-    people.push_back(std::make_unique<YoungMan>(name));
-}
 
-void handleMenuChoice(int choice, std::vector<std::unique_ptr<Person>>& people) {
-    switch(choice) {
-        case 1:
-            showAllReactions(people);
-            break;
-        case 2:
-            addGirl(people);
-            break;
-        case 3:
-            addYoungMan(people);
-            break;
-        case 4:
-            std::cout << "Exit..." << std::endl;
-            break;
-        default:
-            std::cout << "Invalid choice!" << std::endl;
-    }
+    (*people)[(*count)++] = new YoungMan(name);
 }

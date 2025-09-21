@@ -1,12 +1,15 @@
 #include "../include/Utils.h"
+#include <iostream>
 
 int main() {
-    std::vector<std::unique_ptr<Person>> people;
+    int capacity = 10;
+    int count = 0;
+    Person** people = new Person*[capacity];
 
-    people.push_back(std::make_unique<Girl>("Anna"));
-    people.push_back(std::make_unique<Girl>("Maria"));
-    people.push_back(std::make_unique<YoungMan>("Ivan"));
-    people.push_back(std::make_unique<YoungMan>("Peter"));
+    people[count++] = new Girl("Anna");
+    people[count++] = new Girl("Maria");
+    people[count++] = new YoungMan("Ivan");
+    people[count++] = new YoungMan("Peter");
 
     int choice;
     do {
@@ -17,9 +20,29 @@ int main() {
         std::cout << "Choose action: ";
         std::cin >> choice;
 
-        handleMenuChoice(choice, people);
+        switch(choice) {
+            case 1:
+                showAllReactions(people, count);
+                break;
+            case 2:
+                addGirl(&people, &count, &capacity);
+                break;
+            case 3:
+                addYoungMan(&people, &count, &capacity);
+                break;
+            case 4:
+                std::cout << "Exit..." << std::endl;
+                break;
+            default:
+                std::cout << "Invalid choice!" << std::endl;
+        }
 
     } while (choice != 4);
+
+    for (int i = 0; i < count; ++i) {
+        delete people[i];
+    }
+    delete[] people;
 
     return 0;
 }

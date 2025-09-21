@@ -1,19 +1,12 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include <iostream>
-#include <vector>
-#include <memory>
-#include "../include/Person.h"
-#include "../include/Girl.h"
-#include "../include/YoungMan.h"
+#include "Person.h"
+#include "Girl.h"
+#include "YoungMan.h"
 
-void showAllReactions(const std::vector<std::unique_ptr<Person>>& people);
-
-void addGirl(std::vector<std::unique_ptr<Person>>& people);
-
-void addYoungMan(std::vector<std::unique_ptr<Person>>& people);
-
-void handleMenuChoice(int choice, std::vector<std::unique_ptr<Person>>& people);
+void showAllReactions(Person** people, int count);
+void addGirl(Person*** people, int* count, int* capacity);
+void addYoungMan(Person*** people, int* count, int* capacity);
 
 #endif
