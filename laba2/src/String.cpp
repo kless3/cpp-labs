@@ -49,7 +49,7 @@ String String::operator()(int start, int count) const {
     }
 
     auto subStr = new char[actualCount + 1];
-    std::strncpy(subStr, data + start, actualCount);
+    std::copy(data + start, data + start + actualCount, subStr);
     subStr[actualCount] = '\0';
 
     String result(subStr);
