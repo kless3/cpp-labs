@@ -1,10 +1,12 @@
 #include "../include/Utils.h"
 #include <iostream>
 
+const int EXIT_OPTION = 4;
+
 int main() {
     int capacity = 10;
     int count = 0;
-    auto people = new Person*[capacity];
+    auto people = new Person *[capacity];
 
     people[count++] = new Girl("Anna");
     people[count++] = new Girl("Maria");
@@ -20,7 +22,7 @@ int main() {
         std::cout << "Choose action: ";
         std::cin >> choice;
 
-        switch(choice) {
+        switch (choice) {
             case 1:
                 showAllReactions(people, count);
                 break;
@@ -37,7 +39,7 @@ int main() {
                 std::cout << "Invalid choice!" << std::endl;
         }
 
-    } while (choice != 4);
+    } while (choice != EXIT_OPTION);
 
     for (int i = 0; i < count; ++i) {
         delete people[i];
