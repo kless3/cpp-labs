@@ -12,6 +12,7 @@ int main() {
     int shapeCount = 0;
     int capacity = 0;
 
+    
     int choice;
 
     while (true) {
