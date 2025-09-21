@@ -14,10 +14,9 @@ int main() {
     int shapeCount = 0;
     int capacity = 0;
 
-
     int choice;
 
-    while (choice != EXIT_OPTION) {
+    do {
         cout << "1. Show all areas" << endl;
         cout << "2. Add Rectangle" << endl;
         cout << "3. Add Circle" << endl;
@@ -137,6 +136,7 @@ int main() {
                     delete shapes[i];
                 }
                 delete[] shapes;
+                cout << "Exiting program..." << endl;
                 break;
             }
 
@@ -145,7 +145,7 @@ int main() {
                 break;
             }
         }
-    }
+    } while (choice != EXIT_OPTION);
 
     return 0;
 }
