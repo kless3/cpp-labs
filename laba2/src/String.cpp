@@ -2,7 +2,8 @@
 
 void String::copyFrom(const char *str, size_t len) {
     data = new char[len + 1];
-    std::strcpy(data, str);
+    std::strncpy(data, str, len);
+    data[len] = '\0';
     length = len;
 }
 
