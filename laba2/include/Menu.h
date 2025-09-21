@@ -7,8 +7,6 @@ void clearInputBuffer();
 
 void displayMenu();
 
-void handleMenuChoice(int choice, String &currentString);
-
 void handleInputString(String &currentString);
 
 void handleCheckEmpty(const String &currentString);

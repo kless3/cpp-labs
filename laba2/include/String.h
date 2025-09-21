@@ -41,7 +41,8 @@ public:
         delete[] str.data;
         str.length = buffer.length();
         str.data = new char[str.length + 1];
-        std::strcpy(str.data, buffer.c_str());
+        std::copy(buffer.begin(), buffer.end(), str.data);
+        str.data[str.length] = '\0';
 
         return is;
     }
