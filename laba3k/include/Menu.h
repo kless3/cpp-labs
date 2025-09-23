@@ -8,8 +8,7 @@
 
 void displayMenu();
 void clearInputBuffer();
-void addStudent(std::span<Student>& students, int& studentCount);
-void displayStudents(std::span<Student> students);
-
+void addStudent(Student**& students, int& studentCount);
+void displayStudents(Student** students, int studentCount);
 
 #endif

@@ -5,7 +5,7 @@
 const int EXIT_OPTION = 3;
 
 int main() {
-    Student *students = nullptr;
+    Student** students = nullptr;
     int studentCount = 0;
     int choice;
 
@@ -14,15 +14,13 @@ int main() {
         std::cin >> choice;
         clearInputBuffer();
 
-        std::span<Student> studentsSpan(students, studentCount);
-
         switch (choice) {
             case 1:
-                addStudent(studentsSpan, studentCount);
+                addStudent(students, studentCount);
                 break;
 
             case 2:
-                displayStudents(studentsSpan);
+                displayStudents(students, studentCount);
                 break;
 
             case 3:
@@ -34,6 +32,10 @@ int main() {
         }
     } while (choice != EXIT_OPTION);
 
+    for (int i = 0; i < studentCount; ++i) {
+        delete students[i];
+    }
     delete[] students;
+
     return 0;
 }
