@@ -40,7 +40,7 @@ String::String(const char *str)
     }
 }
 
-String::String(const String &other)
+[[maybe_unused]] String::String(const String &other)
         : data(nullptr), length(other.length) {
     copyFrom(other.data, length);
 }

@@ -8,7 +8,7 @@
 class String {
 private:
     char *data;
-    size_t length;
+    size_t length{};
 
     void copyFrom(const char *str, size_t len);
 
@@ -23,7 +23,7 @@ public:
 
     explicit String(const char *str);
 
-    String(const String &other);
+    [[maybe_unused]] String(const String &other);
 
     ~String();
 
