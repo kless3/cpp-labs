@@ -24,12 +24,12 @@ public:
     void setBirthYear(int year);
     void setExamResults(const int* results, int count);
 
-    std::string getFullName() const;
-    int getBirthYear() const;
-    const int* getExamResults() const;
-    int getExamsCount() const;
+    [[nodiscard]] std::string getFullName() const;
+    [[nodiscard]] int getBirthYear() const;
+    [[nodiscard]] const int* getExamResults() const;
+    [[nodiscard]] int getExamsCount() const;
 
-    double calculateAverage() const;
+    [[nodiscard]] double calculateAverage() const;
     void display() const final;
 };
 
