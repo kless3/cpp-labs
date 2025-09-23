@@ -47,7 +47,7 @@ int main() {
             clearInputBuffer();
         }
 
-        if (choice != 7) {
+        if (choice != EXIT_OPTION) {
             std::cout << "\nНажмите Enter для продолжения...\n";
             std::cin.get();
         }
