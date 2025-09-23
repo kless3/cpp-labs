@@ -1,0 +1,37 @@
+@startuml
+
+!define abstract abstract
+!define interface interface
+
+
+abstract class Person {
+  + {field} name: string
+  + {method} Person(n: string)
+  + {abstract} reactToNewPerson(other: Person*): void
+  + {method} getName(): string
+}
+
+class Girl {
+  + {method} Girl(n: string)
+  + {method} reactToNewPerson(other: Person*): void
+}
+
+class YoungMan {
+  + {method} YoungMan(n: string)
+  + {method} reactToNewPerson(other: Person*): void
+}
+
+class Utils {
+  + {static} showAllReactions(people: Person**, count: int): void
+  + {static} addGirl(people: Person***, count: int*, capacity: int*): void
+  + {static} addYoungMan(people: Person***, count: int*, capacity: int*): void
+}
+
+Person <|-- Girl
+Person <|-- YoungMan
+
+Utils --> Person : uses
+Utils --> Girl : uses
+Utils --> YoungMan : uses
+
+@enduml

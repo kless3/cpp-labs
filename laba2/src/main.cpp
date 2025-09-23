@@ -1,7 +1,7 @@
 #include "../include/String.h"
 #include "../include/Menu.h"
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 
 const int EXIT_OPTION = 7;
 
