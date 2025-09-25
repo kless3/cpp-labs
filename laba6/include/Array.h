@@ -6,9 +6,9 @@
 
 class IndexOutOfBoundsException : public std::out_of_range {
 public:
-    explicit IndexOutOfBoundsException(int index, int size);
+    explicit IndexOutOfBoundsException([[maybe_unused]] int index, [[maybe_unused]] int size);
 
-    [[nodiscard]] std::string createMessage(int index, int size) const;
+    [[nodiscard]] static std::string createMessage(int index, int size) ;
 };
 
 class SafeArray {
@@ -19,6 +19,12 @@ private:
 public:
     explicit SafeArray(int arraySize);
     ~SafeArray();
+
+    SafeArray(const SafeArray&) = delete;
+    SafeArray& operator=(const SafeArray&) = delete;
+
+    [[maybe_unused]] SafeArray(SafeArray&& other) noexcept;
+    SafeArray& operator=(SafeArray&& other) noexcept;
 
     int& operator[](int index);
     const int& operator[](int index) const;

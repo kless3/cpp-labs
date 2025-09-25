@@ -1,13 +1,13 @@
 #include "../include/Array.h"
 #include <sstream>
 
-std::string IndexOutOfBoundsException::createMessage(int index, int size) const {
+std::string IndexOutOfBoundsException::createMessage(int index, int size) {
     std::ostringstream message;
     message << "Index " << index << " is out of bounds for array of size " << size;
     return message.str();
 }
 
-IndexOutOfBoundsException::IndexOutOfBoundsException(int index, int size)
+IndexOutOfBoundsException::IndexOutOfBoundsException([[maybe_unused]] int index, [[maybe_unused]] int size)
         : std::out_of_range(createMessage(index, size)) {}
 
 
@@ -39,4 +39,21 @@ const int& SafeArray::operator[](int index) const {
 
 int SafeArray::getSize() const {
     return size;
+}
+
+[[maybe_unused]] SafeArray::SafeArray(SafeArray&& other) noexcept
+        : data(other.data), size(other.size) {
+    other.data = nullptr;
+    other.size = 0;
+}
+
+SafeArray& SafeArray::operator=(SafeArray&& other) noexcept {
+    if (this != &other) {
+        delete[] data;
+        data = other.data;
+        size = other.size;
+        other.data = nullptr;
+        other.size = 0;
+    }
+    return *this;
 }
