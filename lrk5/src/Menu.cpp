@@ -37,7 +37,6 @@ void workWithSearch() {
 }
 
 [[maybe_unused]] void displayMainMenu() {
-    cout << "\n=== Sequential Search System ===" << endl;
     cout << "1. Search in integer array" << endl;
     cout << "2. Search in double array" << endl;
     cout << "3. Search in string array" << endl;
