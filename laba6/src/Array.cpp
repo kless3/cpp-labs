@@ -1,7 +1,7 @@
 #include "../include/Array.h"
 #include <sstream>
 
-std::string IndexOutOfBoundsException::createMessage(int index, int size) {
+std::string IndexOutOfBoundsException::createMessage(int index, int size) const {
     std::ostringstream message;
     message << "Index " << index << " is out of bounds for array of size " << size;
     return message.str();
