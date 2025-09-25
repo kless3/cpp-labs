@@ -2,6 +2,7 @@
 #include "../include/Search.h"
 #include <iostream>
 #include <string>
+#include <span>
 
 using namespace std;
 
@@ -16,7 +17,7 @@ void workWithSearch() {
         size = 5;
     }
 
-    T* array = new T[size];
+    auto array = new T[size];
     cout << "Enter " << size << " elements: ";
     for (int i = 0; i < size; ++i) {
         cin >> array[i];
@@ -26,8 +27,7 @@ void workWithSearch() {
     cout << "Enter key to search: ";
     cin >> key;
 
-    int result = sequentialSearch(array, size, key);
-    if (result != -1) {
+    if (auto result = sequentialSearch(span<const T>(array, size), key); result != -1) {
         cout << "Element found at index: " << result << endl;
     } else {
         cout << "Element not found" << endl;

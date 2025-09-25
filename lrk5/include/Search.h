@@ -1,9 +1,11 @@
 #ifndef SEARCH_H
 #define SEARCH_H
 
+#include <span>
+
 template <typename T>
-int sequentialSearch(const T array[], int size, const T& key) {
-    for (int i = 0; i < size; ++i) {
+int sequentialSearch(std::span<const T> array, const T& key) {
+    for (int i = 0; i < array.size(); ++i) {
         if (array[i] == key) {
             return i;
         }

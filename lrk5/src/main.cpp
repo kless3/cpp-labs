@@ -1,5 +1,7 @@
 #include "../include/Menu.h"
 #include <iostream>
+const int EXIT_OPTION = 4;
+
 int main() {
     int choice;
 
@@ -7,7 +9,7 @@ int main() {
         displayMainMenu();
         std::cin >> choice;
         handleMainMenuChoice(choice);
-    } while (choice != 4);
+    } while (choice != EXIT_OPTION);
 
     return 0;
 }
