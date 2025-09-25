@@ -1,6 +1,7 @@
-#include "../include/Menu.h"
+#include "../include/menu.h"
+#include <iostream>
 
-using namespace std;
+const int EXIT_OPTION = 4;
 
 int main() {
     int choice;
@@ -8,27 +9,8 @@ int main() {
     do {
         displayMainMenu();
         std::cin >> choice;
-        switch (choice) {
-            case 1:
-                workWithIntQueue();
-                break;
-
-            case 2:
-                workWithDoubleQueue();
-                break;
-
-            case 3:
-                workWithStringQueue();
-                break;
-
-            case 4:
-                cout << "Goodbye!" << endl;
-                break;
-
-            default:
-                cout << "Invalid choice. Try again." << endl;
-        }
-    } while (choice != 4);
+        handleMainMenuChoice(choice);
+    } while (choice != EXIT_OPTION);
 
     return 0;
 }

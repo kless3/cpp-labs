@@ -4,17 +4,71 @@
 #include "../include/Queue.h"
 
 template <typename T>
-Queue<T>::Queue(int initialCapacity) {
-    capacity = initialCapacity;
+Queue<T>::Queue(int initialCapacity)
+        : capacity(initialCapacity), front(0), rear(-1), count(0) {
     data = new T[capacity];
-    front = 0;
-    rear = -1;
-    count = 0;
 }
 
 template <typename T>
 Queue<T>::~Queue() {
     delete[] data;
+}
+
+template <typename T>
+Queue<T>::Queue(const Queue& other)
+        : capacity(other.capacity), front(other.front), rear(other.rear), count(other.count) {
+    data = new T[capacity];
+    for (int i = 0; i < capacity; i++) {
+        data[i] = other.data[i];
+    }
+}
+
+template <typename T>
+Queue<T>& Queue<T>::operator=(const Queue& other) {
+    if (this != &other) {
+        delete[] data;
+
+        capacity = other.capacity;
+        front = other.front;
+        rear = other.rear;
+        count = other.count;
+
+        data = new T[capacity];
+        for (int i = 0; i < capacity; i++) {
+            data[i] = other.data[i];
+        }
+    }
+    return *this;
+}
+
+template <typename T>
+Queue<T>::Queue(Queue&& other) noexcept
+        : data(other.data), capacity(other.capacity), front(other.front), rear(other.rear), count(other.count) {
+    other.data = nullptr;
+    other.capacity = 0;
+    other.front = 0;
+    other.rear = -1;
+    other.count = 0;
+}
+
+template <typename T>
+Queue<T>& Queue<T>::operator=(Queue&& other) noexcept {
+    if (this != &other) {
+        delete[] data;
+
+        data = other.data;
+        capacity = other.capacity;
+        front = other.front;
+        rear = other.rear;
+        count = other.count;
+
+        other.data = nullptr;
+        other.capacity = 0;
+        other.front = 0;
+        other.rear = -1;
+        other.count = 0;
+    }
+    return *this;
 }
 
 template <typename T>
@@ -73,12 +127,12 @@ bool Queue<T>::isEmpty() const {
 }
 
 template <typename T>
-[[maybe_unused]] int Queue<T>::size() const {
+int Queue<T>::size() const {
     return count;
 }
 
 template <typename T>
-[[maybe_unused]] void Queue<T>::clear() {
+void Queue<T>::clear() {
     front = 0;
     rear = -1;
     count = 0;

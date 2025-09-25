@@ -1,4 +1,7 @@
 #include "../include/Menu.h"
+#include "../include/Queue.h"
+#include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -37,8 +40,6 @@ void workWithQueue() {
                 success = queue.enqueue(value);
                 if (success) {
                     cout << "Value enqueued successfully." << endl;
-                } else {
-                    cout << "Failed to enqueue value." << endl;
                 }
                 break;
 
@@ -82,14 +83,25 @@ void workWithQueue() {
     }
 }
 
-void workWithIntQueue() {
-    workWithQueue<int>();
-}
+void handleMainMenuChoice(int choice) {
+    switch (choice) {
+        case 1:
+            workWithQueue<int>();
+            break;
 
-void workWithDoubleQueue() {
-    workWithQueue<double>();
-}
+        case 2:
+            workWithQueue<double>();
+            break;
 
-void workWithStringQueue() {
-    workWithQueue<string>();
+        case 3:
+            workWithQueue<string>();
+            break;
+
+        case 4:
+            cout << "Goodbye!" << endl;
+            break;
+
+        default:
+            cout << "Invalid choice. Try again." << endl;
+    }
 }

@@ -2,7 +2,7 @@
 #define QUEUE_H
 
 template <typename T>
-class [[maybe_unused]] Queue {
+class Queue {
 private:
     T* data;
     int capacity;
@@ -13,14 +13,19 @@ private:
     void resize();
 
 public:
-    explicit Queue(int initialCapacity = 10);
+    Queue(int initialCapacity = 10);
     ~Queue();
+
+    Queue(const Queue& other);
+    Queue& operator=(const Queue& other);
+    Queue(Queue&& other) noexcept;
+    Queue& operator=(Queue&& other) noexcept;
+
     bool enqueue(const T& item);
     bool dequeue(T& result);
     bool peek(T& result);
-    [[nodiscard]] bool isEmpty() const;
-
-    [[maybe_unused]] [[nodiscard]] int size() const;
+    bool isEmpty() const;
+    int size() const;
     void clear();
 };
 
