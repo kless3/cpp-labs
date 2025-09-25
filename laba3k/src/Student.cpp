@@ -1,6 +1,5 @@
 #include "../include/Student.h"
 #include <iostream>
-#include <stdexcept>
 
 Student::Student() : Fakultet(), birthYear(0), examResults(nullptr) {}
 
@@ -47,11 +46,11 @@ Student& Student::operator=(const Student& other) {
     return *this;
 }
 
-void Student::setFullName(std::string_view name) {
+[[maybe_unused]] void Student::setFullName(std::string_view name) {
     fullName = name;
 }
 
-void Student::setBirthYear(int year) {
+[[maybe_unused]] void Student::setBirthYear(int year) {
     if (year > 1900 && year < 2100) {
         birthYear = year;
     }
@@ -72,19 +71,19 @@ void Student::setExamResults(const int* results, int count) {
     }
 }
 
-std::string Student::getFullName() const {
+[[maybe_unused]] std::string Student::getFullName() const {
     return fullName;
 }
 
-int Student::getBirthYear() const {
+[[maybe_unused]] int Student::getBirthYear() const {
     return birthYear;
 }
 
-const int* Student::getExamResults() const {
+[[maybe_unused]] const int* Student::getExamResults() const {
     return examResults;
 }
 
-int Student::getExamsCount() const {
+[[maybe_unused]] int Student::getExamsCount() const {
     return examsCount;
 }
 

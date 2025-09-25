@@ -9,7 +9,7 @@
 void displayMenu();
 void clearInputBuffer();
 
-[[maybe_unused]] [[maybe_unused]] void addStudent(std::span<Student*>& students, int& studentCount);
+[[maybe_unused]] void addStudent(std::span<Student*>& students, int& studentCount);
 void displayStudents(std::span<Student*> students);
 
 #endif

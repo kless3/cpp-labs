@@ -11,7 +11,7 @@ private:
 public:
     Trapezoid(double a, double b, double h);
 
-    double area() const override;
+    [[nodiscard]] double area() const override;
 };
 
 #endif

@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <cstring>
-#include <stdexcept>
 
 class String {
 private:

@@ -10,7 +10,7 @@ private:
 public:
     Rectangle(double w, double h);
 
-    double area() const override;
+    [[nodiscard]] double area() const override;
 };
 
 #endif

@@ -7,10 +7,10 @@ class Person {
 public:
     std::string name;
 public:
-    explicit Person(const std::string& n);
+    explicit Person(std::string  n);
     virtual ~Person() = default;
     virtual void reactToNewPerson(const Person* other) const = 0;
-    std::string getName() const;
+    [[nodiscard]] std::string getName() const;
 };
 
 #endif

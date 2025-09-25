@@ -1,5 +1,4 @@
 #include "../include/Matrix.h"
-#include <stdexcept>
 
 
 Matrix::Matrix(int r, int c) : rows(r), cols(c) {
@@ -13,7 +12,7 @@ Matrix::Matrix(int r, int c) : rows(r), cols(c) {
     }
 }
 
-Matrix::Matrix(const Matrix &other) : rows(other.rows), cols(other.cols) {
+[[maybe_unused]] Matrix::Matrix(const Matrix &other) : rows(other.rows), cols(other.cols) {
     if (rows > 0 && cols > 0) {
         data = new int *[rows];
         for (auto i = 0; i < rows; i++) {

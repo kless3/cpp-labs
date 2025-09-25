@@ -12,13 +12,13 @@ private:
 public:
     explicit Matrix(int r = 0, int c = 0);
 
-    Matrix(const Matrix &other);
+    [[maybe_unused]] Matrix(const Matrix &other);
 
     ~Matrix();
 
-    int getRows() const { return rows; }
+    [[nodiscard]] int getRows() const { return rows; }
 
-    int getCols() const { return cols; }
+    [[nodiscard]] int getCols() const { return cols; }
 
     void resize(int newRows, int newCols);
 
@@ -26,7 +26,8 @@ public:
 
     friend Matrix operator+(const Matrix &lhs, const Matrix &rhs) {
         if (lhs.rows != rhs.rows || lhs.cols != rhs.cols) {
-            throw std::invalid_argument("Matrix's should be equal size ");
+            std::cout << "Error!" << std::endl;
+            exit(1);
         }
 
         Matrix result(lhs.rows, lhs.cols);

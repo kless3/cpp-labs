@@ -9,7 +9,7 @@ private:
 public:
     explicit Circle(double r);
 
-    double area() const override;
+    [[nodiscard]] double area() const override;
 };
 
 #endif

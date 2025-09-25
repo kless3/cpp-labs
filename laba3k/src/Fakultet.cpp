@@ -25,11 +25,11 @@ Fakultet &Fakultet::operator=(const Fakultet &other) {
     return *this;
 }
 
-void Fakultet::setFacultyName(std::string_view name) {
+[[maybe_unused]] void Fakultet::setFacultyName(std::string_view name) {
     facultyName = name;
 }
 
-std::string Fakultet::getFacultyName() const {
+[[maybe_unused]] std::string Fakultet::getFacultyName() const {
     return facultyName;
 }
 

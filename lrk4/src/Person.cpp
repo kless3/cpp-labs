@@ -1,6 +1,7 @@
-#include "../include/Person.h"
-#include <iostream>
+#include <utility>
 
-Person::Person(const std::string &n) : name(n) {}
+#include "../include/Person.h"
+
+Person::Person(std::string n) : name(std::move(n)) {}
 
 std::string Person::getName() const { return name; }

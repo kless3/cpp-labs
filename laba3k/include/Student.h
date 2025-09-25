@@ -20,14 +20,18 @@ public:
 
     Student& operator=(const Student& other);
 
-    void setFullName(std::string_view name);
-    void setBirthYear(int year);
+    [[maybe_unused]] void setFullName(std::string_view name);
+
+    [[maybe_unused]] void setBirthYear(int year);
     void setExamResults(const int* results, int count);
 
-    [[nodiscard]] std::string getFullName() const;
-    [[nodiscard]] int getBirthYear() const;
-    [[nodiscard]] const int* getExamResults() const;
-    [[nodiscard]] int getExamsCount() const;
+    [[maybe_unused]] [[nodiscard]] std::string getFullName() const;
+
+    [[maybe_unused]] [[nodiscard]] int getBirthYear() const;
+
+    [[maybe_unused]] [[nodiscard]] const int* getExamResults() const;
+
+    [[maybe_unused]] [[nodiscard]] int getExamsCount() const;
 
     [[nodiscard]] double calculateAverage() const;
     void display() const final;
