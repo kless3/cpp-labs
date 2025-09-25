@@ -5,7 +5,7 @@
 
 template <typename T>
 Queue<T>::Queue(int initialCapacity)
-        : capacity(initialCapacity), front(0), rear(-1), count(0) {
+        : capacity(initialCapacity) {
     data = new T[capacity];
 }
 
@@ -16,8 +16,12 @@ Queue<T>::~Queue() {
 
 template <typename T>
 Queue<T>::Queue(const Queue& other)
-        : capacity(other.capacity), front(other.front), rear(other.rear), count(other.count) {
+        : capacity(other.capacity) {
     data = new T[capacity];
+    front = other.front;
+    rear = other.rear;
+    count = other.count;
+
     for (int i = 0; i < capacity; i++) {
         data[i] = other.data[i];
     }
@@ -43,7 +47,11 @@ Queue<T>& Queue<T>::operator=(const Queue& other) {
 
 template <typename T>
 Queue<T>::Queue(Queue&& other) noexcept
-        : data(other.data), capacity(other.capacity), front(other.front), rear(other.rear), count(other.count) {
+        : data(other.data), capacity(other.capacity) {
+    front = other.front;
+    rear = other.rear;
+    count = other.count;
+
     other.data = nullptr;
     other.capacity = 0;
     other.front = 0;

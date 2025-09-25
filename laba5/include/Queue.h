@@ -4,11 +4,11 @@
 template <typename T>
 class Queue {
 private:
-    T* data;
-    int capacity;
-    int front;
-    int rear;
-    int count;
+    T* data = nullptr;
+    int capacity = 10;
+    int front = 0;
+    int rear = -1;
+    int count = 0;
 
     void resize();
 

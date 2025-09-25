@@ -1,4 +1,4 @@
-#include "../include/menu.h"
+#include "../include/Menu.h"
 #include <iostream>
 
 const int EXIT_OPTION = 4;
