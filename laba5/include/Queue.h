@@ -13,7 +13,7 @@ private:
     void resize();
 
 public:
-    Queue(int initialCapacity = 10);
+    explicit Queue(int initialCapacity = 10);
     ~Queue();
 
     Queue(const Queue& other);
