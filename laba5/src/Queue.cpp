@@ -15,7 +15,7 @@ Queue<T>::~Queue() {
 }
 
 template <typename T>
-Queue<T>::Queue(const Queue& other)
+[[maybe_unused]] Queue<T>::Queue(const Queue& other)
         : capacity(other.capacity),
           front(other.front),
           rear(other.rear),
@@ -45,7 +45,7 @@ Queue<T>& Queue<T>::operator=(const Queue& other) {
 }
 
 template <typename T>
-Queue<T>::Queue(Queue&& other) noexcept
+[[maybe_unused]] Queue<T>::Queue(Queue&& other) noexcept
         : data(other.data),
           capacity(other.capacity),
           front(other.front),
@@ -81,7 +81,7 @@ Queue<T>& Queue<T>::operator=(Queue&& other) noexcept {
 template <typename T>
 void Queue<T>::resize() {
     int newCapacity = capacity * 2;
-    T* newData = new T[newCapacity];
+    auto newData = new T[newCapacity];
 
     for (int i = 0; i < count; i++) {
         newData[i] = data[(front + i) % capacity];

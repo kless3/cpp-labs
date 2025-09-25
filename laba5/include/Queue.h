@@ -16,16 +16,17 @@ public:
     explicit Queue(int initialCapacity = 10);
     ~Queue();
 
-    Queue(const Queue& other);
+    [[maybe_unused]] Queue(const Queue& other);
     Queue& operator=(const Queue& other);
-    Queue(Queue&& other) noexcept;
+
+    [[maybe_unused]] Queue(Queue&& other) noexcept;
     Queue& operator=(Queue&& other) noexcept;
 
     bool enqueue(const T& item);
     bool dequeue(T& result);
     bool peek(T& result);
-    bool isEmpty() const;
-    int size() const;
+    [[nodiscard]] bool isEmpty() const;
+    [[nodiscard]] int size() const;
     void clear();
 };
 

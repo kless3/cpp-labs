@@ -22,7 +22,6 @@ void workWithQueue() {
     bool success;
 
     while (true) {
-        cout << "\n=== Queue Operations ===" << endl;
         cout << "1. Enqueue" << endl;
         cout << "2. Dequeue" << endl;
         cout << "3. Peek" << endl;
