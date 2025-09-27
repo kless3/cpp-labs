@@ -15,7 +15,8 @@ void inputEmployeesToFile() {
     cout << "Enter employee data (type 'exit' for first name to stop):" << endl;
 
     while (true) {
-        string middleName, lastName;
+        string middleName;
+        string lastName;
         string firstName;
         int employeeNumber;
 
