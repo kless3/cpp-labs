@@ -17,79 +17,75 @@ void clearInputBuffer() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-void addStudent(std::span<Student*>& studentsSpan, int& studentCount) {
+void addStudent(std::span<Student *> &studentsSpan, int &studentCount) {
     std::string name;
     std::string faculty;
     int year;
     int examCount;
 
-    try {
-        // Ввод имени с проверкой
-        while (true) {
-            std::cout << "Enter student full name (English only): ";
-            std::getline(std::cin, name);
+    while (true) {
+        std::cout << "Enter student full name (English only): ";
+        std::getline(std::cin, name);
 
-            try {
-                StringValidator::validateEnglishText(name);
-                break;
-            } catch (const EnglishLanguageException& e) {
-                std::cout << "Error: " << e.what() << std::endl;
-                std::cout << "Please enter English characters only. Try again." << std::endl;
-            }
+        try {
+            StringValidator::validateEnglishText(name);
+            break;
+        } catch (const EnglishLanguageException &e) {
+            std::cout << "Error: " << e.what() << std::endl;
+            std::cout << "Please enter English characters only. Try again." << std::endl;
         }
-
-        std::cout << "Enter birth year: ";
-        std::cin >> year;
-        clearInputBuffer();
-
-        while (true) {
-            std::cout << "Enter faculty name (English only): ";
-            std::getline(std::cin, faculty);
-
-            try {
-                StringValidator::validateEnglishText(faculty);
-                break; // Если проверка прошла, выходим из цикла
-            } catch (const EnglishLanguageException& e) {
-                std::cout << "Error: " << e.what() << std::endl;
-                std::cout << "Please enter English characters only. Try again." << std::endl;
-            }
-        }
-
-        auto* newStudent = new Student(name, year, faculty);
-
-        std::cout << "Enter number of exams: ";
-        std::cin >> examCount;
-
-        if (examCount > 0) {
-            auto exams = new int[examCount];
-            std::cout << "Enter exam results: ";
-            for (int i = 0; i < examCount; ++i) {
-                std::cin >> exams[i];
-            }
-            clearInputBuffer();
-            newStudent->setExamResults(exams, examCount);
-            delete[] exams;
-        }
-
-        Student** oldStudents = studentsSpan.data();
-        auto** newStudents = new Student*[studentCount + 1];
-
-        for (int i = 0; i < studentCount; ++i) {
-            newStudents[i] = oldStudents[i];
-        }
-
-        newStudents[studentCount] = newStudent;
-        delete[] oldStudents;
-
-        studentsSpan = std::span<Student*>(newStudents, studentCount + 1);
-        studentCount++;
-
-        std::cout << "Student added successfully!" << std::endl;
-
-    } catch (const std::exception& e) {
-        std::cout << "Unexpected error: " << e.what() << std::endl;
     }
+
+    std::cout << "Enter birth year: ";
+    std::cin >> year;
+    clearInputBuffer();
+
+    while (true) {
+        std::cout << "Enter faculty name (English only): ";
+        std::getline(std::cin, faculty);
+
+        try {
+            StringValidator::validateEnglishText(faculty);
+            break; 
+        } catch (const EnglishLanguageException &e) {
+            std::cout << "Error: " << e.what() << std::endl;
+            std::cout << "Please enter English characters only. Try again." << std::endl;
+        }
+    }
+
+    auto *newStudent = new Student(name, year, faculty);
+
+    std::cout << "Enter number of exams: ";
+    std::cin >> examCount;
+
+    if (examCount > 0) {
+        auto exams = new int[examCount];
+        std::cout << "Enter exam results: ";
+        for (int i = 0; i < examCount; ++i) {
+            std::cin >> exams[i];
+        }
+        clearInputBuffer();
+        newStudent->setExamResults(exams, examCount);
+        delete[] exams;
+    }
+
+    Student **oldStudents = studentsSpan.data();
+    auto **newStudents = new Student *[studentCount + 1];
+
+    for (int i = 0; i < studentCount; ++i) {
+        newStudents[i] = oldStudents[i];
+    }
+
+    newStudents[studentCount] = newStudent;
+    delete[] oldStudents;
+
+    studentsSpan = std::span<Student *>(newStudents, studentCount + 1);
+    studentCount++;
+
+    std::cout << "Student added successfully!" << std::endl;
+
 }
+
 
 void displayStudents(std::span<Student *> studentsSpan) {
     if (studentsSpan.empty()) {
