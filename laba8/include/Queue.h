@@ -5,7 +5,7 @@ class Node {
 public:
     int data;
     Node* next;
-    Node(int value);
+    explicit Node(int value);
 };
 
 class Queue {
@@ -18,8 +18,8 @@ public:
     ~Queue();
     void enqueue(int value);
     int dequeue();
-    bool isEmpty() const;
-    int getSize() const;
+    [[nodiscard]] bool isEmpty() const;
+    [[nodiscard]] int getSize() const;
     void clear();
     void display() const;
 
@@ -27,13 +27,13 @@ public:
     private:
         Node* current;
     public:
-        Iterator(Node* start);
+        explicit Iterator(Node* start);
         void next();
-        bool hasNext() const;
-        int getValue() const;
+        [[nodiscard]] bool hasNext() const;
+        [[nodiscard]] int getValue() const;
     };
 
-    Iterator getIterator() const;
+    [[nodiscard]] Iterator getIterator() const;
 };
 
 class Algorithm {

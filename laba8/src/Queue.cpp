@@ -76,9 +76,6 @@ bool Queue::Iterator::hasNext() const {
 }
 
 int Queue::Iterator::getValue() const {
-    if (current == nullptr) {
-        throw std::runtime_error("Iterator is at end");
-    }
     return current->data;
 }
 
@@ -102,8 +99,8 @@ int Algorithm::linearSearch(const Queue& queue, int target) {
 void Algorithm::bubbleSort(Queue& queue) {
     int n = queue.getSize();
     if (n <= 1) return;
-    
-    int* arr = new int[n];
+
+    auto arr = new int[n];
     Queue::Iterator it = queue.getIterator();
     for (int i = 0; i < n; i++) {
         arr[i] = it.getValue();

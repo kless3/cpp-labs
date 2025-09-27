@@ -15,7 +15,9 @@ void showMenu() {
 
 int main() {
     Queue queue;
-    int choice, value, result;
+    int result;
+    int choice;
+    int value;
 
     do {
         showMenu();
