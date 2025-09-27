@@ -46,7 +46,7 @@ void addStudent(std::span<Student *> &studentsSpan, int &studentCount) {
 
         try {
             StringValidator::validateEnglishText(faculty);
-            break; 
+            break;
         } catch (const EnglishLanguageException &e) {
             std::cout << "Error: " << e.what() << std::endl;
             std::cout << "Please enter English characters only. Try again." << std::endl;
