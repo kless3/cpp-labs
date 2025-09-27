@@ -29,11 +29,11 @@ void handleDequeue(Queue &queue) {
     }
 }
 
-void handleDisplay(Queue &queue) {
+void handleDisplay(const Queue &queue) {
     queue.display();
 }
 
-void handleLinearSearch(Queue &queue) {
+void handleLinearSearch(const Queue &queue) {
     int value;
     std::cout << "Enter value to search: ";
     std::cin >> value;

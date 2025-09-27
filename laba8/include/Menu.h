@@ -10,9 +10,9 @@ void handleEnqueue(Queue &queue);
 
 void handleDequeue(Queue &queue);
 
-void handleDisplay(Queue &queue);
+void handleDisplay(const Queue &queue);
 
-void handleLinearSearch(Queue &queue);
+void handleLinearSearch(const Queue &queue);
 
 void handleBubbleSort(Queue &queue);
 
