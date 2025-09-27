@@ -1,16 +1,57 @@
 #include "../include/Queue.h"
 #include <iostream>
+#include <stdexcept>
 
-Node::Node(int value) : data(value), next(nullptr) {}
+Node::Node(int value) : data(value) {}
 
-Queue::Queue() : front(nullptr), rear(nullptr), size(0) {}
+Queue::Queue() = default;
 
 Queue::~Queue() {
     clear();
 }
 
+void Queue::copyFrom(const Queue& other) {
+    Node* current = other.front;
+    while (current != nullptr) {
+        enqueue(current->data);
+        current = current->next;
+    }
+}
+
+Queue::Queue(const Queue& other) : front(nullptr), rear(nullptr), size(0) {
+    copyFrom(other);
+}
+
+Queue& Queue::operator=(const Queue& other) {
+    if (this != &other) {
+        clear();
+        copyFrom(other);
+    }
+    return *this;
+}
+
+Queue::Queue(Queue&& other) noexcept
+        : front(other.front), rear(other.rear), size(other.size) {
+    other.front = nullptr;
+    other.rear = nullptr;
+    other.size = 0;
+}
+
+Queue& Queue::operator=(Queue&& other) noexcept {
+    if (this != &other) {
+        clear();
+        front = other.front;
+        rear = other.rear;
+        size = other.size;
+        other.front = nullptr;
+        other.rear = nullptr;
+        other.size = 0;
+    }
+    return *this;
+}
+
 void Queue::enqueue(int value) {
-    auto newNode = new Node(value);
+    Node* newNode = new Node(value);
     if (rear == nullptr) {
         front = rear = newNode;
     } else {
@@ -76,6 +117,9 @@ bool Queue::Iterator::hasNext() const {
 }
 
 int Queue::Iterator::getValue() const {
+    if (current == nullptr) {
+        throw std::runtime_error("Iterator is at end");
+    }
     return current->data;
 }
 
@@ -100,7 +144,7 @@ void Algorithm::bubbleSort(Queue& queue) {
     int n = queue.getSize();
     if (n <= 1) return;
 
-    auto arr = new int[n];
+    int* arr = new int[n];
     Queue::Iterator it = queue.getIterator();
     for (int i = 0; i < n; i++) {
         arr[i] = it.getValue();
@@ -123,48 +167,4 @@ void Algorithm::bubbleSort(Queue& queue) {
     }
 
     delete[] arr;
-}
-void Queue::copyFrom(const Queue& other) {
-    front = rear = nullptr;
-    size = 0;
-
-    Node* current = other.front;
-    while (current != nullptr) {
-        enqueue(current->data);
-        current = current->next;
-    }
-}
-
-Queue::Queue(const Queue& other) : front(nullptr), rear(nullptr), size(0) {
-    copyFrom(other);
-}
-
-Queue& Queue::operator=(const Queue& other) {
-    if (this != &other) {
-        clear();
-        copyFrom(other);
-    }
-    return *this;
-}
-
-Queue::Queue(Queue&& other) noexcept
-        : front(other.front), rear(other.rear), size(other.size) {
-    other.front = nullptr;
-    other.rear = nullptr;
-    other.size = 0;
-}
-
-Queue& Queue::operator=(Queue&& other) noexcept {
-    if (this != &other) {
-        clear();
-
-        front = other.front;
-        rear = other.rear;
-        size = other.size;
-
-        other.front = nullptr;
-        other.rear = nullptr;
-        other.size = 0;
-    }
-    return *this;
 }

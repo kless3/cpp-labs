@@ -4,15 +4,15 @@
 class Node {
 public:
     int data;
-    Node* next;
+    Node* next = nullptr;
     explicit Node(int value);
 };
 
 class Queue {
 private:
-    Node* front;
-    Node* rear;
-    int size;
+    Node* front = nullptr;
+    Node* rear = nullptr;
+    int size = 0;
 
     void copyFrom(const Queue& other);
 
@@ -20,13 +20,9 @@ public:
     Queue();
     ~Queue();
 
-
     Queue(const Queue& other);
-
     Queue& operator=(const Queue& other);
-
     Queue(Queue&& other) noexcept;
-
     Queue& operator=(Queue&& other) noexcept;
 
     void enqueue(int value);
@@ -38,7 +34,7 @@ public:
 
     class Iterator {
     private:
-        Node* current;
+        Node* current = nullptr;
     public:
         explicit Iterator(Node* start);
         void next();
