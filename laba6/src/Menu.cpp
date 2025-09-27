@@ -8,7 +8,6 @@ void workWithArray() {
     cout << "Enter array size: ";
     cin >> size;
 
-
     SafeArray array(size);
 
     cout << "Enter " << size << " elements: ";
@@ -17,7 +16,6 @@ void workWithArray() {
     }
 
     while (true) {
-        cout << "\n=== Array Operations ===" << endl;
         cout << "1. Access element by index" << endl;
         cout << "2. Display all elements" << endl;
         cout << "3. Back to main menu" << endl;
