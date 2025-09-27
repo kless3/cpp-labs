@@ -1,7 +1,6 @@
 #include "../include/Menu.h"
 
 void showMenu() {
-    std::cout << "\n=== Queue Operations ===" << std::endl;
     std::cout << "1. Enqueue" << std::endl;
     std::cout << "2. Dequeue" << std::endl;
     std::cout << "3. Display Queue" << std::endl;

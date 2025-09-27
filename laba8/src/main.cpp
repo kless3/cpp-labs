@@ -2,8 +2,6 @@
 #include "../include/Menu.h"
 #include <iostream>
 
-
-
 int main() {
     Queue queue;
     int choice;
