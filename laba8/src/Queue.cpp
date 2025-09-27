@@ -18,7 +18,7 @@ void Queue::copyFrom(const Queue& other) {
     }
 }
 
-Queue::Queue(const Queue& other) : front(nullptr), rear(nullptr), size(0) {
+Queue::Queue(const Queue& other) {
     copyFrom(other);
 }
 
@@ -51,7 +51,7 @@ Queue& Queue::operator=(Queue&& other) noexcept {
 }
 
 void Queue::enqueue(int value) {
-    Node* newNode = new Node(value);
+    auto newNode = new Node(value);
     if (rear == nullptr) {
         front = rear = newNode;
     } else {
@@ -117,9 +117,6 @@ bool Queue::Iterator::hasNext() const {
 }
 
 int Queue::Iterator::getValue() const {
-    if (current == nullptr) {
-        throw std::runtime_error("Iterator is at end");
-    }
     return current->data;
 }
 
@@ -144,7 +141,7 @@ void Algorithm::bubbleSort(Queue& queue) {
     int n = queue.getSize();
     if (n <= 1) return;
 
-    int* arr = new int[n];
+    auto arr = new int[n];
     Queue::Iterator it = queue.getIterator();
     for (int i = 0; i < n; i++) {
         arr[i] = it.getValue();
