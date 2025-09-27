@@ -124,3 +124,47 @@ void Algorithm::bubbleSort(Queue& queue) {
 
     delete[] arr;
 }
+void Queue::copyFrom(const Queue& other) {
+    front = rear = nullptr;
+    size = 0;
+
+    Node* current = other.front;
+    while (current != nullptr) {
+        enqueue(current->data);
+        current = current->next;
+    }
+}
+
+Queue::Queue(const Queue& other) : front(nullptr), rear(nullptr), size(0) {
+    copyFrom(other);
+}
+
+Queue& Queue::operator=(const Queue& other) {
+    if (this != &other) {
+        clear();
+        copyFrom(other);
+    }
+    return *this;
+}
+
+Queue::Queue(Queue&& other) noexcept
+        : front(other.front), rear(other.rear), size(other.size) {
+    other.front = nullptr;
+    other.rear = nullptr;
+    other.size = 0;
+}
+
+Queue& Queue::operator=(Queue&& other) noexcept {
+    if (this != &other) {
+        clear();
+
+        front = other.front;
+        rear = other.rear;
+        size = other.size;
+
+        other.front = nullptr;
+        other.rear = nullptr;
+        other.size = 0;
+    }
+    return *this;
+}

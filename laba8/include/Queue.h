@@ -13,9 +13,22 @@ private:
     Node* front;
     Node* rear;
     int size;
+
+    void copyFrom(const Queue& other);
+
 public:
     Queue();
     ~Queue();
+
+
+    Queue(const Queue& other);
+
+    Queue& operator=(const Queue& other);
+
+    Queue(Queue&& other) noexcept;
+
+    Queue& operator=(Queue&& other) noexcept;
+
     void enqueue(int value);
     int dequeue();
     [[nodiscard]] bool isEmpty() const;
