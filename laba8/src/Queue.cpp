@@ -10,7 +10,7 @@ Queue::~Queue() {
 }
 
 void Queue::enqueue(int value) {
-    Node* newNode = new Node(value);
+    auto newNode = new Node(value);
     if (rear == nullptr) {
         front = rear = newNode;
     } else {
