@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(laba8 src/main.cpp
         include/Queue.h
-        src/Queue.cpp)
+        src/Queue.cpp
+        include/Menu.h
+        src/Menu.cpp)
