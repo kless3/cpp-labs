@@ -1,12 +1,10 @@
 #include "../include/String.h"
 #include "../include/Menu.h"
 #include <iostream>
-#include <clocale>
 
 const int EXIT_OPTION = 7;
 
 int main() {
-    setlocale(LC_ALL, "Rus");
     String currentString;
     int choice = 0;
 
@@ -35,16 +33,11 @@ int main() {
                 handleShowString(currentString);
                 break;
             case 7:
-                std::cout << "Выход из программы..." << std::endl;
+                std::cout << "Exiting program..." << std::endl;
                 break;
             default:
-                std::cout << "Неверный выбор. Попробуйте снова." << std::endl;
+                std::cout << "Invalid choice. Please try again." << std::endl;
                 break;
-        }
-
-        if (choice != EXIT_OPTION) {
-            std::cout << "\nНажмите Enter для продолжения...\n";
-            std::cin.get();
         }
 
     } while (choice != EXIT_OPTION);

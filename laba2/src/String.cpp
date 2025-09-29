@@ -1,5 +1,6 @@
 #include "../include/String.h"
 #include <string_view>
+#include <iostream>
 
 const size_t MAX_LENGTH = 4096;
 
@@ -55,10 +56,12 @@ bool String::operator!() const {
 
 String String::operator()(int start, int count) const {
     if (start < 0 || start >= static_cast<int>(length)) {
-        throw std::out_of_range("Start index out of range");
+        std::cout << "Error: Start index out of range" << std::endl;
+        return String();
     }
     if (count < 0) {
-        throw std::invalid_argument("Count cannot be negative");
+        std::cout << "Error: Count cannot be negative" << std::endl;
+        return String();
     }
 
     auto actualCount = static_cast<size_t>(count);
@@ -77,14 +80,18 @@ String String::operator()(int start, int count) const {
 
 char &String::operator[](int index) {
     if (index < 0 || index >= static_cast<int>(length)) {
-        throw std::out_of_range("Index out of range");
+        std::cout << "Error: Index out of range" << std::endl;
+        static char dummy = '\0';
+        return dummy;
     }
     return data[index];
 }
 
 const char &String::operator[](int index) const {
     if (index < 0 || index >= static_cast<int>(length)) {
-        throw std::out_of_range("Index out of range");
+        std::cout << "Error: Index out of range" << std::endl;
+        static char dummy = '\0';
+        return dummy;
     }
     return data[index];
 }
@@ -114,4 +121,3 @@ String &String::operator=(String &&other) noexcept {
     }
     return *this;
 }
-
