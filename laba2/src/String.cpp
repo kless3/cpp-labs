@@ -57,11 +57,11 @@ bool String::operator!() const {
 String String::operator()(int start, int count) const {
     if (start < 0 || start >= static_cast<int>(length)) {
         std::cout << "Error: Start index out of range" << std::endl;
-        return String();
+        return {};
     }
     if (count < 0) {
         std::cout << "Error: Count cannot be negative" << std::endl;
-        return String();
+        return {};
     }
 
     auto actualCount = static_cast<size_t>(count);
