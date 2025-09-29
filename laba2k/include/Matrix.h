@@ -7,6 +7,7 @@ class Matrix {
 private:
     int rows;
     int cols;
+    int **data;
 
 public:
     explicit Matrix(int r = 0, int c = 0);
@@ -25,7 +26,7 @@ public:
 
     friend Matrix operator+(const Matrix &lhs, const Matrix &rhs) {
         if (lhs.rows != rhs.rows || lhs.cols != rhs.cols) {
-            std::cout << "Error!" << std::endl;
+            std::cout << "Error! Matrices should be equal size" << std::endl;
             exit(1);
         }
 
@@ -83,7 +84,7 @@ public:
         return is;
     }
 
-    int **data;
+
 };
 
 #endif

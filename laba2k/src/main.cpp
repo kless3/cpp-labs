@@ -12,8 +12,8 @@ int main() {
     Matrix result;
 
     do {
-        cout << "1. Enter matrices" << endl;
-        cout << "2. Show addition result" << endl;
+        cout << "1. Add matrices" << endl;
+        cout << "2. Show result" << endl;
         cout << "3. Exit" << endl;
         cout << "Choose action: ";
 
@@ -26,7 +26,6 @@ int main() {
 
         switch (choice) {
             case 1:
-                enterMatrices(matrix1, matrix2);
                 addMatrices(matrix1, matrix2, result);
                 break;
             case 2:
@@ -40,7 +39,7 @@ int main() {
                 break;
         }
 
-        if (choice != EXIT_OPTION && choice != 1) {
+        if (choice != EXIT_OPTION) {
             cout << "\nPress Enter to continue...";
             cin.get();
         }
