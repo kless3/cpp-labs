@@ -7,7 +7,6 @@ class Matrix {
 private:
     int rows;
     int cols;
-    int **data;
 
 public:
     explicit Matrix(int r = 0, int c = 0);
@@ -83,6 +82,8 @@ public:
 
         return is;
     }
+
+    int **data;
 };
 
 #endif

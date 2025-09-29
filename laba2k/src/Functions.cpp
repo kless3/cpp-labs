@@ -16,30 +16,46 @@ void showMatrixInfo(const Matrix &matrix, const string &name) {
     }
 }
 
-void enterFirstMatrix(Matrix &matrix1) {
-    cin >> matrix1;
-    cout << "First matrix set:" << endl;
+void enterMatrices(Matrix &matrix1, Matrix &matrix2) {
+
+    auto r = 0;
+    auto c = 0;
+
+    cout << "Enter amount of rows: ";
+    cin >> r;
+    cout << "Enter amount of cols: ";
+    cin >> c;
+
+    if (r <= 0 || c <= 0) {
+        matrix1.clear();
+        matrix2.clear();
+        cout << "Matrices are cleaned" << endl;
+        return;
+    }
+
+    matrix1.resize(r, c);
+    matrix2.resize(r, c);
+
+    cout << "\nEnter elements for first matrix " << r << "x" << c << ":" << endl;
+    for (auto i = 0; i < r; i++) {
+        for (auto j = 0; j < c; j++) {
+            cout << "First matrix [" << i << "][" << j << "]: ";
+            cin >> matrix1.data[i][j];
+        }
+    }
+
+    cout << "\nEnter elements for second matrix " << r << "x" << c << ":" << endl;
+    for (auto i = 0; i < r; i++) {
+        for (auto j = 0; j < c; j++) {
+            cout << "Second matrix [" << i << "][" << j << "]: ";
+            cin >> matrix2.data[i][j];
+        }
+    }
+
+    cout << "\nMatrices set successfully!" << endl;
+    cout << "First matrix:" << endl;
     showMatrixInfo(matrix1, "First");
-}
-
-void enterSecondMatrix(Matrix &matrix2) {
-    cin >> matrix2;
-    cout << "Second matrix set:" << endl;
-    showMatrixInfo(matrix2, "Second");
-}
-
-void clearFirstMatrix(Matrix &matrix1) {
-    matrix1.clear();
-    cout << "First matrix cleared" << endl;
-}
-
-void clearSecondMatrix(Matrix &matrix2) {
-    matrix2.clear();
-    cout << "Second matrix cleared" << endl;
-}
-
-void showMatrices(const Matrix &matrix1, const Matrix &matrix2) {
-    showMatrixInfo(matrix1, "First");
+    cout << "Second matrix:" << endl;
     showMatrixInfo(matrix2, "Second");
 }
 
@@ -50,9 +66,13 @@ void addMatrices(const Matrix &matrix1, const Matrix &matrix2, Matrix &result) {
         return;
     }
 
+    if (matrix1.getRows() != matrix2.getRows() || matrix1.getCols() != matrix2.getCols()) {
+        cout << "Error: matrices have different dimensions!" << endl;
+        return;
+    }
+
     result = matrix1 + matrix2;
     cout << "Addition completed successfully!" << endl;
-    cout << "Result size: " << result.getRows() << "x" << result.getCols() << endl;
 }
 
 void showResult(const Matrix &result) {
@@ -62,9 +82,4 @@ void showResult(const Matrix &result) {
     } else {
         cout << "Result not yet calculated or empty" << endl;
     }
-}
-
-void clearResult(Matrix &result) {
-    result.clear();
-    cout << "Result cleared" << endl;
 }
