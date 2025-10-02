@@ -12,7 +12,6 @@ int main() {
         displayMenu();
         std::cin >> choice;
         clearInputBuffer();
-
         
         switch (choice) {
             case 1:
