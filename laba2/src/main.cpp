@@ -13,6 +13,7 @@ int main() {
         std::cin >> choice;
         clearInputBuffer();
 
+        
         switch (choice) {
             case 1:
                 handleInputString(currentString);
