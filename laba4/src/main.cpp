@@ -15,13 +15,7 @@ int main() {
     int choice;
 
     do {
-        cout << "1. Show all areas" << endl;
-        cout << "2. Add Rectangle" << endl;
-        cout << "3. Add Circle" << endl;
-        cout << "4. Add Right Triangle" << endl;
-        cout << "5. Add Trapezoid" << endl;
-        cout << "6. Exit" << endl;
-        cout << "Choose option: ";
+        printMenu();
         cin >> choice;
 
         switch (choice) {

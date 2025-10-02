@@ -17,15 +17,6 @@ namespace {
     }
 }
 
-void String::copyFrom(const char *str, size_t len) {
-    data = new char[len + 1];
-    if (str && len > 0) {
-        std::copy(str, str + len, data);
-    }
-    data[len] = '\0';
-    length = len;
-}
-
 String::String() : data(new char[1]) {
     data[0] = '\0';
 }
@@ -120,4 +111,13 @@ String &String::operator=(String &&other) noexcept {
         other.length = 0;
     }
     return *this;
+}
+
+void String::copyFrom(const char *str, size_t len) {
+    data = new char[len + 1];
+    if (str && len > 0) {
+        std::copy(str, str + len, data);
+    }
+    data[len] = '\0';
+    length = len;
 }

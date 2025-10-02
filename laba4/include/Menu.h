@@ -1,5 +1,5 @@
-#ifndef LABA4_MENU_H
-#define LABA4_MENU_H
+#ifndef MENU_H
+#define MENU_H
 
 #include <iostream>
 #include <span>
@@ -23,5 +23,6 @@ void cleanupMemory(Shape **shapes, int shapeCount);
 
 void resizeArray(Shape ***shapes, int shapeCount, int *capacity);
 
+void printMenu();
 
 #endif
