@@ -102,6 +102,16 @@ String::String(String &&other) noexcept
     other.length = 0;
 }
 
+
+void String::copyFrom(const char *str, size_t len) {
+    data = new char[len + 1];
+    if (str && len > 0) {
+        std::copy(str, str + len, data);
+    }
+    data[len] = '\0';
+    length = len;
+}
+
 String &String::operator=(String &&other) noexcept {
     if (this != &other) {
         delete[] data;
@@ -111,13 +121,4 @@ String &String::operator=(String &&other) noexcept {
         other.length = 0;
     }
     return *this;
-}
-
-void String::copyFrom(const char *str, size_t len) {
-    data = new char[len + 1];
-    if (str && len > 0) {
-        std::copy(str, str + len, data);
-    }
-    data[len] = '\0';
-    length = len;
 }
