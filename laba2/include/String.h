@@ -16,6 +16,7 @@ public:
 
     String(String &&other) noexcept;
 
+    String &operator=(String &&other) noexcept;
 
     String();
 
@@ -52,6 +53,5 @@ public:
     }
 };
 
-String &operator=(String &&other) noexcept;
 
 #endif
