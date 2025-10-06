@@ -1,6 +1,18 @@
 #include "../include/Fakultet.h"
 #include <iostream>
 
+Fakultet::Fakultet() : facultyName("Unknown fakultet") {
+    std::cout << "Fakultet constructor: " << facultyName << std::endl;
+}
+
+Fakultet::Fakultet(std::string_view name) : facultyName(name) {
+    std::cout << "Fakultet parameterized constructor: " << facultyName << std::endl;
+}
+
+Fakultet::Fakultet(const Fakultet &other) : facultyName(other.facultyName) {
+    std::cout << "Fakultet copy constructor: " << facultyName << std::endl;
+}
+
 Fakultet::~Fakultet() {
     facultyName.clear();
 }
