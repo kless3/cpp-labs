@@ -22,11 +22,7 @@ bool Queue<T>::enqueue(const T& item) {
     if (isEmpty()) {
         front = rear = newNode;
     } else {
-        if (rear != nullptr) {
-            rear->next = newNode;
-        } else {
-            front = newNode;
-        }
+        rear->next = newNode;
         rear = newNode;
     }
 
