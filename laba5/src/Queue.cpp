@@ -15,19 +15,16 @@ template <typename T>
 bool Queue<T>::enqueue(const T& item) {
     auto* newNode = new Node<T>(item);
 
-    // Всегда проверяем оба указателя
-    if (front == nullptr) {
-        // Очередь пуста - инициализируем оба указателя
+    // Инвариант: либо оба указателя nullptr, либо оба не nullptr
+    if (front == nullptr && rear == nullptr) {
         front = rear = newNode;
-    } else if (rear == nullptr) {
-        // Некорректное состояние - но front не nullptr
-        // Восстанавливаем структуру
-        rear = newNode;
-        front->next = newNode;  // Связываем front с новым узлом
-    } else {
-        // Нормальное состояние - добавляем в конец
+    } else if (front != nullptr && rear != nullptr) {
         rear->next = newNode;
         rear = newNode;
+    } else {
+        // Некорректное состояние - восстанавливаем
+        delete newNode;
+        return false;
     }
 
     count++;
