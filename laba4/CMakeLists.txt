@@ -11,4 +11,7 @@ add_executable(laba4 src/main.cpp
         src/Rectangle.cpp
         src/RightTriangle.cpp
         include/Menu.h
-        src/Menu.cpp)
+        src/Menu.cpp
+        include/Rectangle.h
+        include/RightTriangle.h
+        include/Trapezoid.h)
