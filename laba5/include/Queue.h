@@ -14,6 +14,12 @@ private:
 public:
     Queue() = default;
     ~Queue();
+
+    Queue(const Queue&) = delete;
+    Queue& operator=(const Queue&) = delete;
+    Queue(Queue&&) = delete;
+    Queue& operator=(Queue&&) = delete;
+
     bool enqueue(const T& item);
     bool dequeue(T& result);
     bool peek(T& result);

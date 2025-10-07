@@ -2,15 +2,12 @@
 #define NODE_H
 
 template <typename T>
-class [[maybe_unused]] Node {
+class Node {
 public:
     T data;
-    [[maybe_unused]] Node<T>* next;
+    Node<T>* next = nullptr;
 
-    explicit Node(const T& value);
+    explicit Node(const T& value) : data(value) {}
 };
-
-template<typename T>
-Node<T>::Node(const T &value) : data(value), next(nullptr) {}
 
 #endif
