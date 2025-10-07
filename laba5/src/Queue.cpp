@@ -4,11 +4,7 @@
 #include "../include/Queue.h"
 
 template <typename T>
-Queue<T>::Queue() {
-    front = nullptr;
-    rear = nullptr;
-    count = 0;
-}
+Queue<T>::Queue() : front(nullptr), rear(nullptr), count(0) {}
 
 template <typename T>
 Queue<T>::~Queue() {
@@ -22,7 +18,9 @@ bool Queue<T>::enqueue(const T& item) {
     if (isEmpty()) {
         front = rear = newNode;
     } else {
-        rear->next = newNode;
+        if (rear != nullptr) {
+            rear->next = newNode;
+        }
         rear = newNode;
     }
 
