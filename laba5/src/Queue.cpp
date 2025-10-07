@@ -4,9 +4,6 @@
 #include "../include/Queue.h"
 
 template <typename T>
-Queue<T>::Queue() : front(nullptr), rear(nullptr), count(0) {}
-
-template <typename T>
 Queue<T>::~Queue() {
     clear();
 }
@@ -15,14 +12,13 @@ template <typename T>
 bool Queue<T>::enqueue(const T& item) {
     auto* newNode = new Node<T>(item);
 
-    // Инвариант: либо оба указателя nullptr, либо оба не nullptr
     if (front == nullptr && rear == nullptr) {
         front = rear = newNode;
     } else if (front != nullptr && rear != nullptr) {
         rear->next = newNode;
         rear = newNode;
     } else {
-        // Некорректное состояние - восстанавливаем
+
         delete newNode;
         return false;
     }

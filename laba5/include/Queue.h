@@ -7,12 +7,12 @@
 template <typename T>
 class Queue {
 private:
-    Node<T>* front;
-    Node<T>* rear;
-    int count;
+    Node<T>* front = nullptr;
+    Node<T>* rear = nullptr;
+    int count = 0;
 
 public:
-    Queue();
+    Queue() = default;
     ~Queue();
     bool enqueue(const T& item);
     bool dequeue(T& result);
