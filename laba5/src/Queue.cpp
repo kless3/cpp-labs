@@ -15,9 +15,17 @@ template <typename T>
 bool Queue<T>::enqueue(const T& item) {
     auto* newNode = new Node<T>(item);
 
-    if (isEmpty()) {
+    // Всегда проверяем оба указателя
+    if (front == nullptr) {
+        // Очередь пуста - инициализируем оба указателя
         front = rear = newNode;
+    } else if (rear == nullptr) {
+        // Некорректное состояние - но front не nullptr
+        // Восстанавливаем структуру
+        rear = newNode;
+        front->next = newNode;  // Связываем front с новым узлом
     } else {
+        // Нормальное состояние - добавляем в конец
         rear->next = newNode;
         rear = newNode;
     }
