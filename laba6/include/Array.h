@@ -8,7 +8,7 @@ class IndexOutOfBoundsException : public std::out_of_range {
 public:
     explicit IndexOutOfBoundsException(int index, int size);
 
-    std::string createMessage(int index, int size);
+    static std::string createMessage(int index, int size);
 };
 
 class SafeArray {
@@ -23,7 +23,7 @@ public:
     int& operator[](int index);
     const int& operator[](int index) const;
 
-    int getSize() const;
+    [[nodiscard]] int getSize() const;
 };
 
 #endif

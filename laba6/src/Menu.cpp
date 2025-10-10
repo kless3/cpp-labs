@@ -55,7 +55,7 @@ void workWithArray() {
                     cout << "Invalid choice. Try again." << endl;
             }
         }
-    } catch (const std::exception& e) {
+    } catch (const std::runtime_error& e) {
         cout << "Error creating array: " << e.what() << endl;
     }
 }
