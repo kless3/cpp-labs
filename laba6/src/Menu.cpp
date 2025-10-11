@@ -72,8 +72,6 @@ void workWithArray() {
         cout << "Error creating array: " << e.what() << endl;
     } catch (const std::bad_alloc& e) {
         cout << "Memory allocation error: " << e.what() << endl;
-    } catch (const std::exception& e) {
-        cout << "Unexpected error: " << e.what() << endl;
     }
 }
 
