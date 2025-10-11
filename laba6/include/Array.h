@@ -4,13 +4,6 @@
 #include <stdexcept>
 #include <string>
 
-class IndexOutOfBoundsException : public std::out_of_range {
-public:
-    explicit IndexOutOfBoundsException(int index, int size);
-
-    static std::string createMessage(int index, int size);
-};
-
 class SafeArray {
 private:
     int* data;

@@ -1,4 +1,5 @@
 #include "../include/Menu.h"
+#include "../include/IndexOutOfBoundsException.h"
 #include <iostream>
 
 using namespace std;

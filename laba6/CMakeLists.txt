@@ -7,4 +7,6 @@ add_executable(laba6 src/main.cpp
         include/Array.h
         src/Array.cpp
         include/Menu.h
-        src/Menu.cpp)
+        src/Menu.cpp
+        include/IndexOutOfBoundsException.h
+        src/IndexOutOfBoundsException.cpp)
