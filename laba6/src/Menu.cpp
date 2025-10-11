@@ -4,6 +4,55 @@
 
 using namespace std;
 
+void handleArrayElementAccess(const SafeArray& array) {
+    int index;
+    cout << "Enter index to access: ";
+    cin >> index;
+
+    try {
+        int value = array[index];
+        cout << "Element at index " << index << ": " << value << endl;
+    } catch (const IndexOutOfBoundsException& e) {
+        cout << "Error: " << e.what() << endl;
+    }
+}
+
+void displayArrayElements(const SafeArray& array) {
+    cout << "Array elements: ";
+    for (int i = 0; i < array.getSize(); ++i) {
+        cout << array[i] << " ";
+    }
+    cout << endl;
+}
+
+void handleArrayMenu(const SafeArray& array) {
+    while (true) {
+        cout << "1. Access element by index" << endl;
+        cout << "2. Display all elements" << endl;
+        cout << "3. Back to main menu" << endl;
+        cout << "Enter your choice: ";
+
+        int choice;
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                handleArrayElementAccess(array);
+                break;
+
+            case 2:
+                displayArrayElements(array);
+                break;
+
+            case 3:
+                return;
+
+            default:
+                cout << "Invalid choice. Try again." << endl;
+        }
+    }
+}
+
 void workWithArray() {
     int size;
     cout << "Enter array size: ";
@@ -17,47 +66,14 @@ void workWithArray() {
             cin >> array[i];
         }
 
-        while (true) {
-            cout << "1. Access element by index" << endl;
-            cout << "2. Display all elements" << endl;
-            cout << "3. Back to main menu" << endl;
-            cout << "Enter your choice: ";
+        handleArrayMenu(array);
 
-            int choice;
-            cin >> choice;
-
-            switch (choice) {
-                case 1: {
-                    int index;
-                    cout << "Enter index to access: ";
-                    cin >> index;
-
-                    try {
-                        int value = array[index];
-                        cout << "Element at index " << index << ": " << value << endl;
-                    } catch (const IndexOutOfBoundsException& e) {
-                        cout << "Error: " << e.what() << endl;
-                    }
-                    break;
-                }
-
-                case 2:
-                    cout << "Array elements: ";
-                    for (int i = 0; i < array.getSize(); ++i) {
-                        cout << array[i] << " ";
-                    }
-                    cout << endl;
-                    break;
-
-                case 3:
-                    return;
-
-                default:
-                    cout << "Invalid choice. Try again." << endl;
-            }
-        }
-    } catch (const std::runtime_error& e) {
+    } catch (const std::invalid_argument& e) {
         cout << "Error creating array: " << e.what() << endl;
+    } catch (const std::bad_alloc& e) {
+        cout << "Memory allocation error: " << e.what() << endl;
+    } catch (const std::exception& e) {
+        cout << "Unexpected error: " << e.what() << endl;
     }
 }
 
