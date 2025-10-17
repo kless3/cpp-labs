@@ -6,6 +6,7 @@
 using namespace std;
 
 void inputEmployeesToFile() {
+
     ofstream outFile("employees.txt", ios::app);
     if (!outFile) {
         cout << "Error opening file for writing!" << endl;

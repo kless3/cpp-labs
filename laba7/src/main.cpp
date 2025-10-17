@@ -1,8 +1,10 @@
 #include "../include/Menu.h"
-
+#include <locale>
 const int EXIT_OPTION = 4;
 
 int main() {
+    system("chcp 1251");
+    setlocale(LC_ALL, "Rus");
     int choice;
 
     do {
