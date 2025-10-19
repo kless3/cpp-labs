@@ -4,7 +4,6 @@
 using namespace std;
 
 void printMenu() {
-    cout << "\n=== File Indexer Menu ===" << endl;
     cout << "1. Open file and count words" << endl;
     cout << "2. Get word by index" << endl;
     cout << "3. Show total word count" << endl;

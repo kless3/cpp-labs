@@ -11,7 +11,6 @@ FileIndexer::~FileIndexer() {
     closeFile();
 }
 
-// Move constructor
 FileIndexer::FileIndexer(FileIndexer&& other) noexcept
         : filename(std::move(other.filename)),
           file(other.file),
@@ -22,7 +21,6 @@ FileIndexer::FileIndexer(FileIndexer&& other) noexcept
     other.wordCount = 0;
 }
 
-// Move assignment operator
 FileIndexer& FileIndexer::operator=(FileIndexer&& other) noexcept {
     if (this != &other) {
         closeFile();

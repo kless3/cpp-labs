@@ -18,11 +18,9 @@ public:
     explicit FileIndexer(const std::string& filename);
     ~FileIndexer();
 
-    // Delete copy operations
     FileIndexer(const FileIndexer&) = delete;
     FileIndexer& operator=(const FileIndexer&) = delete;
-
-    // Custom move operations
+    
     FileIndexer(FileIndexer&& other) noexcept;
     FileIndexer& operator=(FileIndexer&& other) noexcept;
 

@@ -1,6 +1,5 @@
 #include <iostream>
 #include "../include/Menu.h"
-#include "../include/FileIndexer.h"
 using namespace std;
 
 const string FILENAME = "test.txt";
