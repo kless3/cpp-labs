@@ -86,9 +86,7 @@ long FileIndexer::calculateWordCount() {
     size_t bytesRead;
     while ((bytesRead = fread(&buffer[0], 1, buffer.size(), file)) > 0) {
         for (size_t i = 0; i < bytesRead; ++i) {
-            bool currentIsWhitespace = isWhitespace(buffer[i]);
-
-            if (currentIsWhitespace && inWord) {
+            if (bool currentIsWhitespace = isWhitespace(buffer[i]); currentIsWhitespace && inWord) {
                 count++;
                 inWord = false;
             } else if (!currentIsWhitespace) {
@@ -124,15 +122,13 @@ long FileIndexer::findWordPosition(long wordIndex) {
 
         bool currentIsWhitespace = isWhitespace(c);
 
-        if (currentIsWhitespace) {
-            if (inWord) {
-                currentWord++;
-                inWord = false;
-                if (currentWord > wordIndex) {
-                    return position;
-                }
+        if (currentIsWhitespace && inWord) {
+            currentWord++;
+            inWord = false;
+            if (currentWord > wordIndex) {
+                return position;
             }
-        } else {
+        } else if (!currentIsWhitespace) {
             if (!inWord && currentWord == wordIndex) {
                 return position;
             }
@@ -180,8 +176,8 @@ bool FileIndexer::writeWord(const std::string& word) {
         return false;
     }
 
-    std::string spaceWord = " " + word;
-    if (fwrite(spaceWord.c_str(), 1, spaceWord.size(), file) != spaceWord.size()) {
+    if (std::string spaceWord = " " + word;
+            fwrite(spaceWord.c_str(), 1, spaceWord.size(), file) != spaceWord.size()) {
         return false;
     }
 
