@@ -1,5 +1,6 @@
 #include "../include/Menu.h"
 #include <iostream>
+#include <utility>
 
 using namespace std;
 
@@ -10,6 +11,26 @@ Menu::Menu(const std::string& filename)
 
 Menu::~Menu() {
     delete indexer;
+}
+
+// Move constructor
+Menu::Menu(Menu&& other) noexcept
+        : filename(std::move(other.filename)),
+          indexer(other.indexer) {
+    other.indexer = nullptr;
+}
+
+// Move assignment operator
+Menu& Menu::operator=(Menu&& other) noexcept {
+    if (this != &other) {
+        delete indexer; // Delete current indexer
+
+        filename = std::move(other.filename);
+        indexer = other.indexer;
+
+        other.indexer = nullptr;
+    }
+    return *this;
 }
 
 void Menu::printMenu() {

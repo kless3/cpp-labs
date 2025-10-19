@@ -22,9 +22,9 @@ public:
     FileIndexer(const FileIndexer&) = delete;
     FileIndexer& operator=(const FileIndexer&) = delete;
 
-    // Default move operations
-    FileIndexer(FileIndexer&&) = default;
-    FileIndexer& operator=(FileIndexer&&) = default;
+    // Custom move operations
+    FileIndexer(FileIndexer&& other) noexcept;
+    FileIndexer& operator=(FileIndexer&& other) noexcept;
 
     bool openFile();
     bool openFileForWrite();

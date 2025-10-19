@@ -1,6 +1,7 @@
 #include "../include/FileIndexer.h"
 #include <cstdio>
 #include <cctype>
+#include <utility>
 
 FileIndexer::FileIndexer(const std::string& filename)
         : filename(filename), file(nullptr), fileSize(0), wordCount(0) {
@@ -8,6 +9,34 @@ FileIndexer::FileIndexer(const std::string& filename)
 
 FileIndexer::~FileIndexer() {
     closeFile();
+}
+
+// Move constructor
+FileIndexer::FileIndexer(FileIndexer&& other) noexcept
+        : filename(std::move(other.filename)),
+          file(other.file),
+          fileSize(other.fileSize),
+          wordCount(other.wordCount) {
+    other.file = nullptr;
+    other.fileSize = 0;
+    other.wordCount = 0;
+}
+
+// Move assignment operator
+FileIndexer& FileIndexer::operator=(FileIndexer&& other) noexcept {
+    if (this != &other) {
+        closeFile(); // Close current file
+
+        filename = std::move(other.filename);
+        file = other.file;
+        fileSize = other.fileSize;
+        wordCount = other.wordCount;
+
+        other.file = nullptr;
+        other.fileSize = 0;
+        other.wordCount = 0;
+    }
+    return *this;
 }
 
 bool FileIndexer::isWhitespace(char c) {

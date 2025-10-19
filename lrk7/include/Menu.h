@@ -21,9 +21,9 @@ public:
     Menu(const Menu&) = delete;
     Menu& operator=(const Menu&) = delete;
 
-    // Default move operations
-    Menu(Menu&&) = default;
-    Menu& operator=(Menu&&) = default;
+    // Custom move operations
+    Menu(Menu&& other) noexcept;
+    Menu& operator=(Menu&& other) noexcept;
 
     void printMenu();
     bool handleChoice(int choice);
