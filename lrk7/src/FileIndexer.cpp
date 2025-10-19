@@ -29,7 +29,7 @@ bool FileIndexer::openFile() {
 }
 
 bool FileIndexer::openFileForWrite() {
-    file = fopen(filename.c_str(), "ab"); // append mode
+    file = fopen(filename.c_str(), "ab");
     if (!file) {
         return false;
     }
@@ -153,31 +153,13 @@ bool FileIndexer::writeWord(const std::string& word) {
         }
     }
 
-    if (fprintf(file, " %s", word.c_str()) < 0) {
+    std::string spaceWord = " " + word;
+    if (fwrite(spaceWord.c_str(), 1, spaceWord.size(), file) != spaceWord.size()) {
         return false;
     }
 
     fflush(file);
     return true;
-}
-
-bool FileIndexer::writeWords(const std::string& words) {
-    if (!file) {
-        if (!openFileForWrite()) {
-            return false;
-        }
-    }
-
-    if (fprintf(file, " %s", words.c_str()) < 0) {
-        return false;
-    }
-
-    fflush(file);
-    return true;
-}
-
-bool FileIndexer::appendWord(const std::string& word) {
-    return writeWord(word);
 }
 
 long FileIndexer::getWordCount() const {
