@@ -14,8 +14,16 @@ private:
     void handleWriteWord();
 
 public:
-    Menu(const std::string& filename);
+    explicit Menu(const std::string& filename);
     ~Menu();
+
+    // Delete copy operations
+    Menu(const Menu&) = delete;
+    Menu& operator=(const Menu&) = delete;
+
+    // Default move operations
+    Menu(Menu&&) = default;
+    Menu& operator=(Menu&&) = default;
 
     void printMenu();
     bool handleChoice(int choice);

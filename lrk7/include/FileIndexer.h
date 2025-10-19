@@ -15,8 +15,16 @@ private:
     long findWordPosition(long wordIndex);
 
 public:
-    FileIndexer(const std::string& filename);
+    explicit FileIndexer(const std::string& filename);
     ~FileIndexer();
+
+    // Delete copy operations
+    FileIndexer(const FileIndexer&) = delete;
+    FileIndexer& operator=(const FileIndexer&) = delete;
+
+    // Default move operations
+    FileIndexer(FileIndexer&&) = default;
+    FileIndexer& operator=(FileIndexer&&) = default;
 
     bool openFile();
     bool openFileForWrite();
