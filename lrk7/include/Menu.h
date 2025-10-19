@@ -1,11 +1,11 @@
 #ifndef MENU_H
 #define MENU_H
 
-#include "../include/FileIndexer.h"
+#include "FileIndexer.h"
 
 class Menu {
 private:
-    FileIndexer* indexer;
+    FileIndexer* indexer = nullptr;
     std::string filename;
 
     void handleOpenFile();

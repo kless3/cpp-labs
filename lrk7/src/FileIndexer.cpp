@@ -4,7 +4,8 @@
 #include <utility>
 
 FileIndexer::FileIndexer(const std::string& filename)
-        : filename(filename), file(nullptr), fileSize(0), wordCount(0) {
+        : filename(filename) {
+    // file, fileSize, wordCount инициализируются в-class инициализаторами
 }
 
 FileIndexer::~FileIndexer() {
@@ -39,7 +40,7 @@ FileIndexer& FileIndexer::operator=(FileIndexer&& other) noexcept {
     return *this;
 }
 
-bool FileIndexer::isWhitespace(char c) {
+bool FileIndexer::isWhitespace(char c) const {
     return std::isspace(static_cast<unsigned char>(c));
 }
 

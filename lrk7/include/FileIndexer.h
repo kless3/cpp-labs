@@ -6,11 +6,11 @@
 class FileIndexer {
 private:
     std::string filename;
-    FILE* file;
-    long fileSize;
-    long wordCount;
+    FILE* file = nullptr;
+    long fileSize = 0;
+    long wordCount = 0;
 
-    bool isWhitespace(char c);
+    bool isWhitespace(char c) const;
     long calculateWordCount();
     long findWordPosition(long wordIndex);
 
