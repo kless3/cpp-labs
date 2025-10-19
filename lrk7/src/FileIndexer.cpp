@@ -86,10 +86,12 @@ long FileIndexer::calculateWordCount() {
     size_t bytesRead;
     while ((bytesRead = fread(&buffer[0], 1, buffer.size(), file)) > 0) {
         for (size_t i = 0; i < bytesRead; ++i) {
-            if (bool currentIsWhitespace = isWhitespace(buffer[i]); currentIsWhitespace && inWord) {
-                count++;
-                inWord = false;
-            } else if (!currentIsWhitespace) {
+            if (bool currentIsWhitespace = isWhitespace(buffer[i]); currentIsWhitespace) {
+                if (inWord) {
+                    count++;
+                    inWord = false;
+                }
+            } else {
                 inWord = true;
             }
         }
