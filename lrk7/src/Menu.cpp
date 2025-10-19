@@ -1,39 +1,9 @@
 #include "../include/Menu.h"
 #include <iostream>
-#include <utility>
 
 using namespace std;
 
-Menu::Menu(const std::string& filename)
-        : filename(filename) {
-    indexer = new FileIndexer(filename);
-}
-
-Menu::~Menu() {
-    delete indexer;
-}
-
-// Move constructor
-Menu::Menu(Menu&& other) noexcept
-        : filename(std::move(other.filename)),
-          indexer(other.indexer) {
-    other.indexer = nullptr;
-}
-
-// Move assignment operator
-Menu& Menu::operator=(Menu&& other) noexcept {
-    if (this != &other) {
-        delete indexer; // Delete current indexer
-
-        filename = std::move(other.filename);
-        indexer = other.indexer;
-
-        other.indexer = nullptr;
-    }
-    return *this;
-}
-
-void Menu::printMenu() {
+void printMenu() {
     cout << "\n=== File Indexer Menu ===" << endl;
     cout << "1. Open file and count words" << endl;
     cout << "2. Get word by index" << endl;
@@ -43,33 +13,36 @@ void Menu::printMenu() {
     cout << "Choose option: ";
 }
 
-void Menu::handleOpenFile() {
-    if (indexer->openFile()) {
+bool handleOpenFile(FileIndexer& indexer, const std::string& filename) {
+    if (indexer.openFile()) {
         cout << "File opened successfully for reading!" << endl;
-        cout << "Total words in file: " << indexer->getWordCount() << endl;
+        cout << "Total words in file: " << indexer.getWordCount() << endl;
+        return true;
     } else {
         cout << "Error: Could not open file '" << filename << "'" << endl;
         cout << "Creating new file..." << endl;
-        if (indexer->openFileForWrite()) {
+        if (indexer.openFileForWrite()) {
             cout << "New file created successfully!" << endl;
-            indexer->closeFile();
+            indexer.closeFile();
+            return true;
         } else {
             cout << "Error: Could not create file" << endl;
+            return false;
         }
     }
 }
 
-void Menu::handleGetWord() {
-    if (!indexer->openFile()) {
+bool handleGetWord(FileIndexer& indexer) {
+    if (!indexer.openFile()) {
         cout << "Error: Could not open file for reading." << endl;
-        return;
+        return false;
     }
 
-    long wordCount = indexer->getWordCount();
+    long wordCount = indexer.getWordCount();
     if (wordCount == 0) {
         cout << "File is empty or could not read word count." << endl;
-        indexer->closeFile();
-        return;
+        indexer.closeFile();
+        return false;
     }
 
     long index;
@@ -77,43 +50,60 @@ void Menu::handleGetWord() {
     cin >> index;
 
     if (index >= 0 && index < wordCount) {
-        string word = (*indexer)[index];
+        string word = indexer[index];
         cout << "Word at index " << index << ": '" << word << "'" << endl;
+        indexer.closeFile();
+        return true;
     } else {
         cout << "Error: Invalid index. Must be between 0 and " << wordCount - 1 << endl;
+        indexer.closeFile();
+        return false;
     }
-    indexer->closeFile();
 }
 
-void Menu::handleShowWordCount() {
-    if (indexer->openFile()) {
-        cout << "Total words in file: " << indexer->getWordCount() << endl;
-        indexer->closeFile();
+bool handleShowWordCount(FileIndexer& indexer) {
+    if (indexer.openFile()) {
+        cout << "Total words in file: " << indexer.getWordCount() << endl;
+        indexer.closeFile();
+        return true;
     } else {
         cout << "Error: Could not open file for reading." << endl;
+        return false;
     }
 }
 
-void Menu::handleWriteWord() {
+bool handleWriteWord(FileIndexer& indexer) {
     string word;
     cout << "Enter word to write: ";
     getline(cin, word);
 
-    if (indexer->writeWord(word)) {
+    if (indexer.writeWord(word)) {
         cout << "Word '" << word << "' successfully written to file!" << endl;
+        return true;
     } else {
         cout << "Error: Could not write word to file." << endl;
+        return false;
     }
 }
 
-bool Menu::handleChoice(int choice) {
+bool handleChoice(FileIndexer& indexer, const std::string& filename, int choice) {
     switch (choice) {
-        case 1: handleOpenFile(); break;
-        case 2: handleGetWord(); break;
-        case 3: handleShowWordCount(); break;
-        case 4: handleWriteWord(); break;
-        case 5: return false;
-        default: cout << "Invalid choice. Please try again." << endl;
+        case 1:
+            handleOpenFile(indexer, filename);
+            break;
+        case 2:
+            handleGetWord(indexer);
+            break;
+        case 3:
+            handleShowWordCount(indexer);
+            break;
+        case 4:
+            handleWriteWord(indexer);
+            break;
+        case 5:
+            return false;
+        default:
+            cout << "Invalid choice. Please try again." << endl;
     }
     return true;
 }

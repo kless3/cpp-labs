@@ -1,21 +1,23 @@
 #include <iostream>
 #include "../include/Menu.h"
-
+#include "../include/FileIndexer.h"
 using namespace std;
 
+const string FILENAME = "test.txt";
+
 int main() {
-    string filename = "test.txt";
-    Menu menu(filename);
+    string filename = FILENAME;
+    FileIndexer indexer(filename);
     int choice;
 
     cout << "File Indexer using " << filename << " as default file" << endl;
 
     do {
-        menu.printMenu();
+        printMenu();
         cin >> choice;
         cin.ignore();
 
-    } while (menu.handleChoice(choice));
+    } while (handleChoice(indexer, filename, choice));
 
     cout << "Goodbye!" << endl;
     return 0;
