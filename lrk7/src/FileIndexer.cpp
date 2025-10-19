@@ -5,7 +5,6 @@
 
 FileIndexer::FileIndexer(const std::string& filename)
         : filename(filename) {
-    // file, fileSize, wordCount инициализируются в-class инициализаторами
 }
 
 FileIndexer::~FileIndexer() {
@@ -26,7 +25,7 @@ FileIndexer::FileIndexer(FileIndexer&& other) noexcept
 // Move assignment operator
 FileIndexer& FileIndexer::operator=(FileIndexer&& other) noexcept {
     if (this != &other) {
-        closeFile(); // Close current file
+        closeFile();
 
         filename = std::move(other.filename);
         file = other.file;
@@ -74,23 +73,25 @@ void FileIndexer::closeFile() {
 }
 
 long FileIndexer::calculateWordCount() {
-    if (!file || fileSize == 0) return 0;
+    if (!file || fileSize == 0) {
+        return 0;
+    }
 
     long count = 0;
     bool inWord = false;
-    char buffer[1024];
+    std::string buffer(1024, '\0');
 
     fseek(file, 0, SEEK_SET);
 
     size_t bytesRead;
-    while ((bytesRead = fread(buffer, 1, sizeof(buffer), file)) > 0) {
+    while ((bytesRead = fread(&buffer[0], 1, buffer.size(), file)) > 0) {
         for (size_t i = 0; i < bytesRead; ++i) {
-            if (isWhitespace(buffer[i])) {
-                if (inWord) {
-                    count++;
-                    inWord = false;
-                }
-            } else {
+            bool currentIsWhitespace = isWhitespace(buffer[i]);
+
+            if (currentIsWhitespace && inWord) {
+                count++;
+                inWord = false;
+            } else if (!currentIsWhitespace) {
                 inWord = true;
             }
         }
@@ -121,7 +122,9 @@ long FileIndexer::findWordPosition(long wordIndex) {
             break;
         }
 
-        if (isWhitespace(c)) {
+        bool currentIsWhitespace = isWhitespace(c);
+
+        if (currentIsWhitespace) {
             if (inWord) {
                 currentWord++;
                 inWord = false;
@@ -139,11 +142,7 @@ long FileIndexer::findWordPosition(long wordIndex) {
         position++;
     }
 
-    if (inWord && currentWord == wordIndex) {
-        return position;
-    }
-
-    return -1;
+    return (inWord && currentWord == wordIndex) ? position : -1;
 }
 
 std::string FileIndexer::operator[](long wordIndex) {
@@ -177,10 +176,8 @@ std::string FileIndexer::operator[](long wordIndex) {
 }
 
 bool FileIndexer::writeWord(const std::string& word) {
-    if (!file) {
-        if (!openFileForWrite()) {
-            return false;
-        }
+    if (!file && !openFileForWrite()) {
+        return false;
     }
 
     std::string spaceWord = " " + word;
