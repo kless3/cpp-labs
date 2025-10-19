@@ -19,8 +19,12 @@ public:
     ~FileIndexer();
 
     bool openFile();
+    bool openFileForWrite();
     void closeFile();
     std::string operator[](long wordIndex);
+    bool writeWord(const std::string& word);
+    bool writeWords(const std::string& words);
+    bool appendWord(const std::string& word);
     long getWordCount() const;
 };
 

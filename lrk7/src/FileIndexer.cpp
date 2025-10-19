@@ -28,6 +28,14 @@ bool FileIndexer::openFile() {
     return true;
 }
 
+bool FileIndexer::openFileForWrite() {
+    file = fopen(filename.c_str(), "ab"); // append mode
+    if (!file) {
+        return false;
+    }
+    return true;
+}
+
 void FileIndexer::closeFile() {
     if (file) {
         fclose(file);
@@ -136,6 +144,40 @@ std::string FileIndexer::operator[](long wordIndex) {
     }
 
     return word;
+}
+
+bool FileIndexer::writeWord(const std::string& word) {
+    if (!file) {
+        if (!openFileForWrite()) {
+            return false;
+        }
+    }
+
+    if (fprintf(file, " %s", word.c_str()) < 0) {
+        return false;
+    }
+
+    fflush(file);
+    return true;
+}
+
+bool FileIndexer::writeWords(const std::string& words) {
+    if (!file) {
+        if (!openFileForWrite()) {
+            return false;
+        }
+    }
+
+    if (fprintf(file, " %s", words.c_str()) < 0) {
+        return false;
+    }
+
+    fflush(file);
+    return true;
+}
+
+bool FileIndexer::appendWord(const std::string& word) {
+    return writeWord(word);
 }
 
 long FileIndexer::getWordCount() const {
