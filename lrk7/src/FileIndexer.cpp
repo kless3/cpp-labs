@@ -120,9 +120,7 @@ long FileIndexer::findWordPosition(long wordIndex) {
             break;
         }
 
-        bool currentIsWhitespace = isWhitespace(c);
-
-        if (currentIsWhitespace && inWord) {
+        if (bool currentIsWhitespace = isWhitespace(c); currentIsWhitespace && inWord) {
             currentWord++;
             inWord = false;
             if (currentWord > wordIndex) {
@@ -138,7 +136,11 @@ long FileIndexer::findWordPosition(long wordIndex) {
         position++;
     }
 
-    return (inWord && currentWord == wordIndex) ? position : -1;
+    if (inWord && currentWord == wordIndex) {
+        return position;
+    } else {
+        return -1;
+    }
 }
 
 std::string FileIndexer::operator[](long wordIndex) {
