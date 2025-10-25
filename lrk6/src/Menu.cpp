@@ -164,7 +164,7 @@ void demonstrateFileIndexing(const std::string& filename) {
             std::cout << "\n--- Студент #" << i << " из файла ---" << std::endl;
             Student student = studentFile[i];
             student.display();
-        } catch (const std::exception& e) {
+        } catch (const std::invalid_argument& e) {
             std::cout << "Ошибка при доступе к студенту #" << i << ": " << e.what() << std::endl;
         }
     }
@@ -180,7 +180,7 @@ void demonstrateFileIndexing(const std::string& filename) {
         Student specificStudent = studentFile[index];
         std::cout << "\n--- Найденный студент ---" << std::endl;
         specificStudent.display();
-    } catch (const std::exception& e) {
+    } catch (const std::invalid_argument& e) {
         std::cout << "Ошибка: " << e.what() << std::endl;
     }
 }
