@@ -9,7 +9,7 @@ StudentFile::StudentFile(std::string  filename) : filename(std::move(filename)) 
 Student StudentFile::operator[](int index) const {
     std::ifstream file(filename, std::ios::binary);
     if (!file.is_open()) {
-        throw std::runtime_error("Не удалось открыть файл: " + filename);
+        throw std::invalid_argument("Не удалось открыть файл: " + filename);
     }
 
     std::string countStr;
@@ -18,7 +18,7 @@ Student StudentFile::operator[](int index) const {
 
     if (index < 0 || index >= studentCount) {
         file.close();
-        throw std::out_of_range("Индекс студента вне диапазона: " + std::to_string(index));
+        throw std::out_of_range("Индекс студента вне диапазона");
     }
 
     for (int i = 0; i <= index; i++) {
@@ -61,6 +61,7 @@ Student StudentFile::operator[](int index) const {
     }
 
     file.close();
+    throw std::invalid_argument("Студент не найден");
 }
 
 int StudentFile::getStudentCount() const {
