@@ -1,7 +1,7 @@
 #include "../include/Menu.h"
 #include <iostream>
 #include <span>
-#include <windows.h>
+#include <Windows.h>
 
 const int EXIT_OPTION = 6;
 const std::string DATA_FILE = "students.txt";
