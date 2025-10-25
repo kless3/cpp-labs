@@ -14,64 +14,38 @@ Student StudentFile::operator[](int index) const {
 
     std::string countStr;
     std::getline(file, countStr);
-    int studentCount = std::stoi(countStr);
-
-    if (index < 0 || index >= studentCount) {
+    if (int studentCount = std::stoi(countStr); index < 0 || index >= studentCount) {
         file.close();
         throw std::out_of_range("Индекс студента вне диапазона");
     }
 
-    for (int i = 0; i <= index; i++) {
-        Student student;
+    file.seekg(0, std::ios::beg);
+    std::getline(file, countStr);
 
-        std::string name;
-        std::getline(file, name);
-        student.setFullName(name);
+    int studentCount = std::stoi(countStr);
+    auto* students = new Student[studentCount];
 
-        std::string yearStr;
-        std::getline(file, yearStr);
-        student.setBirthYear(std::stoi(yearStr));
-
-        std::string faculty;
-        std::getline(file, faculty);
-        student.setFacultyName(faculty);
-
-        std::string examCountStr;
-        std::getline(file, examCountStr);
-        int examCount = std::stoi(examCountStr);
-
-        if (examCount > 0) {
-            std::string resultsLine;
-            std::getline(file, resultsLine);
-
-            auto results = new int[examCount];
-            std::istringstream iss(resultsLine);
-            for (int j = 0; j < examCount; ++j) {
-                iss >> results[j];
-            }
-
-            student.setExamResults(results, examCount);
-            delete[] results;
-        }
-
-        if (i == index) {
-            file.close();
-            return student;
-        }
+    for (int i = 0; i < studentCount; i++) {
+        students[i].loadFromFile(file);
     }
 
     file.close();
-    throw std::invalid_argument("Студент не найден");
+
+    auto result = students[index];
+    delete[] students;
+
+    return result;
 }
 
 int StudentFile::getStudentCount() const {
-    std::ifstream file(filename);
+    std::ifstream file(filename, std::ios::binary);
     if (!file.is_open() || file.peek() == std::ifstream::traits_type::eof()) {
         return 0;
     }
 
-    int studentCount;
-    file >> studentCount;
+    std::string countStr;
+    std::getline(file, countStr);
     file.close();
-    return studentCount;
+
+    return std::stoi(countStr);
 }
