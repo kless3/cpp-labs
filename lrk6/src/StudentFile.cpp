@@ -44,7 +44,7 @@ Student StudentFile::operator[](int index) const {
             std::string resultsLine;
             std::getline(file, resultsLine);
 
-            int* results = new int[examCount];
+            auto results = new int[examCount];
             std::istringstream iss(resultsLine);
             for (int j = 0; j < examCount; ++j) {
                 iss >> results[j];
@@ -61,7 +61,6 @@ Student StudentFile::operator[](int index) const {
     }
 
     file.close();
-    throw std::runtime_error("Студент не найден");
 }
 
 int StudentFile::getStudentCount() const {

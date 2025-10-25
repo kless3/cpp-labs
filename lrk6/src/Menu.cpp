@@ -101,7 +101,7 @@ void displayStudents(std::span<Student *> studentsSpan) {
     }
 }
 
-void saveStudentsToFile(const std::string& filename, std::span<Student*> students) {
+void saveStudentsToFile(const std::string &filename, std::span<Student *> students) {
     std::ofstream file(filename, std::ios::binary);
     if (!file.is_open()) {
         std::cout << "Ошибка: не удалось открыть файл для записи!" << std::endl;
@@ -110,7 +110,7 @@ void saveStudentsToFile(const std::string& filename, std::span<Student*> student
 
     file << students.size() << std::endl;
 
-    for (const auto& student : students) {
+    for (const auto &student: students) {
         student->saveToFile(file);
     }
 
@@ -118,7 +118,7 @@ void saveStudentsToFile(const std::string& filename, std::span<Student*> student
     std::cout << "Студенты успешно сохранены в файл: " << filename << std::endl;
 }
 
-void loadStudentsFromFile(const std::string& filename, std::span<Student*>& studentsSpan, int& studentCount) {
+void loadStudentsFromFile(const std::string &filename, std::span<Student *> &studentsSpan, int &studentCount) {
     std::ifstream file(filename, std::ios::binary);
     if (!file.is_open()) {
         std::cout << "Ошибка: не удалось открыть файл для чтения!" << std::endl;
@@ -134,20 +134,21 @@ void loadStudentsFromFile(const std::string& filename, std::span<Student*>& stud
     std::getline(file, countStr);
     int count = std::stoi(countStr);
 
-    auto** newStudents = new Student*[count];
+    auto **newStudents = new Student *[count];
 
     for (int i = 0; i < count; ++i) {
         newStudents[i] = new Student();
         newStudents[i]->loadFromFile(file);
     }
 
-    studentsSpan = std::span<Student*>(newStudents, count);
+    studentsSpan = std::span<Student *>(newStudents, count);
     studentCount = count;
 
     file.close();
     std::cout << "Студенты успешно загружены из файла: " << filename << std::endl;
 }
-void demonstrateFileIndexing(const std::string& filename) {
+
+void demonstrateFileIndexing(const std::string &filename) {
     StudentFile studentFile(filename);
 
     int studentCount = studentFile.getStudentCount();
@@ -160,13 +161,9 @@ void demonstrateFileIndexing(const std::string& filename) {
     std::cout << "Всего студентов в файле: " << studentCount << std::endl;
 
     for (int i = 0; i < studentCount; i++) {
-        try {
-            std::cout << "\n--- Студент #" << i << " из файла ---" << std::endl;
-            Student student = studentFile[i];
-            student.display();
-        } catch (const std::invalid_argument& e) {
-            std::cout << "Ошибка при доступе к студенту #" << i << ": " << e.what() << std::endl;
-        }
+        std::cout << "\n--- Студент #" << i << " из файла ---" << std::endl;
+        Student student = studentFile[i];
+        student.display();
     }
 
     std::cout << "\nДоступ к конкретному студенту по индексу" << std::endl;
@@ -176,11 +173,7 @@ void demonstrateFileIndexing(const std::string& filename) {
     std::cin >> index;
     clearInputBuffer();
 
-    try {
-        Student specificStudent = studentFile[index];
-        std::cout << "\n--- Найденный студент ---" << std::endl;
-        specificStudent.display();
-    } catch (const std::invalid_argument& e) {
-        std::cout << "Ошибка: " << e.what() << std::endl;
-    }
+    Student specificStudent = studentFile[index];
+    std::cout << "\n--- Найденный студент ---" << std::endl;
+    specificStudent.display();
 }
