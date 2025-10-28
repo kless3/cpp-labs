@@ -12,7 +12,7 @@ void displayMenu() {
     std::cout << "2. Показать все объекты" << std::endl;
     std::cout << "3. Сохранить объекты в файл" << std::endl;
     std::cout << "4. Загрузить объекты из файла" << std::endl;
-    std::cout << "5. Доступ к объектам из файла через operator[]" << std::endl;
+    std::cout << "5. Доступ к объектам из файла через []" << std::endl;
     std::cout << "6. Выход" << std::endl;
     std::cout << "Выберите действие: ";
 }
