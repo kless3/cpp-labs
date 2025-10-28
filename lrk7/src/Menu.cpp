@@ -37,7 +37,8 @@ void addObject(std::span<Object*>& objectsSpan, int& objectCount) {
 
     switch (typeChoice) {
         case 1: {
-            std::string name, breed;
+            std::string breed;
+            std::string name;
             int age;
 
             std::cout << "¬ведите им€ кота: ";
@@ -52,7 +53,8 @@ void addObject(std::span<Object*>& objectsSpan, int& objectCount) {
             break;
         }
         case 2: {
-            std::string brand, model;
+            std::string model;
+            std::string brand;
             int year;
             double price;
 
@@ -70,7 +72,8 @@ void addObject(std::span<Object*>& objectsSpan, int& objectCount) {
             break;
         }
         case 3: {
-            std::string color, variety;
+            std::string color;
+            std::string variety;
             int bloomLevel;
             bool hasThorns;
 
