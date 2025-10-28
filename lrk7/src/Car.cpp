@@ -26,42 +26,6 @@ Car& Car::operator=(const Car& other) {
     return *this;
 }
 
-void Car::setBrand(std::string_view brand) {
-    this->brand = brand;
-}
-
-void Car::setModel(std::string_view model) {
-    this->model = model;
-}
-
-void Car::setYear(int year) {
-    if (year >= 1900 && year <= 2030) {
-        this->year = year;
-    }
-}
-
-void Car::setPrice(double price) {
-    if (price >= 0) {
-        this->price = price;
-    }
-}
-
-std::string Car::getBrand() const {
-    return brand;
-}
-
-std::string Car::getModel() const {
-    return model;
-}
-
-int Car::getYear() const {
-    return year;
-}
-
-double Car::getPrice() const {
-    return price;
-}
-
 void Car::display() const {
     std::cout << "=== Автомобиль ===" << std::endl;
     std::cout << "Марка: " << brand << std::endl;
@@ -71,7 +35,7 @@ void Car::display() const {
 }
 
 void Car::saveToFile(std::ofstream& file) const {
-    file << "CAR" << std::endl; // Идентификатор типа
+    file << "CAR" << std::endl;
     file << brand << std::endl;
     file << model << std::endl;
     file << year << std::endl;

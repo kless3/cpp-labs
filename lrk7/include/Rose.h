@@ -9,7 +9,7 @@ class Rose : public Object {
 private:
     std::string color;
     std::string variety;
-    int bloomLevel; // 1-10 уровень цветения
+    int bloomLevel;
     bool hasThorns;
 
 public:
@@ -19,16 +19,6 @@ public:
     ~Rose() override;
 
     Rose& operator=(const Rose& other);
-
-    void setColor(std::string_view color);
-    void setVariety(std::string_view variety);
-    void setBloomLevel(int bloomLevel);
-    void setHasThorns(bool hasThorns);
-
-    std::string getColor() const;
-    std::string getVariety() const;
-    int getBloomLevel() const;
-    bool getHasThorns() const;
 
     void display() const override;
     void saveToFile(std::ofstream& file) const override;

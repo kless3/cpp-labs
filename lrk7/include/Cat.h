@@ -19,14 +19,6 @@ public:
 
     Cat& operator=(const Cat& other);
 
-    void setName(std::string_view name);
-    void setBreed(std::string_view breed);
-    void setAge(int age);
-
-    std::string getName() const;
-    std::string getBreed() const;
-    int getAge() const;
-
     void display() const override;
     void saveToFile(std::ofstream& file) const override;
     void loadFromFile(std::ifstream& file) override;

@@ -4,7 +4,6 @@
 #include "../include/Rose.h"
 #include <fstream>
 #include <stdexcept>
-#include <sstream>
 
 ObjectFile::ObjectFile(std::string filename) : filename(std::move(filename)) {}
 
@@ -21,12 +20,10 @@ Object* ObjectFile::operator[](int index) const {
         throw std::out_of_range("Индекс объекта вне диапазона");
     }
 
-    // Пропускаем первые index объектов
     for (int i = 0; i < index; i++) {
         std::string type;
-        std::getline(file, type); // Читаем тип
+        std::getline(file, type);
 
-        // Пропускаем остальные поля объекта
         if (type == "CAT") {
             for (int j = 0; j < 3; j++) std::getline(file, type);
         } else if (type == "CAR") {
@@ -36,7 +33,6 @@ Object* ObjectFile::operator[](int index) const {
         }
     }
 
-    // Читаем нужный объект
     std::string type;
     std::getline(file, type);
 

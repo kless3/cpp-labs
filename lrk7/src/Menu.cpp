@@ -22,7 +22,7 @@ void clearInputBuffer() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-void addObject(std::span<Object*>& objectsSpan, int& objectCount) {
+void addObject(std::span<Object *> &objectsSpan, int &objectCount) {
     std::cout << "Выберите тип объекта:" << std::endl;
     std::cout << "1. Кот" << std::endl;
     std::cout << "2. Автомобиль" << std::endl;
@@ -33,7 +33,7 @@ void addObject(std::span<Object*>& objectsSpan, int& objectCount) {
     std::cin >> typeChoice;
     clearInputBuffer();
 
-    Object* newObject = nullptr;
+    Object *newObject = nullptr;
 
     switch (typeChoice) {
         case 1: {
@@ -96,8 +96,8 @@ void addObject(std::span<Object*>& objectsSpan, int& objectCount) {
     }
 
     if (newObject) {
-        Object** oldObjects = objectsSpan.data();
-        auto** newObjects = new Object*[objectCount + 1];
+        Object **oldObjects = objectsSpan.data();
+        auto **newObjects = new Object *[objectCount + 1];
 
         for (int i = 0; i < objectCount; ++i) {
             newObjects[i] = oldObjects[i];
@@ -106,25 +106,25 @@ void addObject(std::span<Object*>& objectsSpan, int& objectCount) {
         newObjects[objectCount] = newObject;
         delete[] oldObjects;
 
-        objectsSpan = std::span<Object*>(newObjects, objectCount + 1);
+        objectsSpan = std::span<Object *>(newObjects, objectCount + 1);
         objectCount++;
 
         std::cout << "Объект успешно добавлен!" << std::endl;
     }
 }
 
-void displayObjects(std::span<Object*> objectsSpan) {
+void displayObjects(std::span<Object *> objectsSpan) {
     if (objectsSpan.empty()) {
         std::cout << "Нет объектов для отображения." << std::endl;
     } else {
-        for (const auto& object : objectsSpan) {
+        for (const auto &object: objectsSpan) {
             object->display();
             std::cout << "-------------------" << std::endl;
         }
     }
 }
 
-void saveObjectsToFile(const std::string& filename, std::span<Object*> objects) {
+void saveObjectsToFile(const std::string &filename, std::span<Object *> objects) {
     std::ofstream file(filename);
     if (!file.is_open()) {
         std::cout << "Ошибка: не удалось открыть файл для записи!" << std::endl;
@@ -133,7 +133,7 @@ void saveObjectsToFile(const std::string& filename, std::span<Object*> objects) 
 
     file << objects.size() << std::endl;
 
-    for (const auto& object : objects) {
+    for (const auto &object: objects) {
         object->saveToFile(file);
     }
 
@@ -141,14 +141,13 @@ void saveObjectsToFile(const std::string& filename, std::span<Object*> objects) 
     std::cout << "Объекты успешно сохранены в файл: " << filename << std::endl;
 }
 
-void loadObjectsFromFile(const std::string& filename, std::span<Object*>& objectsSpan, int& objectCount) {
+void loadObjectsFromFile(const std::string &filename, std::span<Object *> &objectsSpan, int &objectCount) {
     std::ifstream file(filename);
     if (!file.is_open()) {
         std::cout << "Ошибка: не удалось открыть файл для чтения!" << std::endl;
         return;
     }
 
-    // Очищаем старые объекты
     for (int i = 0; i < objectCount; ++i) {
         delete objectsSpan[i];
     }
@@ -158,7 +157,7 @@ void loadObjectsFromFile(const std::string& filename, std::span<Object*>& object
     std::getline(file, countStr);
     int count = std::stoi(countStr);
 
-    auto** newObjects = new Object*[count];
+    auto **newObjects = new Object *[count];
 
     for (int i = 0; i < count; ++i) {
         std::string type;
@@ -179,14 +178,14 @@ void loadObjectsFromFile(const std::string& filename, std::span<Object*>& object
         newObjects[i]->loadFromFile(file);
     }
 
-    objectsSpan = std::span<Object*>(newObjects, count);
+    objectsSpan = std::span<Object *>(newObjects, count);
     objectCount = count;
 
     file.close();
     std::cout << "Объекты успешно загружены из файла: " << filename << std::endl;
 }
 
-void demonstrateFileIndexing(const std::string& filename) {
+void demonstrateFileIndexing(const std::string &filename) {
     ObjectFile objectFile(filename);
 
     int objectCount = objectFile.getObjectCount();
@@ -201,10 +200,10 @@ void demonstrateFileIndexing(const std::string& filename) {
     for (int i = 0; i < objectCount; i++) {
         try {
             std::cout << "\n--- Объект #" << i << " из файла ---" << std::endl;
-            Object* object = objectFile[i];
+            Object *object = objectFile[i];
             object->display();
-            delete object; // Важно: удаляем объект после использования
-        } catch (const std::invalid_argument& e) {
+            delete object;
+        } catch (const std::invalid_argument &e) {
             std::cout << "Ошибка при доступе к объекту #" << i << ": " << e.what() << std::endl;
         }
     }
@@ -216,12 +215,8 @@ void demonstrateFileIndexing(const std::string& filename) {
     std::cin >> index;
     clearInputBuffer();
 
-    try {
-        Object* specificObject = objectFile[index];
-        std::cout << "\n--- Найденный объект ---" << std::endl;
-        specificObject->display();
-        delete specificObject; // Важно: удаляем объект после использования
-    } catch (const std::invalid_argument& e) {
-        std::cout << "Ошибка: " << e.what() << std::endl;
-    }
+    Object *specificObject = objectFile[index];
+    std::cout << "\n--- Найденный объект ---" << std::endl;
+    specificObject->display();
+    delete specificObject;
 }

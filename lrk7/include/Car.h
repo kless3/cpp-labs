@@ -20,16 +20,6 @@ public:
 
     Car& operator=(const Car& other);
 
-    void setBrand(std::string_view brand);
-    void setModel(std::string_view model);
-    void setYear(int year);
-    void setPrice(double price);
-
-    std::string getBrand() const;
-    std::string getModel() const;
-    int getYear() const;
-    double getPrice() const;
-
     void display() const override;
     void saveToFile(std::ofstream& file) const override;
     void loadFromFile(std::ifstream& file) override;

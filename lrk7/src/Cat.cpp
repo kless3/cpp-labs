@@ -25,32 +25,6 @@ Cat& Cat::operator=(const Cat& other) {
     return *this;
 }
 
-void Cat::setName(std::string_view name) {
-    this->name = name;
-}
-
-void Cat::setBreed(std::string_view breed) {
-    this->breed = breed;
-}
-
-void Cat::setAge(int age) {
-    if (age >= 0 && age <= 30) {
-        this->age = age;
-    }
-}
-
-std::string Cat::getName() const {
-    return name;
-}
-
-std::string Cat::getBreed() const {
-    return breed;
-}
-
-int Cat::getAge() const {
-    return age;
-}
-
 void Cat::display() const {
     std::cout << "=== Кот ===" << std::endl;
     std::cout << "Имя: " << name << std::endl;
@@ -59,7 +33,7 @@ void Cat::display() const {
 }
 
 void Cat::saveToFile(std::ofstream& file) const {
-    file << "CAT" << std::endl; // Идентификатор типа
+    file << "CAT" << std::endl;
     file << name << std::endl;
     file << breed << std::endl;
     file << age << std::endl;

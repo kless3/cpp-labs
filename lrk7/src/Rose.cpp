@@ -1,6 +1,5 @@
 #include "../include/Rose.h"
 #include <iostream>
-#include <sstream>
 
 Rose::Rose() : color("Неизвестно"), variety("Неизвестно"), bloomLevel(0), hasThorns(true) {}
 
@@ -26,40 +25,6 @@ Rose& Rose::operator=(const Rose& other) {
     return *this;
 }
 
-void Rose::setColor(std::string_view color) {
-    this->color = color;
-}
-
-void Rose::setVariety(std::string_view variety) {
-    this->variety = variety;
-}
-
-void Rose::setBloomLevel(int bloomLevel) {
-    if (bloomLevel >= 0 && bloomLevel <= 10) {
-        this->bloomLevel = bloomLevel;
-    }
-}
-
-void Rose::setHasThorns(bool hasThorns) {
-    this->hasThorns = hasThorns;
-}
-
-std::string Rose::getColor() const {
-    return color;
-}
-
-std::string Rose::getVariety() const {
-    return variety;
-}
-
-int Rose::getBloomLevel() const {
-    return bloomLevel;
-}
-
-bool Rose::getHasThorns() const {
-    return hasThorns;
-}
-
 void Rose::display() const {
     std::cout << "=== Роза ===" << std::endl;
     std::cout << "Цвет: " << color << std::endl;
@@ -69,7 +34,7 @@ void Rose::display() const {
 }
 
 void Rose::saveToFile(std::ofstream& file) const {
-    file << "ROSE" << std::endl; // Идентификатор типа
+    file << "ROSE" << std::endl;
     file << color << std::endl;
     file << variety << std::endl;
     file << bloomLevel << std::endl;
