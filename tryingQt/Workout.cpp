@@ -41,7 +41,7 @@ Workout& Workout::operator=(const Workout& other) {
 void Workout::addExercise(const Exercise& ex) {
     if(exerciseCount >= exerciseCapacity) {
         exerciseCapacity *= 2;
-        Exercise* newExercises = new Exercise[exerciseCapacity];
+        auto* newExercises = new Exercise[exerciseCapacity];
         for(int i = 0; i < exerciseCount; i++) {
             newExercises[i] = exercises[i];
         }

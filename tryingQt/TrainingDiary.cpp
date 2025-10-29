@@ -53,7 +53,7 @@ bool TrainingDiary::isDateEarlier(const std::string& date1, const std::string& d
 
 void TrainingDiary::resizeWorkoutsArray() {
     workoutCapacity *= 2;
-    Workout* newWorkouts = new Workout[workoutCapacity];
+    auto* newWorkouts = new Workout[workoutCapacity];
     for(int i = 0; i < workoutCount; i++) {
         newWorkouts[i] = workouts[i];
     }

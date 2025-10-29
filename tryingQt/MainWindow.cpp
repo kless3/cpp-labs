@@ -26,11 +26,11 @@ void MainWindow::setupUI()
     tabWidget = new QTabWidget(this);
     setCentralWidget(tabWidget);
 
-    QWidget *addTab = new QWidget();
-    QVBoxLayout *addLayout = new QVBoxLayout(addTab);
+    auto *addTab = new QWidget();
+    auto *addLayout = new QVBoxLayout(addTab);
 
-    QGroupBox *workoutGroup = new QGroupBox("Данные тренировки");
-    QFormLayout *workoutForm = new QFormLayout(workoutGroup);
+    auto *workoutGroup = new QGroupBox("Данные тренировки");
+    auto *workoutForm = new QFormLayout(workoutGroup);
 
     workoutDateEdit = new QDateEdit(QDate::currentDate());
     workoutDateEdit->setDisplayFormat("dd.MM.yyyy");
@@ -39,8 +39,8 @@ void MainWindow::setupUI()
     workoutForm->addRow("Дата:", workoutDateEdit);
     workoutForm->addRow("Тип тренировки:", workoutTypeEdit);
 
-    QGroupBox *exerciseGroup = new QGroupBox("Добавить упражнение");
-    QFormLayout *exerciseForm = new QFormLayout(exerciseGroup);
+    auto *exerciseGroup = new QGroupBox("Добавить упражнение");
+    auto *exerciseForm = new QFormLayout(exerciseGroup);
 
     exerciseNameEdit = new QLineEdit();
     exerciseSetsEdit = new QLineEdit();
@@ -52,25 +52,25 @@ void MainWindow::setupUI()
     exerciseForm->addRow("Повторения:", exerciseRepsEdit);
     exerciseForm->addRow("Вес (кг):", exerciseWeightEdit);
 
-    QPushButton *addExerciseBtn = new QPushButton("Добавить упражнение");
-    QPushButton *addWorkoutBtn = new QPushButton("Сохранить тренировку");
+    auto *addExerciseBtn = new QPushButton("Добавить упражнение");
+    auto *addWorkoutBtn = new QPushButton("Сохранить тренировку");
 
     exercisesList = new QListWidget();
 
-    QWidget *viewTab = new QWidget();
-    QVBoxLayout *viewLayout = new QVBoxLayout(viewTab);
+    auto *viewTab = new QWidget();
+    auto *viewLayout = new QVBoxLayout(viewTab);
 
-    QPushButton *showAllBtn = new QPushButton("Показать все тренировки");
-    QPushButton *showLastBtn = new QPushButton("Последняя тренировка");
-    QPushButton *showVolumeBtn = new QPushButton("Общий тоннаж");
+    auto *showAllBtn = new QPushButton("Показать все тренировки");
+    auto *showLastBtn = new QPushButton("Последняя тренировка");
+    auto *showVolumeBtn = new QPushButton("Общий тоннаж");
 
     workoutsList = new QListWidget();
 
-    QWidget *searchTab = new QWidget();
-    QVBoxLayout *searchLayout = new QVBoxLayout(searchTab);
+    auto *searchTab = new QWidget();
+    auto *searchLayout = new QVBoxLayout(searchTab);
 
-    QGroupBox *searchGroup = new QGroupBox("Поиск тренировок");
-    QFormLayout *searchForm = new QFormLayout(searchGroup);
+    auto *searchGroup = new QGroupBox("Поиск тренировок");
+    auto *searchForm = new QFormLayout(searchGroup);
 
     searchTypeEdit = new QLineEdit();
     searchExerciseEdit = new QLineEdit();
@@ -87,10 +87,10 @@ void MainWindow::setupUI()
     searchForm->addRow("Начальная дата:", searchStartDateEdit);
     searchForm->addRow("Конечная дата:", searchEndDateEdit);
 
-    QPushButton *searchTypeBtn = new QPushButton("Найти по типу");
-    QPushButton *searchProgressBtn = new QPushButton("Анализ прогресса");
-    QPushButton *searchDateBtn = new QPushButton("Найти по дате");
-    QPushButton *searchPeriodBtn = new QPushButton("Найти за период");
+    auto *searchTypeBtn = new QPushButton("Найти по типу");
+    auto *searchProgressBtn = new QPushButton("Анализ прогресса");
+    auto *searchDateBtn = new QPushButton("Найти по дате");
+    auto *searchPeriodBtn = new QPushButton("Найти за период");
 
     resultsText = new QTextEdit();
     resultsText->setReadOnly(true);
