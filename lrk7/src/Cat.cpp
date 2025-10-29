@@ -2,18 +2,18 @@
 #include <iostream>
 #include <sstream>
 
-Cat::Cat() : name("Неизвестно"), breed("Неизвестно"), age(0) {}
+Cat::Cat() : name("РќРµРёР·РІРµСЃС‚РЅРѕ"), breed("РќРµРёР·РІРµСЃС‚РЅРѕ"), age(0) {}
 
 Cat::Cat(std::string_view name, std::string_view breed, int age)
         : name(name), breed(breed), age(age) {}
 
 Cat::Cat(const Cat& other)
         : name(other.name), breed(other.breed), age(other.age) {
-    std::cout << "Вызван конструктор копирования Cat: " << name << std::endl;
+    std::cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ Cat: " << name << std::endl;
 }
 
 Cat::~Cat() {
-    std::cout << "Вызван деструктор Cat: " << name << std::endl;
+    std::cout << "Р’С‹Р·РІР°РЅ РґРµСЃС‚СЂСѓРєС‚РѕСЂ Cat: " << name << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& other) {
@@ -26,10 +26,10 @@ Cat& Cat::operator=(const Cat& other) {
 }
 
 void Cat::display() const {
-    std::cout << "=== Кот ===" << std::endl;
-    std::cout << "Имя: " << name << std::endl;
-    std::cout << "Порода: " << breed << std::endl;
-    std::cout << "Возраст: " << age << " лет" << std::endl;
+    std::cout << "=== РљРѕС‚ ===" << std::endl;
+    std::cout << "РРјСЏ: " << name << std::endl;
+    std::cout << "РџРѕСЂРѕРґР°: " << breed << std::endl;
+    std::cout << "Р’РѕР·СЂР°СЃС‚: " << age << " Р»РµС‚" << std::endl;
 }
 
 void Cat::saveToFile(std::ofstream& file) const {

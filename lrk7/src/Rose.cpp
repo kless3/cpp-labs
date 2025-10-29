@@ -1,18 +1,18 @@
 #include "../include/Rose.h"
 #include <iostream>
 
-Rose::Rose() : color("Неизвестно"), variety("Неизвестно"), bloomLevel(0), hasThorns(true) {}
+Rose::Rose() : color("РќРµРёР·РІРµСЃС‚РЅРѕ"), variety("РќРµРёР·РІРµСЃС‚РЅРѕ"), bloomLevel(0), hasThorns(true) {}
 
 Rose::Rose(std::string_view color, std::string_view variety, int bloomLevel, bool hasThorns)
         : color(color), variety(variety), bloomLevel(bloomLevel), hasThorns(hasThorns) {}
 
 Rose::Rose(const Rose& other)
         : color(other.color), variety(other.variety), bloomLevel(other.bloomLevel), hasThorns(other.hasThorns) {
-    std::cout << "Вызван конструктор копирования Rose: " << color << " " << variety << std::endl;
+    std::cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ Rose: " << color << " " << variety << std::endl;
 }
 
 Rose::~Rose() {
-    std::cout << "Вызван деструктор Rose: " << color << " " << variety << std::endl;
+    std::cout << "Р’С‹Р·РІР°РЅ РґРµСЃС‚СЂСѓРєС‚РѕСЂ Rose: " << color << " " << variety << std::endl;
 }
 
 Rose& Rose::operator=(const Rose& other) {
@@ -26,11 +26,11 @@ Rose& Rose::operator=(const Rose& other) {
 }
 
 void Rose::display() const {
-    std::cout << "=== Роза ===" << std::endl;
-    std::cout << "Цвет: " << color << std::endl;
-    std::cout << "Сорт: " << variety << std::endl;
-    std::cout << "Уровень цветения: " << bloomLevel << "/10" << std::endl;
-    std::cout << "Наличие шипов: " << (hasThorns ? "Да" : "Нет") << std::endl;
+    std::cout << "=== Р РѕР·Р° ===" << std::endl;
+    std::cout << "Р¦РІРµС‚: " << color << std::endl;
+    std::cout << "РЎРѕСЂС‚: " << variety << std::endl;
+    std::cout << "РЈСЂРѕРІРµРЅСЊ С†РІРµС‚РµРЅРёСЏ: " << bloomLevel << "/10" << std::endl;
+    std::cout << "РќР°Р»РёС‡РёРµ С€РёРїРѕРІ: " << (hasThorns ? "Р”Р°" : "РќРµС‚") << std::endl;
 }
 
 void Rose::saveToFile(std::ofstream& file) const {

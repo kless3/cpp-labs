@@ -45,11 +45,11 @@ int main() {
                 break;
 
             case 6:
-                std::cout << "Âûõîä èç ïğîãğàììû..." << std::endl;
+                std::cout << "Ğ’Ñ‹Ñ…Ğ¾Ğ´ Ğ¸Ğ· Ğ¿Ñ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ¼Ñ‹..." << std::endl;
                 break;
 
             default:
-                std::cout << "Íåïğàâèëüíûé âûáîğ. Ïîïğîáóéòå åùå ğàç." << std::endl;
+                std::cout << "ĞĞµĞ¿Ñ€Ğ°Ğ²Ğ¸Ğ»ÑŒĞ½Ñ‹Ğ¹ Ğ²Ñ‹Ğ±Ğ¾Ñ€. ĞŸĞ¾Ğ¿Ñ€Ğ¾Ğ±ÑƒĞ¹Ñ‚Ğµ ĞµÑ‰Ğµ Ñ€Ğ°Ğ·." << std::endl;
         }
     } while (choice != EXIT_OPTION);
 

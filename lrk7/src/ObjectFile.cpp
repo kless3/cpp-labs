@@ -10,14 +10,14 @@ ObjectFile::ObjectFile(std::string filename) : filename(std::move(filename)) {}
 Object* ObjectFile::operator[](int index) const {
     std::ifstream file(filename);
     if (!file.is_open()) {
-        throw std::invalid_argument("Не удалось открыть файл: " + filename);
+        throw std::invalid_argument("РќРµ СѓРґР°Р»РѕСЃСЊ РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р»: " + filename);
     }
 
     std::string countStr;
     std::getline(file, countStr);
     if (int objectCount = std::stoi(countStr); index < 0 || index >= objectCount) {
         file.close();
-        throw std::out_of_range("Индекс объекта вне диапазона");
+        throw std::out_of_range("РРЅРґРµРєСЃ РѕР±СЉРµРєС‚Р° РІРЅРµ РґРёР°РїР°Р·РѕРЅР°");
     }
 
     for (int i = 0; i < index; i++) {
@@ -48,7 +48,7 @@ Object* ObjectFile::operator[](int index) const {
         object = new Rose();
         object->loadFromFile(file);
     } else {
-        throw std::invalid_argument("Неизвестный тип объекта: " + type);
+        throw std::invalid_argument("РќРµРёР·РІРµСЃС‚РЅС‹Р№ С‚РёРї РѕР±СЉРµРєС‚Р°: " + type);
     }
 
     file.close();

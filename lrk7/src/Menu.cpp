@@ -7,14 +7,14 @@
 #include <span>
 
 void displayMenu() {
-    std::cout << "\n=== Ìåíþ óïðàâëåíèÿ îáúåêòàìè ===" << std::endl;
-    std::cout << "1. Äîáàâèòü îáúåêò" << std::endl;
-    std::cout << "2. Ïîêàçàòü âñå îáúåêòû" << std::endl;
-    std::cout << "3. Ñîõðàíèòü îáúåêòû â ôàéë" << std::endl;
-    std::cout << "4. Çàãðóçèòü îáúåêòû èç ôàéëà" << std::endl;
-    std::cout << "5. Äîñòóï ê îáúåêòàì èç ôàéëà ÷åðåç []" << std::endl;
-    std::cout << "6. Âûõîä" << std::endl;
-    std::cout << "Âûáåðèòå äåéñòâèå: ";
+    std::cout << "\n=== ÐœÐµÐ½ÑŽ ÑƒÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ñ Ð¾Ð±ÑŠÐµÐºÑ‚Ð°Ð¼Ð¸ ===" << std::endl;
+    std::cout << "1. Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð¾Ð±ÑŠÐµÐºÑ‚" << std::endl;
+    std::cout << "2. ÐŸÐ¾ÐºÐ°Ð·Ð°Ñ‚ÑŒ Ð²ÑÐµ Ð¾Ð±ÑŠÐµÐºÑ‚Ñ‹" << std::endl;
+    std::cout << "3. Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ð¾Ð±ÑŠÐµÐºÑ‚Ñ‹ Ð² Ñ„Ð°Ð¹Ð»" << std::endl;
+    std::cout << "4. Ð—Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð¾Ð±ÑŠÐµÐºÑ‚Ñ‹ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð°" << std::endl;
+    std::cout << "5. Ð”Ð¾ÑÑ‚ÑƒÐ¿ Ðº Ð¾Ð±ÑŠÐµÐºÑ‚Ð°Ð¼ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð° Ñ‡ÐµÑ€ÐµÐ· []" << std::endl;
+    std::cout << "6. Ð’Ñ‹Ñ…Ð¾Ð´" << std::endl;
+    std::cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ";
 }
 
 void clearInputBuffer() {
@@ -23,11 +23,11 @@ void clearInputBuffer() {
 }
 
 void addObject(std::span<Object *> &objectsSpan, int &objectCount) {
-    std::cout << "Âûáåðèòå òèï îáúåêòà:" << std::endl;
-    std::cout << "1. Êîò" << std::endl;
-    std::cout << "2. Àâòîìîáèëü" << std::endl;
-    std::cout << "3. Ðîçà" << std::endl;
-    std::cout << "Âàø âûáîð: ";
+    std::cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ñ‚Ð¸Ð¿ Ð¾Ð±ÑŠÐµÐºÑ‚Ð°:" << std::endl;
+    std::cout << "1. ÐšÐ¾Ñ‚" << std::endl;
+    std::cout << "2. ÐÐ²Ñ‚Ð¾Ð¼Ð¾Ð±Ð¸Ð»ÑŒ" << std::endl;
+    std::cout << "3. Ð Ð¾Ð·Ð°" << std::endl;
+    std::cout << "Ð’Ð°Ñˆ Ð²Ñ‹Ð±Ð¾Ñ€: ";
 
     int typeChoice;
     std::cin >> typeChoice;
@@ -41,11 +41,11 @@ void addObject(std::span<Object *> &objectsSpan, int &objectCount) {
             std::string name;
             int age;
 
-            std::cout << "Ââåäèòå èìÿ êîòà: ";
+            std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ ÐºÐ¾Ñ‚Ð°: ";
             std::getline(std::cin, name);
-            std::cout << "Ââåäèòå ïîðîäó êîòà: ";
+            std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð¾Ñ€Ð¾Ð´Ñƒ ÐºÐ¾Ñ‚Ð°: ";
             std::getline(std::cin, breed);
-            std::cout << "Ââåäèòå âîçðàñò êîòà: ";
+            std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚ ÐºÐ¾Ñ‚Ð°: ";
             std::cin >> age;
             clearInputBuffer();
 
@@ -58,13 +58,13 @@ void addObject(std::span<Object *> &objectsSpan, int &objectCount) {
             int year;
             double price;
 
-            std::cout << "Ââåäèòå ìàðêó àâòîìîáèëÿ: ";
+            std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¼Ð°Ñ€ÐºÑƒ Ð°Ð²Ñ‚Ð¾Ð¼Ð¾Ð±Ð¸Ð»Ñ: ";
             std::getline(std::cin, brand);
-            std::cout << "Ââåäèòå ìîäåëü àâòîìîáèëÿ: ";
+            std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¼Ð¾Ð´ÐµÐ»ÑŒ Ð°Ð²Ñ‚Ð¾Ð¼Ð¾Ð±Ð¸Ð»Ñ: ";
             std::getline(std::cin, model);
-            std::cout << "Ââåäèòå ãîä âûïóñêà: ";
+            std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð³Ð¾Ð´ Ð²Ñ‹Ð¿ÑƒÑÐºÐ°: ";
             std::cin >> year;
-            std::cout << "Ââåäèòå öåíó: ";
+            std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ†ÐµÐ½Ñƒ: ";
             std::cin >> price;
             clearInputBuffer();
 
@@ -77,13 +77,13 @@ void addObject(std::span<Object *> &objectsSpan, int &objectCount) {
             int bloomLevel;
             bool hasThorns;
 
-            std::cout << "Ââåäèòå öâåò ðîçû: ";
+            std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ†Ð²ÐµÑ‚ Ñ€Ð¾Ð·Ñ‹: ";
             std::getline(std::cin, color);
-            std::cout << "Ââåäèòå ñîðò ðîçû: ";
+            std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ¾Ñ€Ñ‚ Ñ€Ð¾Ð·Ñ‹: ";
             std::getline(std::cin, variety);
-            std::cout << "Ââåäèòå óðîâåíü öâåòåíèÿ (0-10): ";
+            std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑƒÑ€Ð¾Ð²ÐµÐ½ÑŒ Ñ†Ð²ÐµÑ‚ÐµÐ½Ð¸Ñ (0-10): ";
             std::cin >> bloomLevel;
-            std::cout << "Åñòü ëè øèïû? (1 - äà, 0 - íåò): ";
+            std::cout << "Ð•ÑÑ‚ÑŒ Ð»Ð¸ ÑˆÐ¸Ð¿Ñ‹? (1 - Ð´Ð°, 0 - Ð½ÐµÑ‚): ";
             std::cin >> hasThorns;
             clearInputBuffer();
 
@@ -91,7 +91,7 @@ void addObject(std::span<Object *> &objectsSpan, int &objectCount) {
             break;
         }
         default:
-            std::cout << "Íåâåðíûé âûáîð òèïà îáúåêòà!" << std::endl;
+            std::cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð²Ñ‹Ð±Ð¾Ñ€ Ñ‚Ð¸Ð¿Ð° Ð¾Ð±ÑŠÐµÐºÑ‚Ð°!" << std::endl;
             return;
     }
 
@@ -109,13 +109,13 @@ void addObject(std::span<Object *> &objectsSpan, int &objectCount) {
         objectsSpan = std::span<Object *>(newObjects, objectCount + 1);
         objectCount++;
 
-        std::cout << "Îáúåêò óñïåøíî äîáàâëåí!" << std::endl;
+        std::cout << "ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½!" << std::endl;
     }
 }
 
 void displayObjects(std::span<Object *> objectsSpan) {
     if (objectsSpan.empty()) {
-        std::cout << "Íåò îáúåêòîâ äëÿ îòîáðàæåíèÿ." << std::endl;
+        std::cout << "ÐÐµÑ‚ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð² Ð´Ð»Ñ Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ñ." << std::endl;
     } else {
         for (const auto &object: objectsSpan) {
             object->display();
@@ -127,7 +127,7 @@ void displayObjects(std::span<Object *> objectsSpan) {
 void saveObjectsToFile(const std::string &filename, std::span<Object *> objects) {
     std::ofstream file(filename);
     if (!file.is_open()) {
-        std::cout << "Îøèáêà: íå óäàëîñü îòêðûòü ôàéë äëÿ çàïèñè!" << std::endl;
+        std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°: Ð½Ðµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ñ„Ð°Ð¹Ð» Ð´Ð»Ñ Ð·Ð°Ð¿Ð¸ÑÐ¸!" << std::endl;
         return;
     }
 
@@ -138,13 +138,13 @@ void saveObjectsToFile(const std::string &filename, std::span<Object *> objects)
     }
 
     file.close();
-    std::cout << "Îáúåêòû óñïåøíî ñîõðàíåíû â ôàéë: " << filename << std::endl;
+    std::cout << "ÐžÐ±ÑŠÐµÐºÑ‚Ñ‹ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹ Ð² Ñ„Ð°Ð¹Ð»: " << filename << std::endl;
 }
 
 void loadObjectsFromFile(const std::string &filename, std::span<Object *> &objectsSpan, int &objectCount) {
     std::ifstream file(filename);
     if (!file.is_open()) {
-        std::cout << "Îøèáêà: íå óäàëîñü îòêðûòü ôàéë äëÿ ÷òåíèÿ!" << std::endl;
+        std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ°: Ð½Ðµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ñ„Ð°Ð¹Ð» Ð´Ð»Ñ Ñ‡Ñ‚ÐµÐ½Ð¸Ñ!" << std::endl;
         return;
     }
 
@@ -170,7 +170,7 @@ void loadObjectsFromFile(const std::string &filename, std::span<Object *> &objec
         } else if (type == "ROSE") {
             newObjects[i] = new Rose();
         } else {
-            std::cout << "Íåèçâåñòíûé òèï îáúåêòà: " << type << std::endl;
+            std::cout << "ÐÐµÐ¸Ð·Ð²ÐµÑÑ‚Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ð¾Ð±ÑŠÐµÐºÑ‚Ð°: " << type << std::endl;
             newObjects[i] = nullptr;
             continue;
         }
@@ -182,7 +182,7 @@ void loadObjectsFromFile(const std::string &filename, std::span<Object *> &objec
     objectCount = count;
 
     file.close();
-    std::cout << "Îáúåêòû óñïåøíî çàãðóæåíû èç ôàéëà: " << filename << std::endl;
+    std::cout << "ÐžÐ±ÑŠÐµÐºÑ‚Ñ‹ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð·Ð°Ð³Ñ€ÑƒÐ¶ÐµÐ½Ñ‹ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð°: " << filename << std::endl;
 }
 
 void demonstrateFileIndexing(const std::string &filename) {
@@ -190,33 +190,33 @@ void demonstrateFileIndexing(const std::string &filename) {
 
     int objectCount = objectFile.getObjectCount();
     if (objectCount == 0) {
-        std::cout << "Ôàéë ïóñò. Ñíà÷àëà äîáàâüòå îáúåêòû è ñîõðàíèòå èõ." << std::endl;
+        std::cout << "Ð¤Ð°Ð¹Ð» Ð¿ÑƒÑÑ‚. Ð¡Ð½Ð°Ñ‡Ð°Ð»Ð° Ð´Ð¾Ð±Ð°Ð²ÑŒÑ‚Ðµ Ð¾Ð±ÑŠÐµÐºÑ‚Ñ‹ Ð¸ ÑÐ¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚Ðµ Ð¸Ñ…." << std::endl;
         return;
     }
 
-    std::cout << "=== Äåìîíñòðàöèÿ äîñòóïà ê îáúåêòàì èç ôàéëà ÷åðåç operator[] ===" << std::endl;
-    std::cout << "Âñåãî îáúåêòîâ â ôàéëå: " << objectCount << std::endl;
+    std::cout << "=== Ð”ÐµÐ¼Ð¾Ð½ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð° Ðº Ð¾Ð±ÑŠÐµÐºÑ‚Ð°Ð¼ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð° Ñ‡ÐµÑ€ÐµÐ· operator[] ===" << std::endl;
+    std::cout << "Ð’ÑÐµÐ³Ð¾ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð² Ð² Ñ„Ð°Ð¹Ð»Ðµ: " << objectCount << std::endl;
 
     for (int i = 0; i < objectCount; i++) {
         try {
-            std::cout << "\n--- Îáúåêò #" << i << " èç ôàéëà ---" << std::endl;
+            std::cout << "\n--- ÐžÐ±ÑŠÐµÐºÑ‚ #" << i << " Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð° ---" << std::endl;
             Object *object = objectFile[i];
             object->display();
             delete object;
         } catch (const std::invalid_argument &e) {
-            std::cout << "Îøèáêà ïðè äîñòóïå ê îáúåêòó #" << i << ": " << e.what() << std::endl;
+            std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ðµ Ðº Ð¾Ð±ÑŠÐµÐºÑ‚Ñƒ #" << i << ": " << e.what() << std::endl;
         }
     }
 
-    std::cout << "\nÄîñòóï ê êîíêðåòíîìó îáúåêòó ïî èíäåêñó" << std::endl;
-    std::cout << "Ââåäèòå èíäåêñ îáúåêòà (0-" << objectCount - 1 << "): ";
+    std::cout << "\nÐ”Ð¾ÑÑ‚ÑƒÐ¿ Ðº ÐºÐ¾Ð½ÐºÑ€ÐµÑ‚Ð½Ð¾Ð¼Ñƒ Ð¾Ð±ÑŠÐµÐºÑ‚Ñƒ Ð¿Ð¾ Ð¸Ð½Ð´ÐµÐºÑÑƒ" << std::endl;
+    std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð½Ð´ÐµÐºÑ Ð¾Ð±ÑŠÐµÐºÑ‚Ð° (0-" << objectCount - 1 << "): ";
 
     int index;
     std::cin >> index;
     clearInputBuffer();
 
     Object *specificObject = objectFile[index];
-    std::cout << "\n--- Íàéäåííûé îáúåêò ---" << std::endl;
+    std::cout << "\n--- ÐÐ°Ð¹Ð´ÐµÐ½Ð½Ñ‹Ð¹ Ð¾Ð±ÑŠÐµÐºÑ‚ ---" << std::endl;
     specificObject->display();
     delete specificObject;
 }

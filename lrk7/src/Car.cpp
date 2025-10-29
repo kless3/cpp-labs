@@ -2,18 +2,18 @@
 #include <iostream>
 #include <sstream>
 
-Car::Car() : brand("Неизвестно"), model("Неизвестно"), year(0), price(0.0) {}
+Car::Car() : brand("РќРµРёР·РІРµСЃС‚РЅРѕ"), model("РќРµРёР·РІРµСЃС‚РЅРѕ"), year(0), price(0.0) {}
 
 Car::Car(std::string_view brand, std::string_view model, int year, double price)
         : brand(brand), model(model), year(year), price(price) {}
 
 Car::Car(const Car& other)
         : brand(other.brand), model(other.model), year(other.year), price(other.price) {
-    std::cout << "Вызван конструктор копирования Car: " << brand << " " << model << std::endl;
+    std::cout << "Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ Car: " << brand << " " << model << std::endl;
 }
 
 Car::~Car() {
-    std::cout << "Вызван деструктор Car: " << brand << " " << model << std::endl;
+    std::cout << "Р’С‹Р·РІР°РЅ РґРµСЃС‚СЂСѓРєС‚РѕСЂ Car: " << brand << " " << model << std::endl;
 }
 
 Car& Car::operator=(const Car& other) {
@@ -27,11 +27,11 @@ Car& Car::operator=(const Car& other) {
 }
 
 void Car::display() const {
-    std::cout << "=== Автомобиль ===" << std::endl;
-    std::cout << "Марка: " << brand << std::endl;
-    std::cout << "Модель: " << model << std::endl;
-    std::cout << "Год: " << year << std::endl;
-    std::cout << "Цена: " << price << " руб." << std::endl;
+    std::cout << "=== РђРІС‚РѕРјРѕР±РёР»СЊ ===" << std::endl;
+    std::cout << "РњР°СЂРєР°: " << brand << std::endl;
+    std::cout << "РњРѕРґРµР»СЊ: " << model << std::endl;
+    std::cout << "Р“РѕРґ: " << year << std::endl;
+    std::cout << "Р¦РµРЅР°: " << price << " СЂСѓР±." << std::endl;
 }
 
 void Car::saveToFile(std::ofstream& file) const {
