@@ -1,6 +1,3 @@
-#ifndef ALGORITHM_CPP
-#define ALGORITHM_CPP
-
 #include "../include/Algorithm.h"
 
 template <typename T>
@@ -51,4 +48,7 @@ void Algorithm<T>::selectionSort(Deque<T>& deque) {
     delete[] arr;
 }
 
-#endif
+template class Algorithm<int>;
+template class Algorithm<double>;
+template class Algorithm<char>;
+template class Algorithm<std::string>;

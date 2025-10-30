@@ -27,7 +27,7 @@ template <typename T>
 void handleLinearSearch(const Deque<T>& deque);
 
 template <typename T>
-void handleBubbleSort(Deque<T>& deque);
+void handleSelectionSort(Deque<T>& deque);
 
 template <typename T>
 void handleClear(Deque<T>& deque);
@@ -35,6 +35,5 @@ void handleClear(Deque<T>& deque);
 template <typename T>
 void runMenu();
 
-#include "Menu.cpp"
 
 #endif

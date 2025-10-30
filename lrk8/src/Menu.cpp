@@ -1,8 +1,4 @@
-#ifndef MENU_CPP
-#define MENU_CPP
-
 #include "../include/Menu.h"
-
 
 template<typename T>
 void showMenu() {
@@ -12,7 +8,7 @@ void showMenu() {
     std::cout << "4. Dequeue Rear" << std::endl;
     std::cout << "5. Display Deque" << std::endl;
     std::cout << "6. Linear Search" << std::endl;
-    std::cout << "7. Bubble Sort" << std::endl;
+    std::cout << "7. Selection Sort" << std::endl;
     std::cout << "8. Clear Deque" << std::endl;
     std::cout << "9. Exit" << std::endl;
     std::cout << "Choose option: ";
@@ -75,8 +71,8 @@ void handleLinearSearch(const Deque<T> &deque) {
 }
 
 template<typename T>
-void handleBubbleSort(Deque<T> &deque) {
-    Algorithm<T>::bubbleSort(deque);
+void handleSelectionSort(Deque<T> &deque) {
+    Algorithm<T>::selectionSort(deque);
     std::cout << "Deque sorted successfully" << std::endl;
     deque.display();
 }
@@ -116,7 +112,7 @@ void runMenu() {
                 handleLinearSearch<T>(deque);
                 break;
             case 7:
-                handleBubbleSort<T>(deque);
+                handleSelectionSort<T>(deque);
                 break;
             case 8:
                 handleClear<T>(deque);
@@ -130,4 +126,7 @@ void runMenu() {
     } while (choice != 9);
 }
 
-#endif
+template void runMenu<int>();
+template void runMenu<double>();
+template void runMenu<char>();
+template void runMenu<std::string>();

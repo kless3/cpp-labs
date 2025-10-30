@@ -10,6 +10,5 @@ public:
     static void selectionSort(Deque<T>& deque);
 };
 
-#include "Algorithm.cpp"
 
 #endif
