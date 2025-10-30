@@ -2,7 +2,6 @@
 #define DEQUE_CPP
 
 #include "../include/Deque.h"
-#include <iostream>
 
 template <typename T>
 void Deque<T>::copyFrom(const Deque& other) {
@@ -17,7 +16,7 @@ template <typename T>
 Deque<T>::Deque() = default;
 
 template <typename T>
-Deque<T>::~Deque() {
+Deque<T>::~Deque() noexcept {
     clear();
 }
 
@@ -84,7 +83,7 @@ void Deque<T>::enqueueRear(const T& value) {
 }
 
 template <typename T>
-T Deque<T>::dequeueFront() {
+T Deque<T>::dequeueFront() noexcept {
     if (isEmpty()) {
         return T();
     }
@@ -102,7 +101,7 @@ T Deque<T>::dequeueFront() {
 }
 
 template <typename T>
-T Deque<T>::dequeueRear() {
+T Deque<T>::dequeueRear() noexcept {
     if (isEmpty()) {
         return T();
     }
@@ -130,7 +129,7 @@ int Deque<T>::getSize() const {
 }
 
 template <typename T>
-void Deque<T>::clear() {
+void Deque<T>::clear() noexcept {
     while (!isEmpty()) {
         dequeueFront();
     }

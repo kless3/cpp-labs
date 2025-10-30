@@ -16,7 +16,7 @@ private:
 
 public:
     Deque();
-    ~Deque();
+    ~Deque() noexcept;
 
     Deque(const Deque& other);
     Deque& operator=(const Deque& other);
@@ -25,11 +25,11 @@ public:
 
     void enqueueFront(const T& value);
     void enqueueRear(const T& value);
-    T dequeueFront();
-    T dequeueRear();
+    T dequeueFront() noexcept;
+    T dequeueRear() noexcept;
     [[nodiscard]] bool isEmpty() const;
     [[nodiscard]] int getSize() const;
-    void clear();
+    void clear() noexcept;
     void display() const;
 
     [[nodiscard]] Iterator<T> getIterator() const;
