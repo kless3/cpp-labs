@@ -42,7 +42,7 @@ void Algorithm<T>::selectionSort(Deque<T>& deque) {
             arr[minIndex] = temp;
         }
     }
-    
+
     deque.clear();
     for (int i = 0; i < n; i++) {
         deque.enqueueRear(arr[i]);

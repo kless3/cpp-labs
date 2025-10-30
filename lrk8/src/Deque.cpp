@@ -2,6 +2,7 @@
 #define DEQUE_CPP
 
 #include "../include/Deque.h"
+#include <iostream>
 
 template <typename T>
 void Deque<T>::copyFrom(const Deque& other) {
