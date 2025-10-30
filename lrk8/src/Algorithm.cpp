@@ -18,7 +18,7 @@ int Algorithm<T>::linearSearch(const Deque<T>& deque, const T& target) {
 }
 
 template <typename T>
-void Algorithm<T>::bubbleSort(Deque<T>& deque) {
+void Algorithm<T>::selectionSort(Deque<T>& deque) {
     int n = deque.getSize();
     if (n <= 1) return;
 
@@ -30,15 +30,19 @@ void Algorithm<T>::bubbleSort(Deque<T>& deque) {
     }
 
     for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                T temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+        int minIndex = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
             }
         }
+        if (minIndex != i) {
+            T temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
     }
-
+    
     deque.clear();
     for (int i = 0; i < n; i++) {
         deque.enqueueRear(arr[i]);
