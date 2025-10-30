@@ -1,41 +1,35 @@
-#include "../include/Queue.h"
 #include "../include/Menu.h"
 #include <iostream>
+#include <string>
 
 int main() {
-    Queue queue;
-    int choice;
+    std::cout << "Choose data type:" << std::endl;
+    std::cout << "1. int" << std::endl;
+    std::cout << "2. double" << std::endl;
+    std::cout << "3. char" << std::endl;
+    std::cout << "4. string" << std::endl;
+    std::cout << "Enter choice: ";
 
-    do {
-        showMenu();
-        std::cin >> choice;
+    int typeChoice;
+    std::cin >> typeChoice;
 
-        switch (choice) {
-            case 1:
-                handleEnqueue(queue);
-                break;
-            case 2:
-                handleDequeue(queue);
-                break;
-            case 3:
-                handleDisplay(queue);
-                break;
-            case 4:
-                handleLinearSearch(queue);
-                break;
-            case 5:
-                handleBubbleSort(queue);
-                break;
-            case 6:
-                handleClear(queue);
-                break;
-            case 7:
-                std::cout << "Exiting program" << std::endl;
-                break;
-            default:
-                std::cout << "Invalid choice" << std::endl;
-        }
-    } while (choice != 7);
+    switch (typeChoice) {
+        case 1:
+            runMenu<int>();
+            break;
+        case 2:
+            runMenu<double>();
+            break;
+        case 3:
+            runMenu<char>();
+            break;
+        case 4:
+            runMenu<std::string>();
+            break;
+        default:
+            std::cout << "Invalid type choice" << std::endl;
+            break;
+    }
 
     return 0;
 }

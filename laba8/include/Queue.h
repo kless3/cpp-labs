@@ -1,54 +1,121 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-class Node {
-public:
-    int data;
-    Node* next = nullptr;
-    explicit Node(int value);
-};
+#include "Node.h"
+#include "Iterator.h"
+#include <iostream>
 
+template<typename T>
 class Queue {
 private:
-    Node* front = nullptr;
-    Node* rear = nullptr;
+    Node<T>* front = nullptr;
+    Node<T>* rear = nullptr;
     int size = 0;
 
-    void copyFrom(const Queue& other);
+    void copyFrom(const Queue& other) {
+        Node<T>* current = other.front;
+        while (current != nullptr) {
+            enqueue(current->data);
+            current = current->next;
+        }
+    }
 
 public:
-    Queue();
-    ~Queue();
+    Queue() = default;
 
-    Queue(const Queue& other);
-    Queue& operator=(const Queue& other);
-    Queue(Queue&& other) noexcept;
-    Queue& operator=(Queue&& other) noexcept;
+    ~Queue() noexcept {
+        clear();
+    }
 
-    void enqueue(int value);
-    int dequeue();
-    [[nodiscard]] bool isEmpty() const;
-    [[nodiscard]] int getSize() const;
-    void clear();
-    void display() const;
+    Queue(const Queue& other) {
+        copyFrom(other);
+    }
 
-    class Iterator {
-    private:
-        Node* current = nullptr;
-    public:
-        explicit Iterator(Node* start);
-        void next();
-        [[nodiscard]] bool hasNext() const;
-        [[nodiscard]] int getValue() const;
-    };
+    Queue& operator=(const Queue& other) {
+        if (this != &other) {
+            clear();
+            copyFrom(other);
+        }
+        return *this;
+    }
 
-    [[nodiscard]] Iterator getIterator() const;
-};
+    Queue(Queue&& other) noexcept
+            : front(other.front), rear(other.rear), size(other.size) {
+        other.front = nullptr;
+        other.rear = nullptr;
+        other.size = 0;
+    }
 
-class Algorithm {
-public:
-    static int linearSearch(const Queue& queue, int target);
-    static void bubbleSort(Queue& queue);
+    Queue& operator=(Queue&& other) noexcept {
+        if (this != &other) {
+            clear();
+            front = other.front;
+            rear = other.rear;
+            size = other.size;
+            other.front = nullptr;
+            other.rear = nullptr;
+            other.size = 0;
+        }
+        return *this;
+    }
+
+    void enqueue(const T& value) {
+        auto newNode = new Node<T>(value);
+        if (isEmpty()) {
+            front = rear = newNode;
+        } else {
+            rear->next = newNode;
+            rear = newNode;
+        }
+        size++;
+    }
+
+    T dequeue() {
+        if (isEmpty()) {
+            return T();
+        }
+        Node<T>* temp = front;
+        T value = temp->data;
+        front = front->next;
+        if (front == nullptr) {
+            rear = nullptr;
+        }
+        delete temp;
+        size--;
+        return value;
+    }
+
+    [[nodiscard]] bool isEmpty() const {
+        return front == nullptr;
+    }
+
+    [[nodiscard]] int getSize() const {
+        return size;
+    }
+
+    void clear() noexcept {
+        while (!isEmpty()) {
+            dequeue();
+        }
+    }
+
+    void display() const {
+        if (isEmpty()) {
+            std::cout << "Queue is empty" << std::endl;
+            return;
+        }
+        Node<T>* current = front;
+        std::cout << "Queue: ";
+        while (current != nullptr) {
+            std::cout << current->data << " ";
+            current = current->next;
+        }
+        std::cout << std::endl;
+    }
+
+    [[nodiscard]] Iterator<T> getIterator() const {
+        return Iterator<T>(front);
+    }
 };
 
 #endif
