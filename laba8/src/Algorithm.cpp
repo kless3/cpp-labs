@@ -1,4 +1,5 @@
 #include "../include/Algorithm.h"
+#include "../include/NotFoundException.h"
 
 template <typename T>
 int Algorithm<T>::linearSearch(const Queue<T>& queue, const T& target) {
@@ -11,7 +12,7 @@ int Algorithm<T>::linearSearch(const Queue<T>& queue, const T& target) {
         it.next();
         index++;
     }
-    throw std::runtime_error("Value not found in queue");
+    throw NotFoundException("Value not found in queue");
 }
 
 template <typename T>
