@@ -38,14 +38,14 @@ void handleDisplay(const Queue<T> &queue) {
 
 template<typename T>
 void handleLinearSearch(const Queue<T> &queue) {
-    T value;
-    std::cout << "Enter value to search: ";
-    std::cin >> value;
-    int result = Algorithm<T>::linearSearch(queue, value);
-    if (result != -1) {
+    try {
+        T value;
+        std::cout << "Enter value to search: ";
+        std::cin >> value;
+        int result = Algorithm<T>::linearSearch(queue, value);
         std::cout << "Value found at position: " << result << std::endl;
-    } else {
-        std::cout << "Value not found in queue" << std::endl;
+    } catch (const std::exception& e) {
+        std::cout << "Search failed: " << e.what() << std::endl;
     }
 }
 

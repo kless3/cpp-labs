@@ -11,7 +11,7 @@ int Algorithm<T>::linearSearch(const Queue<T>& queue, const T& target) {
         it.next();
         index++;
     }
-    return -1;
+    throw std::runtime_error("Value not found in queue");
 }
 
 template <typename T>

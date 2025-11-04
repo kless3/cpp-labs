@@ -7,4 +7,5 @@ add_executable(laba8 src/main.cpp
         include/Queue.h
         include/Menu.h
         src/Menu.cpp
+        src/Algorithm.cpp
         src/Algorithm.cpp)
