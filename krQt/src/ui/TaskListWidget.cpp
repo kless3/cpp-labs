@@ -8,6 +8,7 @@
 #include <QMessageBox>
 
 #include <algorithm>
+#include <ranges>
 
 TaskListWidget::TaskListWidget(const QString& title, TaskManager* taskManager, QWidget* parent)
     : QWidget(parent)
@@ -73,8 +74,8 @@ void TaskListWidget::displayTasksForDate(const QString& date) {
 
         connect(taskWidget, &TaskItemWidget::taskEdited, [this](int id) {
             auto allTasks = taskManager->getAllTasks();
-            auto it = std::find_if(allTasks.begin(), allTasks.end(),
-                                   [id](const Task& t) { return t.getId() == id; });
+            auto it = std::ranges::find_if(allTasks,
+                                            [id](const Task& t) { return t.getId() == id; });
             if (it != allTasks.end()) {
                 EditTaskDialog dialog(*it, this);
                 if (dialog.exec() == QDialog::Accepted) {

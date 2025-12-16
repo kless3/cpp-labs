@@ -1,17 +1,18 @@
 #include "repository/TaskSorter.h"
 
 #include <algorithm>
+#include <ranges>
 
 void TaskSorter::sortByDate(std::vector<Task>& tasks) {
-    std::sort(tasks.begin(), tasks.end(), compareByDate);
+    std::ranges::sort(tasks, compareByDate);
 }
 
 void TaskSorter::sortByPriority(std::vector<Task>& tasks) {
-    std::sort(tasks.begin(), tasks.end(), compareByPriority);
+    std::ranges::sort(tasks, compareByPriority);
 }
 
 void TaskSorter::sortByStatus(std::vector<Task>& tasks) {
-    std::sort(tasks.begin(), tasks.end(), compareByStatus);
+    std::ranges::sort(tasks, compareByStatus);
 }
 
 bool TaskSorter::compareByDate(const Task& a, const Task& b) {

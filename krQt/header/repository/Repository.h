@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <functional>
+#include <ranges>
 
 template<typename T>
 class Repository {
@@ -18,14 +19,12 @@ public:
     }
 
     void remove(std::function<bool(const T&)> predicate) {
-        items.erase(
-                std::remove_if(items.begin(), items.end(), predicate),
-                items.end()
-        );
+        auto [first, last] = std::ranges::remove_if(items, predicate);
+        items.erase(first, last);
     }
 
     void update(std::function<bool(const T&)> predicate, const T& newItem) {
-        auto it = std::find_if(items.begin(), items.end(), predicate);
+        auto it = std::ranges::find_if(items, predicate);
         if (it != items.end()) {
             *it = newItem;
         }
@@ -36,18 +35,18 @@ public:
     }
 
     T* find(std::function<bool(const T&)> predicate) {
-        auto it = std::find_if(items.begin(), items.end(), predicate);
+        auto it = std::ranges::find_if(items, predicate);
         return it != items.end() ? &(*it) : nullptr;
     }
 
     const T* find(std::function<bool(const T&)> predicate) const {
-        auto it = std::find_if(items.begin(), items.end(), predicate);
+        auto it = std::ranges::find_if(items, predicate);
         return it != items.end() ? &(*it) : nullptr;
     }
 
     std::vector<T> filter(std::function<bool(const T&)> predicate) const {
         std::vector<T> result;
-        std::copy_if(items.begin(), items.end(), std::back_inserter(result), predicate);
+        std::ranges::copy_if(items, std::back_inserter(result), predicate);
         return result;
     }
 
