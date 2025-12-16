@@ -45,5 +45,5 @@ private:
     TaskListWidget* tomorrowTasksWidget;
     ControlPanel* controlPanel;
     QLabel* statusLabel;
-    QDate currentDate;
+    QDate currentDate{QDate::currentDate()};
 };

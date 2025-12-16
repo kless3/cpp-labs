@@ -15,5 +15,5 @@ public:
     bool initialize();
 
 private:
-    std::unique_ptr<DailyPlannerApp> mainWindow;
+    std::unique_ptr<DailyPlannerApp> mainWindow{nullptr};
 };

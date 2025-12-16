@@ -14,7 +14,6 @@
 
 DailyPlannerApp::DailyPlannerApp(QWidget* parent)
     : QMainWindow(parent)
-    , currentDate(QDate::currentDate())
 {
     setupUI();
     applyStyle();
