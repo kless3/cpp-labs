@@ -7,5 +7,5 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    return app.exec();
+    return app.QApplication::exec();
 }
