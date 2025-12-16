@@ -1,5 +1,0 @@
-C:/Users/Maksim/Desktop/uni/krQt/build/CMakeFiles/DailyPlanner.dir
-C:/Users/Maksim/Desktop/uni/krQt/build/CMakeFiles/edit_cache.dir
-C:/Users/Maksim/Desktop/uni/krQt/build/CMakeFiles/rebuild_cache.dir
-C:/Users/Maksim/Desktop/uni/krQt/build/CMakeFiles/DailyPlanner_autogen_timestamp_deps.dir
-C:/Users/Maksim/Desktop/uni/krQt/build/CMakeFiles/DailyPlanner_autogen.dir
