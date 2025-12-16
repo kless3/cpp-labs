@@ -1,11 +1,9 @@
 #include "application/Application.h"
 
 int main(int argc, char* argv[]) {
-    Application app(argc, argv);
-    
-    if (!app.initialize()) {
+    if (Application app(argc, argv); !app.initialize()) {
         return -1;
+    } else {
+        return Application::exec();
     }
-
-    return Application::exec();
 }
