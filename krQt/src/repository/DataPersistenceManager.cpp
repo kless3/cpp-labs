@@ -13,9 +13,13 @@ bool DataPersistenceManager::saveToFile(const std::vector<Task>& tasks, const st
 
     for (const auto& task : tasks) {
         file << taskToLine(task) << "\n";
+        if (!file.good()) {
+            return false;
+        }
     }
 
-    return true;
+    file.flush();
+    return file.good();
 }
 
 bool DataPersistenceManager::loadFromFile(std::vector<Task>& tasks, const std::string& filename) {

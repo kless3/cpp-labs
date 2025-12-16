@@ -8,13 +8,11 @@ Application::Application(int& argc, char** argv)
 {
 }
 
-Application::~Application() {
-    delete mainWindow;
-}
+Application::~Application() = default;
 
 bool Application::initialize() {
     try {
-        mainWindow = new DailyPlannerApp();
+        mainWindow = std::make_unique<DailyPlannerApp>();
         mainWindow->show();
         return true;
     } catch (const AppException& e) {

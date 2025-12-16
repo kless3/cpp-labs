@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QApplication>
+#include <memory>
 
 class DailyPlannerApp;
 
@@ -14,5 +15,5 @@ public:
     bool initialize();
 
 private:
-    DailyPlannerApp* mainWindow;
+    std::unique_ptr<DailyPlannerApp> mainWindow;
 };

@@ -98,9 +98,12 @@ void TaskListWidget::setTitle(const QString& newTitle) {
 void TaskListWidget::clearLayout() {
     while (tasksLayout->count() > 1) {
         QLayoutItem* item = tasksLayout->takeAt(0);
-        if (item->widget()) {
-            delete item->widget();
+        if (item != nullptr) {
+            QWidget* widget = item->widget();
+            if (widget != nullptr) {
+                widget->deleteLater();
+            }
+            delete item;
         }
-        delete item;
     }
 }
