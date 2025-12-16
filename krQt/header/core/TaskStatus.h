@@ -5,7 +5,7 @@
 
 class TaskStatus {
 public:
-    enum State {
+    enum class State {
         PENDING,
         COMPLETED
     };

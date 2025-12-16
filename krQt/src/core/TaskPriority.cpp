@@ -2,11 +2,11 @@
 
 std::string TaskPriority::toString(int priority) {
     switch (priority) {
-        case LOW:       return "Низкий";
-        case MEDIUM:    return "Средний";
-        case HIGH:      return "Высокий";
-        case IMPORTANT: return "Важный";
-        case CRITICAL:  return "Критичный";
+        case static_cast<int>(Level::LOW):       return "Низкий";
+        case static_cast<int>(Level::MEDIUM):    return "Средний";
+        case static_cast<int>(Level::HIGH):      return "Высокий";
+        case static_cast<int>(Level::IMPORTANT): return "Важный";
+        case static_cast<int>(Level::CRITICAL):  return "Критичный";
         default:        return "Неизвестно";
     }
 }

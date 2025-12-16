@@ -5,7 +5,7 @@
 
 class TaskPriority {
 public:
-    enum Level {
+    enum class Level {
         LOW = 1,
         MEDIUM = 2,
         HIGH = 3,

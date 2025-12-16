@@ -19,8 +19,8 @@ public:
 
     void remove(std::function<bool(const T&)> predicate) {
         items.erase(
-            std::remove_if(items.begin(), items.end(), predicate),
-            items.end()
+                std::remove_if(items.begin(), items.end(), predicate),
+                items.end()
         );
     }
 
@@ -91,7 +91,6 @@ public:
         return items.cend();
     }
 
-protected:
+private:
     std::vector<T> items;
 };
-

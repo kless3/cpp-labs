@@ -8,7 +8,6 @@ public:
     explicit AppException(const std::string& message);
     const char* what() const noexcept override;
 
-protected:
+private:
     std::string message;
 };
-
