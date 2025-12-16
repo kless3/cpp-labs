@@ -7,7 +7,7 @@ void TaskManager::addTask(const std::string& desc, const std::string& date,
 }
 
 void TaskManager::editTask(int id, const std::string& newDescription, int newPriority) {
-    Task* task = repository.findTaskById(id);
+    const Task* task = repository.findTaskById(id);
     if (task != nullptr) {
         Task updatedTask = *task;
         updatedTask.setDescription(newDescription);
@@ -17,7 +17,7 @@ void TaskManager::editTask(int id, const std::string& newDescription, int newPri
 }
 
 void TaskManager::markCompleted(int id) {
-    Task* task = repository.findTaskById(id);
+    const Task* task = repository.findTaskById(id);
     if (task != nullptr) {
         Task updatedTask = *task;
         updatedTask.setCompleted(true);
@@ -26,7 +26,7 @@ void TaskManager::markCompleted(int id) {
 }
 
 void TaskManager::unmarkCompleted(int id) {
-    Task* task = repository.findTaskById(id);
+    const Task* task = repository.findTaskById(id);
     if (task != nullptr) {
         Task updatedTask = *task;
         updatedTask.setCompleted(false);

@@ -19,10 +19,10 @@ public:
     int getPriority() const;
 
 private:
-    void setupUI();
+    void setupUI() const;
 
-    QLineEdit* descriptionEdit;
-    QDateEdit* dateEdit;
-    QTimeEdit* timeEdit;
-    QComboBox* priorityCombo;
+    QLineEdit* descriptionEdit{nullptr};
+    QDateEdit* dateEdit{nullptr};
+    QTimeEdit* timeEdit{nullptr};
+    QComboBox* priorityCombo{nullptr};
 };

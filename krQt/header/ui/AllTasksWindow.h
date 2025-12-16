@@ -25,9 +25,9 @@ public slots:
 
 private:
     void displayTasks(const std::vector<Task>& tasks);
-    void setupUI();
+    void setupUI() const;
 
     TaskManager* taskManager;
-    QListWidget* tasksList;
-    QLineEdit* searchEdit;
+    QListWidget* tasksList{nullptr};
+    QLineEdit* searchEdit{nullptr};
 };

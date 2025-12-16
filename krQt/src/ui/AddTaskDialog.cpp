@@ -17,6 +17,10 @@
 
 AddTaskDialog::AddTaskDialog(QWidget* parent)
     : QDialog(parent)
+    , descriptionEdit(new QLineEdit())
+    , dateEdit(new QDateEdit(QDate::currentDate()))
+    , timeEdit(new QTimeEdit(QTime::currentTime()))
+    , priorityCombo(new QComboBox())
 {
     setWindowTitle("Добавить задачу");
     setFixedSize(500, 350);
@@ -32,17 +36,12 @@ AddTaskDialog::AddTaskDialog(QWidget* parent)
     auto* contentGroup = new QGroupBox();
     auto* formLayout = new QFormLayout(contentGroup);
 
-    descriptionEdit = new QLineEdit();
     descriptionEdit->setPlaceholderText("Введите описание задачи");
 
-    dateEdit = new QDateEdit(QDate::currentDate());
     dateEdit->setCalendarPopup(true);
     dateEdit->setDisplayFormat("dd.MM.yyyy");
 
-    timeEdit = new QTimeEdit(QTime::currentTime());
     timeEdit->setDisplayFormat("HH:mm");
-
-    priorityCombo = new QComboBox();
     priorityCombo->addItem("⭐ Низкий", 1);
     priorityCombo->addItem("⭐⭐ Средний", 2);
     priorityCombo->addItem("⭐⭐⭐ Высокий", 3);
@@ -83,5 +82,7 @@ int AddTaskDialog::getPriority() const {
     return priorityCombo->currentData().toInt();
 }
 
-void AddTaskDialog::setupUI() {
+void AddTaskDialog::setupUI() const {
+    // UI setup is done directly in the constructor
+    // This method is kept for potential future use or interface compatibility
 }

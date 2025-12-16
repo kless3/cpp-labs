@@ -11,6 +11,7 @@
 AllTasksWindow::AllTasksWindow(TaskManager* taskManager, QWidget* parent)
     : QDialog(parent)
     , taskManager(taskManager)
+    , searchEdit(new QLineEdit())
 {
     setWindowTitle("Все задачи");
     setMinimumSize(900, 650);
@@ -24,7 +25,6 @@ AllTasksWindow::AllTasksWindow(TaskManager* taskManager, QWidget* parent)
     headerLabel->setStyleSheet("font-size: 20px; font-weight: bold; margin: 10px;");
 
     auto* filterLayout = new QHBoxLayout();
-    searchEdit = new QLineEdit();
     searchEdit->setPlaceholderText("Поиск задач...");
     searchEdit->setStyleSheet(
         "background: white; border: 1px solid #ccc; border-radius: 4px; padding: 6px;"
@@ -123,5 +123,7 @@ void AllTasksWindow::displayTasks(const std::vector<Task>& tasks) {
     }
 }
 
-void AllTasksWindow::setupUI() {
+void AllTasksWindow::setupUI() const {
+    // UI setup is done directly in the constructor
+    // This method is kept for potential future use or interface compatibility
 }

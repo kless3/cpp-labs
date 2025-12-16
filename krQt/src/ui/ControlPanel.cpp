@@ -40,7 +40,7 @@ void ControlPanel::setupUI() {
 
     auto* managementMenu = new QMenu(managementButton);
 
-    auto* sortDateAction = managementMenu->addAction("Сортировать по дате");
+    const auto* sortDateAction = managementMenu->addAction("Сортировать по дате");
     auto* sortPriorityAction = managementMenu->addAction("Сортировать по приоритету");
     auto* showCompletedAction = managementMenu->addAction("Выполненные задачи");
     auto* showPendingAction = managementMenu->addAction("Текущие задачи");
