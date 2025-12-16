@@ -41,6 +41,6 @@ std::vector<Task> TaskRepository::findTasksByPriority(int minPriority) const {
 
 std::vector<Task> TaskRepository::searchTasks(const std::string& keyword) const {
     return filter([&keyword](const Task& task) {
-        return task.getDescription().find(keyword) != std::string::npos;
+        return task.getDescription().contains(keyword);
     });
 }

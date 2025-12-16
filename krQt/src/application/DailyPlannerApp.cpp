@@ -174,7 +174,7 @@ void DailyPlannerApp::showAllTasksWindow() {
 
 void DailyPlannerApp::saveData() const {
     taskManager.saveToFile("tasks.txt");
-    QMessageBox::information(const_cast<DailyPlannerApp*>(this), "Успех", "Задачи сохранены в tasks.txt");
+    QMessageBox::information(nullptr, "Успех", "Задачи сохранены в tasks.txt");
 }
 
 void DailyPlannerApp::loadData() {

@@ -35,7 +35,7 @@ std::vector<Task> TaskFilter::searchByDescription(const std::vector<Task>& tasks
     std::vector<Task> result;
     std::ranges::copy_if(tasks, std::back_inserter(result),
                          [&keyword](const Task& task) {
-                             return task.getDescription().find(keyword) != std::string::npos;
+                             return task.getDescription().contains(keyword);
                          });
     return result;
 }

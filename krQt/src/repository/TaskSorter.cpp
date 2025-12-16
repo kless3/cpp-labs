@@ -31,7 +31,7 @@ bool TaskSorter::compareByPriority(const Task& a, const Task& b) {
 
 bool TaskSorter::compareByStatus(const Task& a, const Task& b) {
     if (a.isCompleted() != b.isCompleted()) {
-        return a.isCompleted() < b.isCompleted();
+        return !a.isCompleted() && b.isCompleted();
     }
     return compareByPriority(a, b);
 }
