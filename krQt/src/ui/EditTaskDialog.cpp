@@ -12,6 +12,8 @@
 
 EditTaskDialog::EditTaskDialog(const Task& task, QWidget* parent)
     : QDialog(parent)
+    , descriptionEdit(new QLineEdit(QString::fromStdString(task.getDescription())))
+    , priorityCombo(new QComboBox())
 {
     setWindowTitle("Редактировать задачу");
     setFixedSize(500, 250);
@@ -27,10 +29,7 @@ EditTaskDialog::EditTaskDialog(const Task& task, QWidget* parent)
     auto* contentGroup = new QGroupBox();
     auto* formLayout = new QFormLayout(contentGroup);
 
-    descriptionEdit = new QLineEdit(QString::fromStdString(task.getDescription()));
     descriptionEdit->setPlaceholderText("Введите описание задачи");
-
-    priorityCombo = new QComboBox();
     priorityCombo->addItem("⭐ Низкий", 1);
     priorityCombo->addItem("⭐⭐ Средний", 2);
     priorityCombo->addItem("⭐⭐⭐ Высокий", 3);
@@ -61,5 +60,7 @@ int EditTaskDialog::getPriority() const {
     return priorityCombo->currentData().toInt();
 }
 
-void EditTaskDialog::setupUI() {
+void EditTaskDialog::setupUI() const {
+    // UI setup is done directly in the constructor
+    // This method is kept for potential future use or interface compatibility
 }

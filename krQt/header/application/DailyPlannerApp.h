@@ -35,7 +35,7 @@ private:
     void onShowPending();
     void onShowHighPriority();
     void setupUI();
-    void applyStyle();
+    void applyStyle() const;
     void loadInitialData();
 
     TaskManager taskManager;

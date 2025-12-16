@@ -100,8 +100,7 @@ void TaskListWidget::clearLayout() {
     while (tasksLayout->count() > 1) {
         QLayoutItem* item = tasksLayout->takeAt(0);
         if (item != nullptr) {
-            QWidget* widget = item->widget();
-            if (widget != nullptr) {
+            if (QWidget* widget = item->widget(); widget != nullptr) {
                 widget->deleteLater();
             }
             delete item;

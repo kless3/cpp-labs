@@ -12,6 +12,7 @@ AllTasksWindow::AllTasksWindow(TaskManager* taskManager, QWidget* parent)
     : QDialog(parent)
     , taskManager(taskManager)
     , searchEdit(new QLineEdit())
+    , tasksList(new QListWidget())
 {
     setWindowTitle("Все задачи");
     setMinimumSize(900, 650);
@@ -57,8 +58,6 @@ AllTasksWindow::AllTasksWindow(TaskManager* taskManager, QWidget* parent)
 
     sortLayout->addWidget(sortByDateButton);
     sortLayout->addWidget(sortByPriorityButton);
-
-    tasksList = new QListWidget();
 
     layout->addWidget(headerLabel);
     layout->addLayout(filterLayout);

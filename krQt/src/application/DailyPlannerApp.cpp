@@ -127,7 +127,7 @@ void DailyPlannerApp::setupUI() {
     updateDisplay();
 }
 
-void DailyPlannerApp::applyStyle() {
+void DailyPlannerApp::applyStyle() const {
     QString styleSheet = StyleLoader::loadStyleSheet("resources/styles/main.qss");
     centralWidget()->setStyleSheet(styleSheet);
 }

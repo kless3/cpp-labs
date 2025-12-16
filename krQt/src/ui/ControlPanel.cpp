@@ -41,7 +41,7 @@ void ControlPanel::setupUI() {
     auto* managementMenu = new QMenu(managementButton);
 
     const auto* sortDateAction = managementMenu->addAction("Сортировать по дате");
-    auto* sortPriorityAction = managementMenu->addAction("Сортировать по приоритету");
+    const auto* sortPriorityAction = managementMenu->addAction("Сортировать по приоритету");
     auto* showCompletedAction = managementMenu->addAction("Выполненные задачи");
     auto* showPendingAction = managementMenu->addAction("Текущие задачи");
     auto* showHighPriorityAction = managementMenu->addAction("Важные задачи");
