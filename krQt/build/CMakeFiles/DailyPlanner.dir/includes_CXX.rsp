@@ -1,0 +1,1 @@
+-IC:/Users/Maksim/Desktop/uni/krQt/build/DailyPlanner_autogen/include -IC:/Users/Maksim/Desktop/uni/krQt/header -IC:/Users/Maksim/Desktop/uni/krQt/src -isystem C:/msys64/mingw64/include/QtCore -isystem "C:/msys64/mingw64/share/qt5/mkspecs/win32-g++" -isystem C:/msys64/mingw64/include/QtWidgets -isystem C:/msys64/mingw64/include/QtGui

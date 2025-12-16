@@ -1,0 +1,194 @@
+[
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\DailyPlanner_autogen\\mocs_compilation.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\build\\DailyPlanner_autogen\\mocs_compilation.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/build/DailyPlanner_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/DailyPlanner_autogen/mocs_compilation.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\main.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\main.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/main.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\application\\Application.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\application\\Application.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/application/Application.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/application/Application.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\application\\DailyPlannerApp.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\application\\DailyPlannerApp.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/application/DailyPlannerApp.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/application/DailyPlannerApp.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\core\\Task.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\core\\Task.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/core/Task.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/core/Task.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\core\\TaskPriority.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\core\\TaskPriority.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/core/TaskPriority.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/core/TaskPriority.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\core\\TaskStatus.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\core\\TaskStatus.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/core/TaskStatus.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/core/TaskStatus.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\exception\\AppException.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\exception\\AppException.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/exception/AppException.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/exception/AppException.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\exception\\InitializationFailedException.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\exception\\InitializationFailedException.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/exception/InitializationFailedException.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/exception/InitializationFailedException.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\exception\\WindowCreationFailedException.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\exception\\WindowCreationFailedException.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/exception/WindowCreationFailedException.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/exception/WindowCreationFailedException.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\exception\\FileAccessFailedException.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\exception\\FileAccessFailedException.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/exception/FileAccessFailedException.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/exception/FileAccessFailedException.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\exception\\FileOpenFailedException.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\exception\\FileOpenFailedException.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/exception/FileOpenFailedException.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/exception/FileOpenFailedException.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\exception\\FileSaveFailedException.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\exception\\FileSaveFailedException.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/exception/FileSaveFailedException.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/exception/FileSaveFailedException.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\exception\\TaskParseFailedException.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\exception\\TaskParseFailedException.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/exception/TaskParseFailedException.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/exception/TaskParseFailedException.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\exception\\InvalidTaskFormatException.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\exception\\InvalidTaskFormatException.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/exception/InvalidTaskFormatException.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/exception/InvalidTaskFormatException.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\exception\\NumericConversionFailedException.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\exception\\NumericConversionFailedException.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/exception/NumericConversionFailedException.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/exception/NumericConversionFailedException.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\exception\\TaskNotFoundException.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\exception\\TaskNotFoundException.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/exception/TaskNotFoundException.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/exception/TaskNotFoundException.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\repository\\DataPersistenceManager.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\repository\\DataPersistenceManager.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/repository/DataPersistenceManager.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/repository/DataPersistenceManager.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\repository\\TaskFilter.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\repository\\TaskFilter.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/repository/TaskFilter.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/repository/TaskFilter.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\repository\\TaskRepository.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\repository\\TaskRepository.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/repository/TaskRepository.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/repository/TaskRepository.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\repository\\TaskSorter.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\repository\\TaskSorter.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/repository/TaskSorter.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/repository/TaskSorter.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\service\\DateService.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\service\\DateService.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/service/DateService.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/service/DateService.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\service\\NotificationService.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\service\\NotificationService.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/service/NotificationService.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/service/NotificationService.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\service\\TaskManager.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\service\\TaskManager.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/service/TaskManager.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/service/TaskManager.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\ui\\AddTaskDialog.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\ui\\AddTaskDialog.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/ui/AddTaskDialog.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/ui/AddTaskDialog.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\ui\\AllTasksWindow.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\ui\\AllTasksWindow.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/ui/AllTasksWindow.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/ui/AllTasksWindow.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\ui\\ControlPanel.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\ui\\ControlPanel.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/ui/ControlPanel.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/ui/ControlPanel.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\ui\\EditTaskDialog.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\ui\\EditTaskDialog.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/ui/EditTaskDialog.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/ui/EditTaskDialog.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\ui\\NavigationHeader.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\ui\\NavigationHeader.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/ui/NavigationHeader.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/ui/NavigationHeader.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\ui\\TaskItemWidget.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\ui\\TaskItemWidget.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/ui/TaskItemWidget.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/ui/TaskItemWidget.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\ui\\TaskListWidget.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\ui\\TaskListWidget.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/ui/TaskListWidget.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/ui/TaskListWidget.cpp.obj"
+},
+{
+  "directory": "C:/Users/Maksim/Desktop/uni/krQt/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB @CMakeFiles/DailyPlanner.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\DailyPlanner.dir\\src\\utils\\StyleLoader.cpp.obj -c C:\\Users\\Maksim\\Desktop\\uni\\krQt\\src\\utils\\StyleLoader.cpp",
+  "file": "C:/Users/Maksim/Desktop/uni/krQt/src/utils/StyleLoader.cpp",
+  "output": "CMakeFiles/DailyPlanner.dir/src/utils/StyleLoader.cpp.obj"
+}
+]

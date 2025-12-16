@@ -1,0 +1,494 @@
+{
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "C:/Users/Maksim/Desktop/uni/krQt/build/DailyPlanner_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/Maksim/Desktop/uni/krQt/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/Maksim/Desktop/uni/krQt/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/Maksim/Desktop/uni/krQt",
+	"CMAKE_EXECUTABLE" : "C:/Program Files/CMake/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"C:/Users/Maksim/Desktop/uni/krQt/CMakeLists.txt",
+		"C:/Users/Maksim/Desktop/uni/krQt/build/CMakeFiles/4.0.0-rc4/CMakeSystem.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/Windows-Initialize.cmake",
+		"C:/Users/Maksim/Desktop/uni/krQt/build/CMakeFiles/4.0.0-rc4/CMakeCCompiler.cmake",
+		"C:/Users/Maksim/Desktop/uni/krQt/build/CMakeFiles/4.0.0-rc4/CMakeCXXCompiler.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeGenericSystem.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/Windows.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/WindowsPaths.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeCInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Compiler/GNU-C.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Compiler/GNU.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/Windows-GNU-C.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/Windows-GNU.cmake",
+		"C:/Users/Maksim/Desktop/uni/krQt/build/CMakeFiles/4.0.0-rc4/CMakeRCCompiler.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeRCInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/Windows-windres.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/Windows-GNU-C-ABI.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Linker/GNU-C.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Linker/GNU.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-C.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeCXXInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Compiler/GNU-CXX.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Compiler/GNU.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/Windows-GNU.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX-ABI.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Internal/CMakeCXXLinkerInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Linker/GNU-CXX.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Linker/GNU.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-CXX.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5/Qt5Config.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeParseArguments.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QJp2Plugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QMngPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
+		"C:/msys64/mingw64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeParseArguments.cmake",
+		"C:/Users/Maksim/Desktop/uni/krQt/resources/styles/main.qss",
+		"C:/Users/Maksim/Desktop/uni/krQt/resources/styles/add_task_dialog.qss",
+		"C:/Users/Maksim/Desktop/uni/krQt/resources/styles/edit_task_dialog.qss",
+		"C:/Users/Maksim/Desktop/uni/krQt/resources/styles/all_tasks_window.qss"
+	],
+	"CMAKE_SOURCE_DIR" : "C:/Users/Maksim/Desktop/uni/krQt",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "C:/Users/Maksim/Desktop/uni/krQt/build/DailyPlanner_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "DailyPlanner_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/application/Application.h",
+			"MU",
+			"KMPH2QKUFC/moc_Application.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/application/DailyPlannerApp.h",
+			"MU",
+			"KMPH2QKUFC/moc_DailyPlannerApp.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/core/Task.h",
+			"MU",
+			"A3PZQTVQPS/moc_Task.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/core/TaskPriority.h",
+			"MU",
+			"A3PZQTVQPS/moc_TaskPriority.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/core/TaskStatus.h",
+			"MU",
+			"A3PZQTVQPS/moc_TaskStatus.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/exceptions/AppException.h",
+			"MU",
+			"PG6WDKBHGH/moc_AppException.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/exceptions/FileAccessFailedException.h",
+			"MU",
+			"PG6WDKBHGH/moc_FileAccessFailedException.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/exceptions/FileOpenFailedException.h",
+			"MU",
+			"PG6WDKBHGH/moc_FileOpenFailedException.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/exceptions/FileSaveFailedException.h",
+			"MU",
+			"PG6WDKBHGH/moc_FileSaveFailedException.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/exceptions/InitializationFailedException.h",
+			"MU",
+			"PG6WDKBHGH/moc_InitializationFailedException.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/exceptions/InvalidTaskFormatException.h",
+			"MU",
+			"PG6WDKBHGH/moc_InvalidTaskFormatException.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/exceptions/NumericConversionFailedException.h",
+			"MU",
+			"PG6WDKBHGH/moc_NumericConversionFailedException.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/exceptions/TaskNotFoundException.h",
+			"MU",
+			"PG6WDKBHGH/moc_TaskNotFoundException.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/exceptions/TaskParseFailedException.h",
+			"MU",
+			"PG6WDKBHGH/moc_TaskParseFailedException.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/exceptions/WindowCreationFailedException.h",
+			"MU",
+			"PG6WDKBHGH/moc_WindowCreationFailedException.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/repository/DataPersistenceManager.h",
+			"MU",
+			"POZZXQFVX5/moc_DataPersistenceManager.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/repository/Repository.h",
+			"MU",
+			"POZZXQFVX5/moc_Repository.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/repository/TaskFilter.h",
+			"MU",
+			"POZZXQFVX5/moc_TaskFilter.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/repository/TaskRepository.h",
+			"MU",
+			"POZZXQFVX5/moc_TaskRepository.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/repository/TaskSorter.h",
+			"MU",
+			"POZZXQFVX5/moc_TaskSorter.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/service/DateService.h",
+			"MU",
+			"ZSBVZW7ZXD/moc_DateService.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/service/NotificationService.h",
+			"MU",
+			"ZSBVZW7ZXD/moc_NotificationService.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/service/TaskManager.h",
+			"MU",
+			"ZSBVZW7ZXD/moc_TaskManager.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/ui/AddTaskDialog.h",
+			"MU",
+			"IYQIVLSXMJ/moc_AddTaskDialog.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/ui/AllTasksWindow.h",
+			"MU",
+			"IYQIVLSXMJ/moc_AllTasksWindow.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/ui/ControlPanel.h",
+			"MU",
+			"IYQIVLSXMJ/moc_ControlPanel.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/ui/EditTaskDialog.h",
+			"MU",
+			"IYQIVLSXMJ/moc_EditTaskDialog.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/ui/NavigationHeader.h",
+			"MU",
+			"IYQIVLSXMJ/moc_NavigationHeader.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/ui/TaskItemWidget.h",
+			"MU",
+			"IYQIVLSXMJ/moc_TaskItemWidget.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/ui/TaskListWidget.h",
+			"MU",
+			"IYQIVLSXMJ/moc_TaskListWidget.cpp",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/header/utils/StyleLoader.h",
+			"MU",
+			"NHEVKBIJ6N/moc_StyleLoader.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "C:/Users/Maksim/Desktop/uni/krQt/build/DailyPlanner_autogen/include",
+	"MOC_COMPILATION_FILE" : "C:/Users/Maksim/Desktop/uni/krQt/build/DailyPlanner_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"C:/Users/Maksim/Desktop/uni/krQt/header",
+		"C:/Users/Maksim/Desktop/uni/krQt/src",
+		"C:/msys64/mingw64/include/QtCore",
+		"C:/msys64/mingw64/share/qt5/mkspecs/win32-g++",
+		"C:/msys64/mingw64/include/QtWidgets",
+		"C:/msys64/mingw64/include/QtGui",
+		"C:/msys64/mingw64/include",
+		"C:/msys64/mingw64/include/c++/15.1.0",
+		"C:/msys64/mingw64/include/c++/15.1.0/x86_64-w64-mingw32",
+		"C:/msys64/mingw64/include/c++/15.1.0/backward",
+		"C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.1.0/include",
+		"C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.1.0/include-fixed"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"C:/msys64/mingw64/bin/g++.exe",
+		"-std=gnu++17",
+		"-dM",
+		"-E",
+		"-c",
+		"C:/Program Files/CMake/share/cmake-4.0/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "C:/Users/Maksim/Desktop/uni/krQt/build/DailyPlanner_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 6,
+	"PARSE_CACHE_FILE" : "C:/Users/Maksim/Desktop/uni/krQt/build/CMakeFiles/DailyPlanner_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "C:/msys64/mingw64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "C:/msys64/mingw64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "C:/Users/Maksim/Desktop/uni/krQt/build/CMakeFiles/DailyPlanner_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "C:/Users/Maksim/Desktop/uni/krQt/main.cpp", "MU", null ],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/application/Application.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/application/DailyPlannerApp.cpp",
+			"MU",
+			null
+		],
+		[ "C:/Users/Maksim/Desktop/uni/krQt/src/core/Task.cpp", "MU", null ],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/core/TaskPriority.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/core/TaskStatus.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/exception/AppException.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/exception/FileAccessFailedException.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/exception/FileOpenFailedException.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/exception/FileSaveFailedException.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/exception/InitializationFailedException.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/exception/InvalidTaskFormatException.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/exception/NumericConversionFailedException.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/exception/TaskNotFoundException.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/exception/TaskParseFailedException.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/exception/WindowCreationFailedException.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/repository/DataPersistenceManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/repository/TaskFilter.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/repository/TaskRepository.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/repository/TaskSorter.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/service/DateService.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/service/NotificationService.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/service/TaskManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/ui/AddTaskDialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/ui/AllTasksWindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/ui/ControlPanel.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/ui/EditTaskDialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/ui/NavigationHeader.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/ui/TaskItemWidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/ui/TaskListWidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Maksim/Desktop/uni/krQt/src/utils/StyleLoader.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}
