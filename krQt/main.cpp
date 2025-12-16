@@ -7,5 +7,5 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    return app.Application::exec();
+    return Application::exec();
 }
