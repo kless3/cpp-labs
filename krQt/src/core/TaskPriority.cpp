@@ -1,13 +1,16 @@
 #include "core/TaskPriority.h"
+#include <format>
 
 std::string TaskPriority::toString(int priority) {
+    using enum Level;
+    
     switch (priority) {
-        case static_cast<int>(Level::LOW):       return "Низкий";
-        case static_cast<int>(Level::MEDIUM):    return "Средний";
-        case static_cast<int>(Level::HIGH):      return "Высокий";
-        case static_cast<int>(Level::IMPORTANT): return "Важный";
-        case static_cast<int>(Level::CRITICAL):  return "Критичный";
-        default:        return "Неизвестно";
+        case std::to_underlying(LOW):       return "Низкий";
+        case std::to_underlying(MEDIUM):    return "Средний";
+        case std::to_underlying(HIGH):       return "Высокий";
+        case std::to_underlying(IMPORTANT):  return "Важный";
+        case std::to_underlying(CRITICAL):  return "Критичный";
+        default:                             return "Неизвестно";
     }
 }
 

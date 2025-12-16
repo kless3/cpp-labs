@@ -8,7 +8,6 @@ Task::Task(std::string description, std::string date, std::string time, int prio
     , date(std::move(date))
     , time(std::move(time))
     , priority(priority)
-    , completed(false)
 {
     id = nextId++;
 }

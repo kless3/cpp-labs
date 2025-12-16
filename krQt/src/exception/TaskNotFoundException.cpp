@@ -1,7 +1,8 @@
 #include "exceptions/TaskNotFoundException.h"
+#include <format>
 
 TaskNotFoundException::TaskNotFoundException(int taskId)
-    : AppException("Task not found with ID: " + std::to_string(taskId))
+    : AppException(std::format("Task not found with ID: {}", taskId))
 {
 }
 

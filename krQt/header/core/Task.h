@@ -34,5 +34,5 @@ private:
     std::string date;
     std::string time;
     int priority;
-    bool completed;
+    bool completed{false};
 };

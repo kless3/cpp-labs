@@ -4,6 +4,7 @@
 
 #include <fstream>
 #include <sstream>
+#include <format>
 
 bool DataPersistenceManager::saveToFile(const std::vector<Task>& tasks, const std::string& filename) {
     std::ofstream file(filename);
@@ -57,7 +58,7 @@ Task DataPersistenceManager::parseTaskLine(const std::string& line) {
     }
 
     if (tokens.size() != 6) {
-        throw InvalidTaskFormatException("expected 6 fields, got " + std::to_string(tokens.size()));
+        throw InvalidTaskFormatException(std::format("expected 6 fields, got {}", tokens.size()));
     }
 
     try {
@@ -81,10 +82,11 @@ Task DataPersistenceManager::parseTaskLine(const std::string& line) {
 }
 
 std::string DataPersistenceManager::taskToLine(const Task& task) {
-    return std::to_string(task.getId()) + "," +
-           task.getDescription() + "," +
-           task.getDate() + "," +
-           task.getTime() + "," +
-           std::to_string(task.getPriority()) + "," +
-           (task.isCompleted() ? "1" : "0");
+    return std::format("{},{},{},{},{},{}",
+                      task.getId(),
+                      task.getDescription(),
+                      task.getDate(),
+                      task.getTime(),
+                      task.getPriority(),
+                      task.isCompleted() ? "1" : "0");
 }

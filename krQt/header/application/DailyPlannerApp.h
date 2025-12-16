@@ -21,7 +21,7 @@ public:
 private slots:
     void addTask();
     void showAllTasksWindow();
-    void saveData();
+    void saveData() const;
     void loadData();
     void nextDay();
     void prevDay();
