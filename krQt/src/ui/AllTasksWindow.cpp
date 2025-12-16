@@ -11,8 +11,8 @@
 AllTasksWindow::AllTasksWindow(TaskManager* taskManager, QWidget* parent)
     : QDialog(parent)
     , taskManager(taskManager)
-    , searchEdit(new QLineEdit())
     , tasksList(new QListWidget())
+    , searchEdit(new QLineEdit())
 {
     setWindowTitle("Все задачи");
     setMinimumSize(900, 650);

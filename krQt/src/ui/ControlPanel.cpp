@@ -42,9 +42,9 @@ void ControlPanel::setupUI() {
 
     const auto* sortDateAction = managementMenu->addAction("Сортировать по дате");
     const auto* sortPriorityAction = managementMenu->addAction("Сортировать по приоритету");
-    auto* showCompletedAction = managementMenu->addAction("Выполненные задачи");
-    auto* showPendingAction = managementMenu->addAction("Текущие задачи");
-    auto* showHighPriorityAction = managementMenu->addAction("Важные задачи");
+    const auto* showCompletedAction = managementMenu->addAction("Выполненные задачи");
+    const auto* showPendingAction = managementMenu->addAction("Текущие задачи");
+    const auto* showHighPriorityAction = managementMenu->addAction("Важные задачи");
 
     managementButton->setMenu(managementMenu);
 
