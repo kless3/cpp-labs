@@ -4,13 +4,13 @@
 int Task::nextId = 1;
 
 Task::Task(std::string description, std::string date, std::string time, int priority)
-    : id(nextId++)
-    , description(std::move(description))
+    : description(std::move(description))
     , date(std::move(date))
     , time(std::move(time))
     , priority(priority)
     , completed(false)
 {
+    id = nextId++;
 }
 
 int Task::getId() const {
@@ -37,30 +37,30 @@ bool Task::isCompleted() const {
     return completed;
 }
 
-void Task::setCompleted(bool completed) {
-    this->completed = completed;
+void Task::setCompleted(bool value) {
+    completed = value;
 }
 
-void Task::setDescription(const std::string& description) {
-    this->description = description;
+void Task::setDescription(std::string_view desc) {
+    description = desc;
 }
 
-void Task::setDate(const std::string& date) {
-    this->date = date;
+void Task::setDate(std::string_view dateStr) {
+    date = dateStr;
 }
 
-void Task::setTime(const std::string& time) {
-    this->time = time;
+void Task::setTime(std::string_view timeStr) {
+    time = timeStr;
 }
 
-void Task::setPriority(int priority) {
-    this->priority = priority;
+void Task::setPriority(int prio) {
+    priority = prio;
 }
 
-void Task::setId(int id) {
-    this->id = id;
-    if (id >= nextId) {
-        nextId = id + 1;
+void Task::setId(int taskId) {
+    id = taskId;
+    if (taskId >= nextId) {
+        nextId = taskId + 1;
     }
 }
 

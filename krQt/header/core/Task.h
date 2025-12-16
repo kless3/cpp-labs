@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <string_view>
 #include <QString>
 
 class Task {
@@ -14,21 +15,21 @@ public:
     int getPriority() const;
     bool isCompleted() const;
 
-    void setCompleted(bool completed);
-    void setDescription(const std::string& description);
-    void setDate(const std::string& date);
-    void setTime(const std::string& time);
-    void setPriority(int priority);
+    void setCompleted(bool value);
+    void setDescription(std::string_view desc);
+    void setDate(std::string_view dateStr);
+    void setTime(std::string_view timeStr);
+    void setPriority(int prio);
 
     std::string getPriorityStars() const;
     QString getPriorityText() const;
 
 private:
     friend class DataPersistenceManager;
-    void setId(int id);
+    void setId(int taskId);
 
     static int nextId;
-    int id;
+    int id{0};
     std::string description;
     std::string date;
     std::string time;
