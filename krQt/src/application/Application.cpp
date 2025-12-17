@@ -19,3 +19,7 @@ bool Application::initialize() {
         return false;
     }
 }
+
+int Application::exec() {
+    return QApplication::exec();
+}

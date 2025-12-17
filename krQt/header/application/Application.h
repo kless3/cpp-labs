@@ -13,6 +13,7 @@ public:
     ~Application() override;
 
     bool initialize();
+    static int exec();
 
 private:
     std::unique_ptr<DailyPlannerApp> mainWindow{nullptr};
